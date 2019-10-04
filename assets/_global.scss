@@ -1,0 +1,19 @@
+.page-enter-active, 
+.page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, 
+.page-leave-active {
+  opacity: 0;
+}
+.margin-transition {
+	transition: .33s margin-left;
+}
+@media (min-width: 576px) {
+	.push-content-left {
+		margin-left: 250px;
+	}
+	.push-content-right {
+		margin-right: 250px;
+	}
+}

@@ -1,72 +1,92 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        yurii-portfolio
-      </h1>
-      <h2 class="subtitle">
-        Yurii Golskyi
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+	<section class="hero py-2 mt-5 text-lighten-dark">
+    <h1 class="display-1">
+    	Hello there,
+    	<span class="mt-1 display db">I'm 
+    		<strong>frontend developer</strong>, 
+    		<strong>physicist</strong>, 
+    		<strong>thinker</strong>, 
+    		<strong>philosopher</strong>.
+    	</span>
+    </h1>
+    <p class="title-1 mt-2">
+    	I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
+    </p>
+
+    <div class="mt-4 text-secondary text-center">
+    	<h2 class="display">Links that You might be interesting:</h2>
+			<div class="links mt-2 title-2">
+				<a v-for="link in links" 
+					 class="link"
+				   :key="link.id" 
+				   :href="link.url"
+				   target="_blank"
+				   v-ripple>
+					{{ link.name }}
+				</a>
+			</div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import { uuid } from '~/utils/helpers';
 export default {
-  components: {
-    Logo
-  }
+	data() {
+		return {
+			links: [
+				{
+					name: 'Codepen',
+					url: 'https://codepen.io/erety',
+					id: uuid()
+				},
+				{
+					name: 'Facebook',
+					url: 'https://facebook.com/',
+					id: uuid()
+				},
+				{
+					name: 'Github',
+					url: 'https://github.com/yuriiholskiy',
+					id: uuid()
+				}
+			]
+		}
+	}
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss">
+.hero {
+	overflow: hidden;
+	@media(max-width: 760px) {
+		padding: 0;
+		margin-top: 3rem !important;
+	}
 }
+.link {
+	text-decoration: none;
+	position: relative;
+	color: map-get($colors, dark);
+	&:not(:first-child) {
+		margin-left: 1rem;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		transition: .25s transform;
+		transform: scale(0);
+		width: 100%;
+		height: 1px;
+		background-color: map-get($colors, dark);
+	}
+	&:hover {
+		color: lighten(map-get($colors, dark), 15%);
+		&::before {
+			transform: scale(1);
+		}
+	}
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

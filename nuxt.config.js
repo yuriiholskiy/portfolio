@@ -1,53 +1,52 @@
-
-export default {
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/portfolio/'
   }
-  /*
-  ** Headers of the page
-  */
+} : {};
+export default {
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Yurii Golskyi portfolio',
+    bodyAttrs: {
+      class: 'margin-transition'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { 
+      	hid: 'description', 
+      	name: 'description', 
+      	content: 'Yurii Golskyi front end developer portfolio created by nuxt.js' 
+      },
+      {
+      	hid: 'keyword',
+      	name: 'keyword',
+      	content: 'javascript, portfolio, vue, nuxt, frontend'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
+  }, 
+  loading: { color: 'blue' },
+  pageTransition: {
+  	name: 'page',
+  	mode: 'out-in'
   },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
   css: [
+  	'~/assets/style.scss'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
+		{
+			src: '~/plugins/comps',
+			ssr: true
+		}
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-  ],
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-  ],
-  /*
-  ** Build configuration
-  */
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: '~/assets/_vars.scss'
+  },
+  ...routerBase,
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend (config, ctx) {
     }
   }

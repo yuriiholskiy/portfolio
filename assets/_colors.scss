@@ -1,0 +1,20 @@
+@each $theme, $color in $colors {
+	.bg-#{$theme} {
+		background-color: #{$color} !important;
+	}
+	.bg-lighten-#{$theme} {
+		background-color: #{lighten($color, 20%)} !important;
+	}
+	.bg-darken-#{$theme} {
+		background-color: #{darken($color, 20%)} !important;
+	}
+	.text-#{$theme} {
+		color: #{$color} !important;
+	}
+	.text-lighten-#{$theme} {
+		color: #{lighten($color, 10%)} !important;
+	}
+	.text-darken-#{$theme} {
+		color: #{darken($color, 10%)} !important;
+	}
+}
