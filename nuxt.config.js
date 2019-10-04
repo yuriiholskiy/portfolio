@@ -47,6 +47,7 @@ export default {
   },
   ...routerBase,
   build: {
+    publicPath: '/assets/'
     extend (config, ctx) {
     }
   }
