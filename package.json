@@ -7,11 +7,9 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "gh-pages -d dist",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "predeploy": "nuxt generate"
   },
   "dependencies": {
     "nuxt": "^2.0.0",

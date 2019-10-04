@@ -1,9 +1,7 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+export default {
   router: {
     base: '/portfolio/'
-  }
-} : {};
-export default {
+  },
   head: {
     title: 'Yurii Golskyi portfolio',
     bodyAttrs: {
@@ -45,9 +43,8 @@ export default {
   styleResources: {
     scss: '~/assets/_vars.scss'
   },
-  ...routerBase,
   build: {
-    publicPath: '/assets/'
+    publicPath: '/assets/',
     extend (config, ctx) {
     }
   }
