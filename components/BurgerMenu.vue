@@ -35,6 +35,10 @@ export default {
 	&:focus {
 		outline: none;
 	}
+	&:focus,
+	&:active {
+		box-shadow: 0 0 0 .2rem rgba(map-get($colors, 'light'), .5);
+	}
 	&-item, 
 	&-item::before,
 	&-item::after {

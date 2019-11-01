@@ -1,9 +1,18 @@
-.page-enter-active, 
-.page-leave-active {
+.layout-fade-enter-active, 
+.layout-fade-leave-active {
   transition: opacity .5s;
 }
-.page-enter, 
-.page-leave-active {
+.layout-fade-enter, 
+.layout-fade-leave-active {
+  opacity: 0;
+}
+
+.page-fade-enter-active, 
+.page-fade-leave-active {
+  transition: opacity .5s;
+}
+.page-fade-enter, 
+.page-fade-leave-active {
   opacity: 0;
 }
 .margin-transition {

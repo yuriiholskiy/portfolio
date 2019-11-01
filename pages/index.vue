@@ -26,6 +26,19 @@
 				</a>
 			</div>
     </div>
+    <div class="mt-4 text-secondary text-center">
+    	<h2 class="display">Or You want to check my works:</h2>
+			<div class="links mt-2 title-2">
+				<a v-for="link in links" 
+					 class="link"
+				   :key="link.id" 
+				   :href="link.url"
+				   target="_blank"
+				   v-ripple>
+					{{ link.name }}
+				</a>
+			</div>
+    </div>
   </section>
 </template>
 

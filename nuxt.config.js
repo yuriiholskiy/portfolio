@@ -26,8 +26,12 @@ export default {
     ]
   }, 
   loading: { color: 'blue' },
+  layoutTransition: {
+    name: 'layout-fade',
+    mode: 'out-in'
+  },
   pageTransition: {
-  	name: 'page',
+  	name: 'page-fade',
   	mode: 'out-in'
   },
   css: [

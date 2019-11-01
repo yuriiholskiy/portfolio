@@ -1,6 +1,6 @@
 <template>
 	<div class="app-header">
-		<c-nav-drawer v-model="drawer" dark push color="'#555'">
+		<c-nav-drawer v-model="drawer" dark push>
 			<h3 class="title-1">Navigation</h3>
 	  	<c-button :to="{name: 'index'}" 
 	  						theme="light"

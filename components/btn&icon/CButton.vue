@@ -124,7 +124,7 @@ export default {
 		}
 		&:active,
 		&:focus {
-			box-shadow: 0px 2px 5px rgba(#000, .5)
+			box-shadow: 0px 2px 5px rgba(#000, .5);
 		}
 		// themes
 		&.flat {
