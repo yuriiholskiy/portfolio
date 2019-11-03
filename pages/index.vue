@@ -21,7 +21,9 @@
 				   :key="link.id" 
 				   :href="link.url"
 				   target="_blank"
-				   v-ripple>
+				   v-ripple
+				   rel="noopener"
+				   aria-label="External link">
 					{{ link.name }}
 				</a>
 			</div>
@@ -34,7 +36,9 @@
 				   :key="link.id" 
 				   :href="link.url"
 				   target="_blank"
-				   v-ripple>
+				   v-ripple
+				   rel="noopener"
+				   aria-label="External link">
 					{{ link.name }}
 				</a>
 			</div>
@@ -100,6 +104,5 @@ export default {
 			transform: scale(1);
 		}
 	}
-
 }
 </style>

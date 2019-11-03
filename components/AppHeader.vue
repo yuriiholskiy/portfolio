@@ -4,12 +4,14 @@
 			<h3 class="title-1">Navigation</h3>
 	  	<c-button :to="{name: 'index'}" 
 	  						theme="light"
-	  						class="mt-2 text-dark">
+	  						class="mt-2 text-dark"
+	  						>
 	  		Home
 	  	</c-button>
 	   	<c-button :to="{name: 'about'}" 
 	   						theme="light" 
-	   						class="mt-1 text-dark">
+	   						class="mt-1 text-dark"
+	   						>
 		   	About
 		   </c-button>
 	  </c-nav-drawer>
@@ -25,13 +27,11 @@
 	    							 :active="drawer"
 	    							 v-ripple />
 	    	<figure class="df aic ml-2">
-	    		<img :src="require('~/assets/images/yurii.jpg')" 
-	    				alt="Yurii Golskyi"
-	    				class="img-responsive hero-image">						 
-		    	<figcaption>
-		    		<h1 class="display text-white">
-		    			Yurii Golskyi, <span class="title db text-darken-light">more than developer.</span>
-		    		</h1>
+	    		<img src="~/assets/images/yurii.png" 
+	    				 alt="Yurii Golskyi"
+	    				 class="img-responsive hero-image">						 
+		    	<figcaption class="display text-white">
+		    		Yurii Golskyi, <span class="title db">more than developer.</span>
 		    	</figcaption>
 	    	</figure>
 	    </div>
@@ -74,7 +74,7 @@ export default {
 .hero-image {
 	width: 50px;
 	height: 50px;
-	border: 1px solid map-get($colors, light);
+	border: 1px solid map-get($colors, dark);
 	border-radius: 50%;
 }
 </style>

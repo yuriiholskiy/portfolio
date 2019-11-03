@@ -4,6 +4,9 @@ export default {
   },
   head: {
     title: 'Yurii Golskyi portfolio',
+    htmlAttrs: {
+      lang: 'en'
+    },
     bodyAttrs: {
       class: 'margin-transition'
     },
@@ -18,7 +21,7 @@ export default {
       {
       	hid: 'keyword',
       	name: 'keyword',
-      	content: 'javascript, portfolio, vue, nuxt, frontend'
+      	content: 'portfolio, javascript, vue, nuxt, frontend'
       }
     ],
     link: [

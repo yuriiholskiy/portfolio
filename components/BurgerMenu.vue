@@ -1,5 +1,6 @@
 <template>
 	<button type="button" 
+					aria-label="burger-menu"
 					class="burger-menu" 
 					:style="sizes" 
 					v-on="$listeners">
