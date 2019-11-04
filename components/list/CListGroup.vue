@@ -8,11 +8,9 @@ export default {
 			required: false
 		}
 	},
-	render(h, { props, children }) {
+	render(h, { data, props, children }) {
 		return h('ul', {
-			class: {
-				'c-list-group': true
-			},
+			class: ['c-list-group', data.staticClass],
 			style: {
 				'max-width': props.maxWidth
 			}

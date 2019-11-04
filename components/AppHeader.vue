@@ -2,7 +2,7 @@
 	<div class="app-header">
 		<c-nav-drawer v-model="drawer" dark push>
 			<h3 class="title-1">Navigation</h3>
-	  	<c-button :to="{name: 'index'}" 
+	  	<!-- <c-button :to="{name: 'index'}" 
 	  						theme="light"
 	  						class="mt-2 text-dark"
 	  						>
@@ -13,6 +13,14 @@
 	   						class="mt-1 text-dark"
 	   						>
 		   	About
+		   </c-button> -->
+		   <c-button theme="light"
+		   					 v-for="link in menuLinks"
+		   					 :to="{name: link.path}"
+		   					 :key="link.path"
+		   					 class="text-dark mt-1"
+		   					 >
+		   		{{ link.name }}
 		   </c-button>
 	  </c-nav-drawer>
 	  <c-overlay v-if="drawer"
@@ -27,7 +35,7 @@
 	    							 :active="drawer"
 	    							 v-ripple />
 	    	<figure class="df aic ml-2">
-	    		<img src="~/assets/images/yurii.png" 
+	    		<img src="~/assets/images/yurii.jpg" 
 	    				 alt="Yurii Golskyi"
 	    				 class="img-responsive hero-image">						 
 		    	<figcaption class="display text-white">
@@ -36,7 +44,7 @@
 	    	</figure>
 	    </div>
 	    <div class="toolbar-right hidden-sm-and-down">
-	    	<c-button :to="{name: 'index'}" 
+	    	<!-- <c-button :to="{name: 'index'}" 
 	    						theme="light" 
 	    						class="mr-1 text-dark">
 	    		Home
@@ -45,7 +53,15 @@
 	   	 						theme="light"
 	   	 						class="text-dark">
 		   	 	About
-		   	 </c-button>
+		   	 </c-button> -->
+		   	 <c-button theme="light"
+			   					 v-for="link in menuLinks"
+			   					 :to="{name: link.path}"
+			   					 :key="link.path"
+			   					 class="mr-1 text-dark"
+		   					 	 >
+		   		{{ link.name }}
+		   </c-button>
 	    </div>
 	  </c-toolbar>
 	</div>
@@ -56,7 +72,21 @@ import BurgerMenu from '~/components/BurgerMenu';
 export default {
 	data() {
 		return {
-			drawer: false
+			drawer: false,
+			menuLinks: [
+				{
+					name: 'Home',
+					path: 'index'
+				},
+				{
+					name: 'About',
+					path: 'about'
+				},
+				{
+					name: 'Works',
+					path: 'works'
+				},
+			]
 		}
 	},
 	watch: {

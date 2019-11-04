@@ -1,5 +1,5 @@
 <template>
-	<router-link class="c-button"
+	<nuxt-link class="c-button"
 							 v-if="!btn"
 							 :to="to"
 							 :class="[
@@ -15,7 +15,7 @@
 							 @click.native="onClick">
 		<c-spinner loading size="1" theme="light" v-if="loading"></c-spinner>
 		<slot>Button</slot>
-	</router-link>
+	</nuxt-link>
 	<button v-else
 					class="c-button"
 				  :class="[
@@ -126,11 +126,6 @@ export default {
 		&:focus {
 			box-shadow: 0px 2px 5px rgba(#000, .5);
 		}
-		// themes
-		&.flat {
-			background-color: transparent;
-			color: #000;
-		}
 		&.no-border {
 			border: none !important;
 		}
@@ -161,6 +156,11 @@ export default {
 				&.flat {
 					border: 1px solid $val;
 					background-color: transparent;
+					color: darken($val, 10%);
+					&:hover {
+						background-color: darken($val, 2%);
+						color: lighten($val, 20%);
+					}
 				}
 			}
 		}

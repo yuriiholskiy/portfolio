@@ -26,7 +26,7 @@ export default {
       { 
       	hid: 'description', 
       	name: 'description', 
-      	content: 'Yurii Golskyi front end developer portfolio created by nuxt.js' 
+      	content: 'Yurii Golskyi Front-end developer portfolio created by nuxt.js' 
       },
       {
       	hid: 'keyword',

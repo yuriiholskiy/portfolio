@@ -2,12 +2,12 @@
 	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
     <h1 class="display-1">
     	Hello there,
-    	<span class="mt-1 display db">I'm 
+    	<p class="mt-1 display">I am 
     		<strong>frontend developer</strong>, 
     		<strong>physicist</strong>, 
     		<strong>thinker</strong>, 
     		<strong>philosopher</strong>.
-    	</span>
+    	</p>
     </h1>
     <p class="title-1 mt-2">
     	I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
@@ -31,16 +31,9 @@
     <div class="mt-4 mt-xs-2 text-secondary text-center">
     	<h2 class="display">Or You want to check my works:</h2>
 			<div class="links mt-2 title-2">
-				<a v-for="link in links" 
-					 class="link"
-				   :key="link.id" 
-				   :href="link.url"
-				   target="_blank"
-				   v-ripple
-				   rel="noopener"
-				   aria-label="External link">
-					{{ link.name }}
-				</a>
+				<c-button :to="{name: 'about'}" theme="secondary" flat>
+					Works
+				</c-button>
 			</div>
     </div>
   </section>
@@ -84,8 +77,19 @@ export default {
 	text-decoration: none;
 	position: relative;
 	color: map-get($colors, dark);
+	border-radius: 5px;
+	padding: .2rem;
 	&:not(:first-child) {
 		margin-left: 1rem;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:active,
+	&:focus {
+		&::before {
+			transform: scale(1);
+		}
 	}
 	&::before {
 		content: '';

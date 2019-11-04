@@ -1,7 +1,7 @@
 <template>
 	<div class="c-progress" :class="[themes[theme]]" v-if="dismiss" v-on="$listeners">
 		<div class="c-progress-bar" :style="progressWidth">
-			{{ value }}
+			{{ value }}%
 		</div>
 	</div>
 </template>
