@@ -11,8 +11,18 @@ export default {
       class: 'margin-transition'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { 
+      	charset: 'utf-8' 
+    	},
+      { 
+      	name: 'viewport', 
+      	content: 'width=device-width, initial-scale=1' 
+      },
+      {
+      	hid: 'author',
+        name: 'author',
+        content: 'Yurii Golskyi'
+      },
       { 
       	hid: 'description', 
       	name: 'description', 

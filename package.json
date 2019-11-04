@@ -12,8 +12,7 @@
     "predeploy": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "nuxt-vue-material": "^1.2.0"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

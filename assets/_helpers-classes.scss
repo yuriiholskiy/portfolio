@@ -40,13 +40,13 @@
 	}
 
 	.px-#{$i} {
-		padding-right: #{$i}rem;
-		padding-left: #{$i}rem;
+		padding-right: #{$i}rem !important;
+		padding-left: #{$i}rem !important;
 	}
 
 	.py-#{$i} {
-		padding-top: #{$i}rem;
-		padding-bottom: #{$i}rem;
+		padding-top: #{$i}rem !important;
+		padding-bottom: #{$i}rem !important;
 	}
 
 	.pa-#{$i} {
@@ -56,125 +56,125 @@
 @for $i from 0 through 5 {
 	@media (min-width: 993px) and (max-width: 1200px) {
 		.mt-lg-#{$i} {
-			margin-top: #{$i}rem;
+			margin-top: #{$i}rem !important;
 		}
 		.mb-lg-#{$i} {
-			margin-bottom: #{$i}rem;
+			margin-bottom: #{$i}rem !important;
 		}
 		.ml-lg-#{$i} {
-			margin-left: #{$i}rem;
+			margin-left: #{$i}rem !important;
 		}
 		.mr-lg-#{$i} {
-			margin-right: #{$i}rem;
+			margin-right: #{$i}rem !important;
 		}
 		.ma-lg-#{$i} {
-			margin: #{$i}rem;
+			margin: #{$i}rem !important;
 		}
 		.mx-lg-#{$i} {
-			margin-left: #{$i}rem;
-			margin-right: #{$i}rem;
+			margin-left: #{$i}rem !important;
+			margin-right: #{$i}rem !important;
 		}
 		.my-lg-#{$i} {
-			margin-top: #{$i}rem;
-			margin-bottom: #{$i}rem;
+			margin-top: #{$i}rem !important;
+			margin-bottom: #{$i}rem !important;
 		}
 		.pt-lg-#{$i} {
-			padding-top: #{$i}rem;
+			padding-top: #{$i}rem !important;
 		}
 		.pb-lg-#{$i} {
-			padding-bottom: #{$i}rem;
+			padding-bottom: #{$i}rem !important;
 		}
 		.pl-lg-#{$i} {
-			padding-left: #{$i}rem;
+			padding-left: #{$i}rem !important;
 		}
 		.pr-lg-#{$i} {
-			padding-right: #{$i}rem;
+			padding-right: #{$i}rem !important;
 		}
 		.pa-lg-#{$i} {
-			padding: #{$i}rem;
+			padding: #{$i}rem !important;
 		}
 		.px-lg-#{$i} {
-			padding-left: #{$i}rem;
-			padding-right: #{$i}rem;
+			padding-left: #{$i}rem !important;
+			padding-right: #{$i}rem !important;
 		}
 		.py-lg-#{$i} {
-			padding-top: #{$i}rem;
-			padding-bottom: #{$i}rem;
+			padding-top: #{$i}rem !important;
+			padding-bottom: #{$i}rem !important;
 		}
 	}
 	@media (min-width: 769px) and (max-width: 992px) {
 		.mt-md-#{$i} {
-			margin-top: #{$i}rem;
+			margin-top: #{$i}rem !important;
 		}
 		.mb-md-#{$i} {
-			margin-bottom: #{$i}rem;
+			margin-bottom: #{$i}rem !important;
 		}
 		.ml-md-#{$i} {
-			margin-left: #{$i}rem;
+			margin-left: #{$i}rem !important;
 		}
 		.mr-md-#{$i} {
-			margin-right: #{$i}rem;
+			margin-right: #{$i}rem !important;
 		}
 		.ma-md-#{$i} {
-			margin: #{$i}rem;
+			margin: #{$i}rem !important;
 		}
 		.mx-md-#{$i} {
-			margin-left: #{$i}rem;
-			margin-right: #{$i}rem;
+			margin-left: #{$i}rem !important;
+			margin-right: #{$i}rem !important;
 		}
 		.my-md-#{$i} {
-			margin-top: #{$i}rem;
-			margin-bottom: #{$i}rem;
+			margin-top: #{$i}rem !important;
+			margin-bottom: #{$i}rem !important;
 		}
 	}
 	@media (min-width: 577px) and (max-width: 768px) {
 		.mt-sm-#{$i} {
-			margin-top: #{$i}rem;
+			margin-top: #{$i}rem !important;
 		}
 		.mb-sm-#{$i} {
-			margin-bottom: #{$i}rem;
+			margin-bottom: #{$i}rem !important;
 		}
 		.ml-sm-#{$i} {
-			margin-left: #{$i}rem;
+			margin-left: #{$i}rem !important;
 		}
 		.mr-sm-#{$i} {
-			margin-right: #{$i}rem;
+			margin-right: #{$i}rem !important;
 		}
 		.ma-sm-#{$i} {
-			margin: #{$i}rem;
+			margin: #{$i}rem !important;
 		}
 		.mx-sm-#{$i} {
-			margin-left: #{$i}rem;
-			margin-right: #{$i}rem;
+			margin-left: #{$i}rem !important;
+			margin-right: #{$i}rem !important;
 		}
 		.my-sm-#{$i} {
-			margin-top: #{$i}rem;
-			margin-bottom: #{$i}rem;
+			margin-top: #{$i}rem !important;
+			margin-bottom: #{$i}rem !important;
 		}
 	}
 	@media (min-width: 1px) and (max-width: 576px) {
 		.mt-xs-#{$i} {
-			margin-top: #{$i}rem;
+			margin-top: #{$i}rem !important;
 		}
 		.mb-xs-#{$i} {
-			margin-bottom: #{$i}rem;
+			margin-bottom: #{$i}rem !important;
 		}
 		.ml-xs-#{$i} {
-			margin-left: #{$i}rem;
+			margin-left: #{$i}rem !important;
 		}
 		.mr-xs-#{$i} {
-			margin-right: #{$i}rem;
+			margin-right: #{$i}rem !important;
 		}
 		.ma-xs-#{$i} {
-			margin: #{$i}rem;
+			margin: #{$i}rem !important;
 		}
 		.mx-xs-#{$i} {
-			margin-left: #{$i}rem;
-			margin-right: #{$i}rem;
+			margin-left: #{$i}rem !important;
+			margin-right: #{$i}rem !important;
 		}
 		.my-xs-#{$i} {
-			margin-top: #{$i}rem;
-			margin-bottom: #{$i}rem;
+			margin-top: #{$i}rem !important;
+			margin-bottom: #{$i}rem !important;
 		}
 	}
 }

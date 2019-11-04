@@ -1,5 +1,5 @@
 <template>
-	<section class="hero py-2 mt-5 text-lighten-dark">
+	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
     <h1 class="display-1">
     	Hello there,
     	<span class="mt-1 display db">I'm 
@@ -13,7 +13,7 @@
     	I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
     </p>
 
-    <div class="mt-4 text-secondary text-center">
+    <div class="mt-4 mt-xs-2 text-secondary text-center">
     	<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-2 title-2">
 				<a v-for="link in links" 
@@ -28,7 +28,7 @@
 				</a>
 			</div>
     </div>
-    <div class="mt-4 text-secondary text-center">
+    <div class="mt-4 mt-xs-2 text-secondary text-center">
     	<h2 class="display">Or You want to check my works:</h2>
 			<div class="links mt-2 title-2">
 				<a v-for="link in links" 
@@ -77,8 +77,7 @@ export default {
 .hero {
 	overflow: hidden;
 	@media(max-width: 760px) {
-		padding: 0;
-		margin-top: 3rem !important;
+		padding: 1rem 0 !important;
 	}
 }
 .link {

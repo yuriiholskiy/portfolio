@@ -6,14 +6,17 @@
 .layout-fade-leave-active {
   opacity: 0;
 }
-
-.page-fade-enter-active, 
+.page-fade-enter-active,
 .page-fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .5s, transform .3s;
 }
-.page-fade-enter, 
-.page-fade-leave-active {
+.page-fade-enter {
+	opacity: 0;
+  transform: translate(100px);
+}
+.page-fade-leave-to {
   opacity: 0;
+  transform: translate(-100px);
 }
 .margin-transition {
 	transition: .33s margin-left;
