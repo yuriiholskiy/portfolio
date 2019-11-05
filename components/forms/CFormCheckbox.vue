@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import themesMixin from '@/mixins/themes.mixin';
+import themesMixin from '../../mixins/themes.mixin';
 export default {
 	inheritAttrs: false,
 	mixins: [themesMixin('form-checkbox')],

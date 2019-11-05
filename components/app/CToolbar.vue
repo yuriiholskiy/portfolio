@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import themesMixin from '@/mixins/themes.mixin';
+import themesMixin from '../../mixins/themes.mixin';
 export default {
 	name: 'CToolbar',
 	mixins: [themesMixin('toolbar')],

@@ -12,11 +12,11 @@
 }
 .page-fade-enter {
 	opacity: 0;
-  transform: translate(100px);
+  transform: translateX(100px);
 }
 .page-fade-leave-to {
   opacity: 0;
-  transform: translate(-100px);
+  transform: translateX(-100px);
 }
 .margin-transition {
 	transition: .33s margin-left;

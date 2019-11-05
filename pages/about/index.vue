@@ -1,10 +1,10 @@
 <template>
 	<div class="section-wrap py-2">
 		<section class="about text-lighten-dark">
-	    <h2 class="display-1">
+	    <h2 class="display-1 anim-trY-fast">
 	    	About me,
 	    </h2>
-		  <div class="about-content text-left">
+		  <div class="about-content text-left anim-trY-slow">
 	    	<p class="mt-1 title-1">
 	  			I am Front-end developer and post graduate student in Ivan Franko Lviv National University.
 		  	</p>
@@ -16,7 +16,7 @@
 		  		Like to look for non-standart ways for solving differents task.
 		    </p>
 		    <p class="mt-1 title-2">
-		    	Also, I am physicist and passionate by quantum mechanics problem.
+		    	Also, I am theoretical physicist and passionate by quantum mechanics problem.
 					Currently, looking for a place where I can apply my knowledge, become a part of a cool team, 
 					program and develop both personally and with team. 
 		    </p>
@@ -24,10 +24,10 @@
 	  </section>
 		
 	  <section class="skills mt-2 text-lighten-dark">
-	    <h2 class="display-1">
+	    <h2 class="display-1 anim-trY-fast">
 	    	My skills,
 	    </h2>
-	    <c-list-group class="mt-2">
+	    <c-list-group class="mt-2 anim-trY-slow">
 	    	<c-list-item v-for="({ name, percent, theme }, idx) in skills"
 	    							 :key="name"
 	    							 class="skill-list title-2"
@@ -89,6 +89,9 @@ export default {
 				}
 			]
 		}
+	},
+	mounted() {
+		console.log(this.$refs);
 	}
 }
 </script>

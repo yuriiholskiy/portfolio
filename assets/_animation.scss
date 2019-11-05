@@ -1,0 +1,68 @@
+@keyframes fadeAndTranslateXEl {
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes fadeAndTranslateYUpEl {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeAndTranslateYDownEl {
+	from {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.anim-trX-fast {
+	animation: fadeAndTranslateXEl .8s;
+}
+
+.anim-trX-middle {
+	animation: fadeAndTranslateXEl 1.3s;
+}
+
+.anim-trX-slow {
+	animation: fadeAndTranslateXEl 1.8s;
+}
+
+
+.anim-trY-fast {
+	animation: fadeAndTranslateYUpEl .8s;
+}
+
+.anim-trY-middle {
+	animation: fadeAndTranslateYUpEl 1.3s;
+}
+
+.anim-trY-slow {
+	animation: fadeAndTranslateYUpEl 1.8s;
+}
+
+
+.anim-trY-down-fast {
+	animation: fadeAndTranslateYDownEl .8s;
+}
+
+.anim-trY-down-middle {
+	animation: fadeAndTranslateYDownEl 1.3s;
+}
+
+.anim-trY-down-slow {
+	animation: fadeAndTranslateYDownEl 1.8s;
+}

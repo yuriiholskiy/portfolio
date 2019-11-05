@@ -28,7 +28,7 @@
 							 @click="drawer = false">
 		</c-overlay>
 	  <c-toolbar theme="secondary">
-	  	<div class="toolbar-left df aic">
+	  	<div class="toolbar-left df aic anim-trY-down-slow">
 	    	<burger-menu class="bg-light"
 	    							 size="2.5"  
 	    							 @click="drawer = true"
@@ -58,7 +58,7 @@
 			   					 v-for="link in menuLinks"
 			   					 :to="{name: link.path}"
 			   					 :key="link.path"
-			   					 class="mr-1 text-dark"
+			   					 class="mr-1 text-dark anim-trY-down-middle"
 		   					 	 >
 		   		{{ link.name }}
 		   </c-button>

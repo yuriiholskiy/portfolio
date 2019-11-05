@@ -1,6 +1,6 @@
 <template>
 	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
-    <h1 class="display-1">
+    <h1 class="display-1 anim-trY-fast">
     	Hello there,
     	<p class="mt-1 display">I am 
     		<strong>frontend developer</strong>, 
@@ -9,11 +9,11 @@
     		<strong>philosopher</strong>.
     	</p>
     </h1>
-    <p class="title-1 mt-2">
+    <p class="title-1 mt-2 anim-trY-middle">
     	I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
     </p>
 
-    <div class="mt-4 mt-xs-2 text-secondary text-center">
+    <div class="mt-4 mt-xs-2 text-secondary text-center anim-trY-slow">
     	<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-2 title-2">
 				<a v-for="link in links" 
@@ -28,7 +28,7 @@
 				</a>
 			</div>
     </div>
-    <div class="mt-4 mt-xs-2 text-secondary text-center">
+    <div class="mt-4 mt-xs-2 text-secondary text-center anim-trY-slow">
     	<h2 class="display">Or You want to check my works:</h2>
 			<div class="links mt-2 title-2">
 				<c-button :to="{name: 'about'}" theme="secondary" flat>
