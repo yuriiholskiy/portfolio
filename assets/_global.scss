@@ -8,15 +8,15 @@
 }
 .page-fade-enter-active,
 .page-fade-leave-active {
-  transition: opacity .5s, transform .3s;
+  transition: opacity .5s; //, transform .3s;
 }
 .page-fade-enter {
 	opacity: 0;
-  transform: translateX(100px);
+  // transform: translateX(100px);
 }
 .page-fade-leave-to {
   opacity: 0;
-  transform: translateX(-100px);
+  // transform: translateX(-100px);
 }
 .margin-transition {
 	transition: .33s margin-left;
