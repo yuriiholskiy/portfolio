@@ -3,7 +3,7 @@ export default {
 	functional: true,
 	name: "CFooter",
 	render(h, { data, children }) {
-		return h('div', { class: ['c-footer', data.staticClass] }, children);
+		return h('div', { class: ['c-footer', data.staticClass, data.class] }, children);
 	}
 }
 </script>

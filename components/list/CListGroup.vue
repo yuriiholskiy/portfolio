@@ -10,7 +10,7 @@ export default {
 	},
 	render(h, { data, props, children }) {
 		return h('ul', {
-			class: ['c-list-group', data.staticClass],
+			class: ['c-list-group', data.staticClass, data.class],
 			style: {
 				'max-width': props.maxWidth
 			}

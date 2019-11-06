@@ -17,7 +17,8 @@ export default {
 			class: [
 				'c-overlay',
 		 	  {'is-open': props.drawer},
-				data.staticClass
+				data.staticClass,
+				data.class
 			],
 			on: listeners
 		}, children);

@@ -1,6 +1,6 @@
 <template>
 	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
-    <h1 class="display-1 anim-trY-fast">
+    <h1 class="display-1" :class="{'anim-trY-fast': isAnimation}">
     	Hello there,
     	<p class="mt-1 display">I am 
     		<strong>frontend developer</strong>, 
@@ -9,11 +9,11 @@
     		<strong>philosopher</strong>.
     	</p>
     </h1>
-    <p class="title-1 mt-2 anim-trY-middle">
+    <p class="title-1 mt-2" :class="{'anim-trY-middle': isAnimation}">
     	I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
     </p>
 
-    <div class="mt-4 mt-xs-2 text-secondary text-center anim-trY-slow">
+    <div class="mt-4 mt-xs-2 text-secondary text-center" :class="{'anim-trY-slow': isAnimation}">
     	<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-2 title-2">
 				<a v-for="link in links" 
@@ -28,7 +28,9 @@
 				</a>
 			</div>
     </div>
-    <div class="mt-4 mt-xs-2 text-secondary text-center anim-trY-slow">
+    <div class="mt-4 mt-xs-2 text-secondary text-center" 
+    		 :class="{'anim-trY-slow': isAnimation}"
+    		 ref="slowAnimEl">
     	<h2 class="display">Or You want to check my works:</h2>
 			<div class="links mt-2 title-2">
 				<c-button :to="{name: 'about'}" theme="secondary" flat>
@@ -41,9 +43,12 @@
 
 <script>
 import { uuid } from '~/utils/helpers';
+import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
 export default {
+	mixins: [removeAnimClassMixin],
 	data() {
 		return {
+			isAnimation: true,
 			links: [
 				{
 					name: 'Codepen',
@@ -62,16 +67,13 @@ export default {
 				}
 			]
 		}
-	}
+	},
 }
 </script>
 
 <style lang="scss">
 .hero {
 	overflow: hidden;
-	@media(max-width: 760px) {
-		padding: 1rem 0 !important;
-	}
 }
 .link {
 	text-decoration: none;

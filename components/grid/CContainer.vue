@@ -3,7 +3,7 @@ export default {
 	functional: true,
 	name: "CContainer",
 	render(h, { data, children }) {
-		return h('div', { class: ['c-container', data.staticClass] }, children);
+		return h('div', { class: ['c-container', data.staticClass, data.class] }, children);
 	}
 }
 </script>

@@ -29,7 +29,7 @@ export default {
 			});
 		}
 		return h('div', {
-			class: ['c-row', data.staticClass, ...classes]
+			class: ['c-row', data.staticClass, data.class, ...classes]
 		}, children);
 	}
 }

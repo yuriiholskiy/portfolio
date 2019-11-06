@@ -32,7 +32,7 @@ export default {
 		if(props.lg !== '') classes.push('lg-' + props.lg)
 		if(props.xl !== '') classes.push('xl-' + props.xl)
 		return h('div', {
-			class: ['c-col', data.staticClass, ...classes]
+			class: ['c-col', data.staticClass, data.class, ...classes]
 		}, children);
 	}
 }

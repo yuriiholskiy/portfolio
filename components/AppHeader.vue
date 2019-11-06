@@ -2,18 +2,6 @@
 	<div class="app-header">
 		<c-nav-drawer v-model="drawer" dark push>
 			<h3 class="title-1">Navigation</h3>
-	  	<!-- <c-button :to="{name: 'index'}" 
-	  						theme="light"
-	  						class="mt-2 text-dark"
-	  						>
-	  		Home
-	  	</c-button>
-	   	<c-button :to="{name: 'about'}" 
-	   						theme="light" 
-	   						class="mt-1 text-dark"
-	   						>
-		   	About
-		   </c-button> -->
 		   <c-button theme="light"
 		   					 v-for="link in menuLinks"
 		   					 :to="{name: link.path}"
@@ -28,7 +16,9 @@
 							 @click="drawer = false">
 		</c-overlay>
 	  <c-toolbar theme="secondary">
-	  	<div class="toolbar-left df aic anim-trY-down-slow">
+	  	<div class="toolbar-left df aic" 
+	  			 :class="{'anim-trY-down-slow': isAnimation}"
+	  			 ref="slowAnimEl">
 	    	<burger-menu class="bg-light"
 	    							 size="2.5"  
 	    							 @click="drawer = true"
@@ -44,21 +34,12 @@
 	    	</figure>
 	    </div>
 	    <div class="toolbar-right hidden-sm-and-down">
-	    	<!-- <c-button :to="{name: 'index'}" 
-	    						theme="light" 
-	    						class="mr-1 text-dark">
-	    		Home
-	    	</c-button>
-	   	 	<c-button :to="{name: 'about'}"
-	   	 						theme="light"
-	   	 						class="text-dark">
-		   	 	About
-		   	 </c-button> -->
 		   	 <c-button theme="light"
 			   					 v-for="link in menuLinks"
 			   					 :to="{name: link.path}"
 			   					 :key="link.path"
-			   					 class="mr-1 text-dark anim-trY-down-middle"
+			   					 class="mr-1 text-dark"
+			   					 :class="{'anim-trY-down-middle': isAnimation}"
 		   					 	 >
 		   		{{ link.name }}
 		   </c-button>
@@ -69,9 +50,12 @@
 
 <script>
 import BurgerMenu from '~/components/BurgerMenu';
+import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
 export default {
+	mixins: [removeAnimClassMixin],
 	data() {
 		return {
+			isAnimation: true,
 			drawer: false,
 			menuLinks: [
 				{

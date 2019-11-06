@@ -1,10 +1,12 @@
 <template>
 	<div class="section-wrap py-2">
 		<section class="about text-lighten-dark">
-	    <h2 class="display-1 anim-trY-fast">
+	    <h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
 	    	About me,
 	    </h2>
-		  <div class="about-content text-left anim-trY-slow">
+		  <div class="about-content text-left" 
+		  		 :class="{'anim-trY-slow': isAnimation}" 
+		  		 ref="slowAnimEl">
 	    	<p class="mt-1 title-1">
 	  			I am Front-end developer and post graduate student in Ivan Franko Lviv National University.
 		  	</p>
@@ -24,10 +26,10 @@
 	  </section>
 		
 	  <section class="skills mt-2 text-lighten-dark">
-	    <h2 class="display-1 anim-trY-fast">
+	    <h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
 	    	My skills,
 	    </h2>
-	    <c-list-group class="mt-2 anim-trY-slow">
+	    <c-list-group class="mt-2" :class="{'anim-trY-slow': isAnimation}">
 	    	<c-list-item v-for="({ name, percent, theme }, idx) in skills"
 	    							 :key="name"
 	    							 class="skill-list title-2"
@@ -41,6 +43,7 @@
 </template>
 
 <script>
+import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
 export default {
 	head() {
 		return {
@@ -54,8 +57,10 @@ export default {
 			]
 		}
 	},
+	mixins: [removeAnimClassMixin],
 	data() {
 		return {
+			isAnimation: true,
 			skills: [
 				{
 					name: 'HTML',
@@ -89,9 +94,6 @@ export default {
 				}
 			]
 		}
-	},
-	mounted() {
-		console.log(this.$refs);
 	}
 }
 </script>
@@ -99,21 +101,21 @@ export default {
 <style lang="scss">
 .about-content {
 	line-height: 2rem;
-	max-width: 50rem;
-	margin: 2rem auto 0 auto;
+	max-width: 100%;	
 
-	@media screen and (max-width: 768px) {
-		max-width: 100%;
-		margin: 0;
+	@media screen and (min-width: map-get($grid-breakpoints, 'xs')) {
+		max-width: 50rem;
+		margin: 2rem auto 0 auto;
 	}
 }
 .skill-list {
 	.c-progress {
 		width: 80%;
 	}
-	@media screen and (max-width: 768px) {
-		display: flex;
-		flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+		flex-direction: row;
 	}
 }
 </style>
