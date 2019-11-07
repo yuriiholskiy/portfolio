@@ -1,44 +1,52 @@
 <template>
 	<div class="section-wrap py-2">
 		<section class="about text-lighten-dark">
-	    <h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
-	    	About me,
-	    </h2>
-		  <div class="about-content text-left" 
-		  		 :class="{'anim-trY-slow': isAnimation}" 
-		  		 ref="slowAnimEl">
-	    	<p class="mt-1 title-1">
-	  			I am Front-end developer and post graduate student in Ivan Franko Lviv National University.
-		  	</p>
-		  	<p class="mt-1 title-2">
-		  		My future I see in IT speciality. I am interested in new technologies. 
-		  		Quickly find a common language with people, easily join the new team.
-		  		Love to work in team and teach new things from other people.
+			<h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
+				About me,
+			</h2>
+			<div class="about-content text-left" 
+					 :class="{'anim-trY-slow': isAnimation}" 
+					 ref="slowAnimEl">
+				<p class="mt-1 title-1">
+					I am Front-end developer and post graduate student in Ivan Franko Lviv National University.
+				</p>
+				<p class="mt-1 title-2">
+					My future I see in IT speciality. I am interested in new technologies. 
+					Quickly find a common language with people, easily join the new team.
+					Love to work in team and teach new things from other people.
 		
-		  		Like to look for non-standart ways for solving differents task.
-		    </p>
-		    <p class="mt-1 title-2">
-		    	Also, I am theoretical physicist and passionate by quantum mechanics problem.
+					Like to look for non-standart ways for solving differents task.
+				</p>
+				<p class="mt-1 title-2">
+					Also, I am theoretical physicist and passionate by quantum mechanics problem.
 					Currently, looking for a place where I can apply my knowledge, become a part of a cool team, 
 					program and develop both personally and with team. 
-		    </p>
-	    </div>
-	  </section>
+				</p>
+			</div>
+		</section>
 		
-	  <section class="skills mt-2 text-lighten-dark">
-	    <h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
-	    	My skills,
-	    </h2>
-	    <c-list-group class="mt-2" :class="{'anim-trY-slow': isAnimation}">
-	    	<c-list-item v-for="({ name, percent, theme }, idx) in skills"
-	    							 :key="name"
-	    							 class="skill-list title-2"
-	    							 >
-	    		# {{ idx + 1 }} \ {{ name }} 
-	    		<c-progress :value="percent" :theme="theme" class="mt-sm-1 mt-xs-1"/>
-	    	</c-list-item>
-	    </c-list-group>
-	  </section>
+		<section class="skills mt-2 text-lighten-dark">
+			<h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
+				My skills,
+			</h2>
+			<c-list-group class="mt-2" :class="{'anim-trY-slow': isAnimation}">
+				<c-list-item v-for="({ name, percent, theme, icon }, idx) in skills"
+										 :key="name"
+										 class="skill-list title-2"
+										 >
+					<div class="skill-content">
+						<c-icon :sprite="require('@/assets/icons/sprite.svg')" 
+										:name="icon" 
+										class="skill-icon" />
+						<span class="skill-name">
+							#{{ idx + 1 }} \ {{ name }}
+						</span>
+					</div>
+
+					<c-progress :value="percent" :theme="theme" class="mt-sm-1 mt-xs-1" />
+				</c-list-item>
+			</c-list-group>
+		</section>
 	</div>
 </template>
 
@@ -52,7 +60,7 @@ export default {
 				{
 					hid: 'description',
 					name: 'description',
-					content: 'A few words about me, my education and hobbies'
+					content: 'A few words about me, my education, skills and hobbies'
 				}
 			]
 		}
@@ -65,32 +73,38 @@ export default {
 				{
 					name: 'HTML',
 					percent: '90',
-					theme: 'danger'
+					theme: 'danger',
+					icon: 'html'
 				},
 				{
 					name: 'CSS',
 					percent: '90',
-					theme: 'primary'
+					theme: 'primary',
+					icon: 'css'
 				},
 				{
 					name: 'JavaScript',
-					percent: '85',
-					theme: 'warning'
+					percent: '90',
+					theme: 'warning',
+					icon: 'js'
 				},
 				{
 					name: 'Vue',
 					percent: '90',
-					theme: 'success'
+					theme: 'success',
+					icon: 'vue'
 				},
 				{
 					name: 'Nuxt',
-					percent: '80',
-					theme: 'success'
+					percent: '85',
+					theme: 'success',
+					icon: 'nuxt'
 				},
 				{
 					name: 'React',
-					percent: '70',
-					theme: 'primary'
+					percent: '80',
+					theme: 'primary',
+					icon: 'react'
 				}
 			]
 		}
@@ -114,8 +128,24 @@ export default {
 	}
 	display: flex;
 	flex-direction: column;
+	.skill-content {
+		display: flex;
+		align-items: center;
+	}
+	.skill-icon {
+		margin-right: .5rem;
+	}
+	.skill-name {
+		margin-right: 0;
+	}
 	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
 		flex-direction: row;
+		.skill-icon {
+			margin-right: .5rem;
+		}
+		.skill-name {
+			margin-right: auto;
+		}
 	}
 }
 </style>

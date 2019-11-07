@@ -8,6 +8,7 @@
 		transform: translateX(0);
 	}
 }
+
 @keyframes fadeAndTranslateYUpEl {
 	from {
 		opacity: 0;
@@ -40,7 +41,17 @@
 .anim-trX-slow {
 	animation: fadeAndTranslateXEl 1.8s;
 }
+.anim-trX-fast-delay {
+	animation: fadeAndTranslateXEl .8s .8s;
+}
 
+.anim-trX-middle-delay {
+	animation: fadeAndTranslateXEl 1.3s 1.3s;
+}
+
+.anim-trX-slow-delay {
+	animation: fadeAndTranslateXEl 1.8s 1.8s;
+}
 
 .anim-trY-fast {
 	animation: fadeAndTranslateYUpEl .8s;

@@ -1,24 +1,24 @@
 {
-  "name": "yurii-portfolio",
-  "version": "1.0.0",
-  "description": "Yurii Golskyi",
-  "author": "Yurii",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "deploy": "gh-pages -d dist",
-    "start": "nuxt start",
-    "predeploy": "nuxt generate"
-  },
-  "dependencies": {
-    "nuxt": "^2.0.0"
-  },
-  "devDependencies": {
-    "@nuxtjs/style-resources": "^1.0.0",
-    "cross-env": "^6.0.0",
-    "gh-pages": "^2.1.1",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0"
-  }
+	"name": "yurii-portfolio",
+	"version": "1.0.0",
+	"description": "Yurii Golskyi",
+	"author": "Yurii",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt build",
+		"deploy": "gh-pages -d dist",
+		"start": "nuxt start",
+		"predeploy": "nuxt generate"
+	},
+	"dependencies": {
+		"nuxt": "^2.0.0"
+	},
+	"devDependencies": {
+		"@nuxtjs/style-resources": "^1.0.0",
+		"cross-env": "^6.0.0",
+		"gh-pages": "^2.1.1",
+		"node-sass": "^4.12.0",
+		"sass-loader": "^8.0.0"
+	}
 }
