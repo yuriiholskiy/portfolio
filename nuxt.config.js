@@ -33,7 +33,12 @@ export default {
 			{
 				hid: 'keyword',
 				name: 'keyword',
-				content: 'portfolio, javascript, vue, nuxt, frontend'
+				content: 'Yurii Golskyi, Yurii Golskyi Portfolio, Portfolio, Frontend, Frond-end developer, HTML, CSS, Github, JavaScript, Vue, Nuxt'
+			},
+			{
+				hid: 'url',
+				name: 'url',
+				content: 'https://yuriiholskiy.github.io/portfolio'
 			}
 		],
 		link: [
@@ -64,7 +69,5 @@ export default {
 	},
 	build: {
 		publicPath: '/assets/',
-		extend (config, ctx) {
-		}
 	}
 }

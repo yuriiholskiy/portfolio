@@ -13,31 +13,36 @@
 			I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
 		</p>
 
+		<div class="mt-4 mt-xs-2 text-secondary text-center" 
+				 :class="{'anim-trY-slow': isAnimation}"
+				 ref="slowAnimEl">
+			<h2 class="display">Want to check my works? Or read about me?</h2>
+			<div class="links mt-2 title-2">
+				<c-button :to="{name: 'works'}" theme="secondary" flat>
+					Works
+				</c-button>
+				<c-button :to="{name: 'about'}" theme="secondary" flat class="ml-2">
+					About
+				</c-button>
+			</div>
+		</div>
+
 		<div class="mt-4 mt-xs-2 text-secondary text-center" :class="{'anim-trY-slow': isAnimation}">
 			<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-2 title-2">
-				<a v-for="link in links" 
+				<a v-for="(link, index) in links" 
 					 class="link"
+					 :class="{'mt-xs-1': index === linksLength}"
 					 :key="link.id" 
 					 :href="link.url"
 					 target="_blank"
-					 v-ripple
 					 rel="noopener"
 					 aria-label="External link">
 					{{ link.name }}
 				</a>
 			</div>
 		</div>
-		<div class="mt-4 mt-xs-2 text-secondary text-center" 
-				 :class="{'anim-trY-slow': isAnimation}"
-				 ref="slowAnimEl">
-			<h2 class="display">Or You want to check my works:</h2>
-			<div class="links mt-2 title-2">
-				<c-button :to="{name: 'about'}" theme="secondary" flat>
-					Works
-				</c-button>
-			</div>
-		</div>
+
 	</section>
 </template>
 
@@ -57,17 +62,27 @@ export default {
 				},
 				{
 					name: 'Facebook',
-					url: 'https://facebook.com/',
+					url: 'https://facebook.com/yuriiholskiy',
 					id: uuid()
 				},
 				{
 					name: 'Github',
 					url: 'https://github.com/yuriiholskiy',
 					id: uuid()
+				},
+				{
+					name: 'LinkedIn',
+					url: 'https://www.linkedin.com/in/yurii-golskyi-322376194/',
+					id: uuid()
 				}
 			]
 		}
 	},
+	computed: {
+		linksLength() {
+			return this.links.length - 1;
+		}
+	}
 }
 </script>
 
@@ -77,6 +92,7 @@ export default {
 }
 .link {
 	text-decoration: none;
+	display: inline-block;
 	position: relative;
 	color: map-get($colors, dark);
 	border-radius: 5px;
@@ -89,6 +105,11 @@ export default {
 	}
 	&:active,
 	&:focus {
+		&::before {
+			transform: scale(1);
+		}
+	}
+	&:visited {
 		&::before {
 			transform: scale(1);
 		}

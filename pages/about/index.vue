@@ -1,23 +1,23 @@
 <template>
-	<div class="section-wrap py-2">
-		<section class="about text-lighten-dark">
+	<div class="section-wrap py-2 text-lighten-dark">
+		<section class="about">
 			<h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
 				About me,
 			</h2>
-			<div class="about-content text-left" 
+			<div class="about-content text-left title-2" 
 					 :class="{'anim-trY-slow': isAnimation}" 
 					 ref="slowAnimEl">
-				<p class="mt-1 title-1">
+				<p class="mt-1">
 					I am Front-end developer and post graduate student in Ivan Franko Lviv National University.
 				</p>
-				<p class="mt-1 title-2">
+				<p class="mt-1">
 					My future I see in IT speciality. I am interested in new technologies. 
 					Quickly find a common language with people, easily join the new team.
 					Love to work in team and teach new things from other people.
 		
 					Like to look for non-standart ways for solving differents task.
 				</p>
-				<p class="mt-1 title-2">
+				<p class="mt-1">
 					Also, I am theoretical physicist and passionate by quantum mechanics problem.
 					Currently, looking for a place where I can apply my knowledge, become a part of a cool team, 
 					program and develop both personally and with team. 
@@ -25,7 +25,7 @@
 			</div>
 		</section>
 		
-		<section class="skills mt-2 text-lighten-dark">
+		<section class="skills mt-2">
 			<h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
 				My skills,
 			</h2>
@@ -46,6 +46,24 @@
 					<c-progress :value="percent" :theme="theme" class="mt-sm-1 mt-xs-1" />
 				</c-list-item>
 			</c-list-group>
+		</section>
+
+		<section class="hobbies mt-2">
+			<h2 class="display-1" :class="{'anim-trY-fast': isAnimation}">
+				My hobbies,
+			</h2>
+			<div class="about-content text-left title-2" 
+					 :class="{'anim-trY-slow': isAnimation}">
+				<p class="mt-1">
+					My hoobies is reading books (much prefer fantastic like "Harry Potter", "Lord of the ring", etc.), I enjoy word games like crosswords and anagrams.
+					Love solving math and physics problems and wonder a lot about how certain things work. 
+					In sports like jogging and table tennis. Also, I often listen to music.
+				</p>
+				<p class="mt-1">
+					My <strong>"personal motivators"</strong> is: supervisor in University, family and friends;
+					<span class="db">My <strong>"energy fillers"</strong> is: listen to music and doing sports.</span>
+				</p>
+			</div>
 		</section>
 	</div>
 </template>
