@@ -2,12 +2,12 @@
 	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
 		<h1 class="display-1" :class="{'anim-trY-fast': isAnimation}">
 			Hello there,
-			<p class="mt-1 display">I am 
+			<span class="db mt-1 display">I am 
 				<strong>frontend developer</strong>, 
 				<strong>physicist</strong>, 
 				<strong>thinker</strong>, 
 				<strong>philosopher</strong>.
-			</p>
+			</span>
 		</h1>
 		<p class="title-1 mt-2" :class="{'anim-trY-middle': isAnimation}">
 			I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
@@ -53,7 +53,6 @@ export default {
 	mixins: [removeAnimClassMixin],
 	data() {
 		return {
-			isAnimation: true,
 			links: [
 				{
 					name: 'Codepen',

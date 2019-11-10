@@ -73,7 +73,6 @@ import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
 export default {
 	head() {
 		return {
-			title: 'About me',
 			meta: [
 				{
 					hid: 'description',
@@ -86,7 +85,6 @@ export default {
 	mixins: [removeAnimClassMixin],
 	data() {
 		return {
-			isAnimation: true,
 			skills: [
 				{
 					name: 'HTML',

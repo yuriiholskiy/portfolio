@@ -1,5 +1,5 @@
 <template>
-	<c-app class="bg-light">
+	<c-app class="bg-light full-height">
 		<app-header />
 
 		<c-container class="pt-5">

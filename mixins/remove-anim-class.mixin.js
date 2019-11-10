@@ -1,4 +1,9 @@
 export default {
+	data() {
+		return {
+			isAnimation: true
+		}
+	},
 	mounted() {
 		const { animationDuration } = window.getComputedStyle(this.$refs.slowAnimEl);
 		const time = (+animationDuration.replace('s', '')) * 1000;

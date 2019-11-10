@@ -38,6 +38,12 @@ import CFormInput from '@/components/forms/CFormInput';
 import CFormCheckbox from '@/components/forms/CFormCheckbox';
 import CFormRadio from '@/components/forms/CFormRadio';
 
+// /cards
+import CCard from '@/components/card/CCard';
+
+// /chips
+import CChip from '@/components/chips/CChip'
+
 export default {
 	CApp,
 	CFooter,
@@ -57,27 +63,8 @@ export default {
 
 	CListGroup, CListItem,
 
-	CForm, CFormGroup, CFormInput, CFormCheckbox, CFormRadio
-}
+	CForm, CFormGroup, CFormInput, CFormCheckbox, CFormRadio,
 
-export {
-	CApp,
-	CFooter,
-	CButton,
-	CIcon,
-	CBanner,
-	CModal,
-	CSnackbar,
-	CProgress,
-	CSpinner,
-
-	CContainer, CRow, CCol,
-
-	CNavDrawer,
-	COverlay,
-	CToolbar,
-
-	CListGroup, CListItem,
-
-	CForm, CFormGroup, CFormInput, CFormCheckbox, CFormRadio
+	CCard,
+	CChip
 }
