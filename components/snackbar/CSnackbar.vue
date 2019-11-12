@@ -70,62 +70,62 @@ export default {
 <style scoped lang="scss"> 
 	.c-snackbar {
 		position: fixed;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    z-index: 10000;
-    font-size: .9rem;
-    &-top {
-    	top: 1rem;
-    }
-    &-bottom {
-    	bottom: 1rem;
-    }
-    &-left {
-    	left: 1rem !important;
-    }
-    &-right {
-    	right: 1rem !important;
-    }
-    &-center {
-    	left: calc(50% - 10rem);
-    }
+		display: flex;
+		align-items: center;
+		color: #fff;
+		z-index: 10000;
+		font-size: .9rem;
+		&-top {
+			top: 1rem;
+		}
+		&-bottom {
+			bottom: 1rem;
+		}
+		&-left {
+			left: 1rem !important;
+		}
+		&-right {
+			right: 1rem !important;
+		}
+		&-center {
+			left: calc(50% - 10rem);
+		}
 		&-content {
 			width: $snackbar-width;
-	    min-height: 48px;
-	    padding: 1rem 1.5rem;
-	    background-color: #323232;
-	    display: flex;
-	    align-items: center;
-	    justify-content: space-between;
-	    overflow: hidden;
-	    @media (max-width: 720px) {
-	    	width: 100%;
-	    }
+			min-height: 48px;
+			padding: 1rem 1.5rem;
+			background-color: #323232;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			overflow: hidden;
+			@media (max-width: 720px) {
+				width: 100%;
+			}
 		}
 	}
 
 	.snackbar-top-enter-active,
 	.snackbar-top-leave-active {
-	  transition: .3s transform;
+		transition: .3s transform;
 	}
 
 	.snackbar-top-enter {
 		transform: translateY(-100px);
 	}
 	.snackbar-top-leave-to {
-	  transform: translateY(-100px);
+		transform: translateY(-100px);
 	}
 
 	.snackbar-bottom-enter-active,
 	.snackbar-bottom-leave-active {
-	  transition: .3s transform;
+		transition: .3s transform;
 	}
 
 	.snackbar-bottom-enter {
 		transform: translateY(100px);
 	}
 	.snackbar-bottom-leave-to {
-	  transform: translateY(100px);
+		transform: translateY(100px);
 	}
 </style>

@@ -35,10 +35,10 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 	@each $key, $val in $colors {
-  	&-#{$key} {
-  		color: darken($val, 15%);
-  		background-color: $val;
-  	}
-  }
+		&-#{$key} {
+			color: darken($val, 15%);
+			background-color: $val;
+		}
+	}
 }
 </style>

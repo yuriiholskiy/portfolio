@@ -41,7 +41,7 @@ export default {
 <style lang='scss'>
 	.c-col {
 		box-sizing: border-box;
-    word-wrap: break-word;
+		word-wrap: break-word;
 		max-width: 100%;
 		min-height: 1px;
 		margin-left: #{$grid-gap-one-side};
@@ -60,6 +60,6 @@ export default {
 					flex: 1;
 				}
 			}
- 		}
+		}
 	}
 </style>

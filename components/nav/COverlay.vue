@@ -16,7 +16,7 @@ export default {
 		return h('div', {
 			class: [
 				'c-overlay',
-		 	  {'is-open': props.drawer},
+				{'is-open': props.drawer},
 				data.staticClass,
 				data.class
 			],

@@ -4,20 +4,29 @@
 			My works,
 		</h2>
 		<div ref="slowAnimEl" :class="{'anim-trY-slow': isAnimation}">
-			<c-row class="works-row mt-1" 
-						 justify="xs-center" 
-						 >
+			<c-row class="works-row" 
+						 justify="xs-center">
 				<c-col xs="size-12" 
 							 sm="size-10" 
 							 md="size-6"
-							 v-for="{ title, description, imageSrc, links } in works"
-							 :key="title">
-					<c-card action :image-src="imageSrc" image-alt="@vue/comps">
+							 v-for="{ title, description, imageSrc, chips, links } in works"
+							 :key="title"
+							 class="mt-1">
+					<c-card action 
+									:image-src="imageSrc" 
+									image-alt="@vue/comps"
+									max-width="40"
+									>
 						<template #title>
 							{{ title }}
 						</template>
 						<template #description>
 							{{ description }}
+							<div class="created-by mt-1">
+								<c-chip v-for="chip in chips" :key="chip.name" :theme="chip.theme">
+									{{ chip.name }}
+								</c-chip>
+							</div>
 						</template>
 						<template #action>
 							<c-button v-for="{ name, to } in links"
@@ -61,6 +70,20 @@ export default {
 					description: `Simple Vue ui component library. This portfolio created by using @vue/comps.
 												You can check more on github.`,
 					imageSrc: 'images/comps.png',
+					chips: [
+						{
+							name: 'Vue',
+							theme: 'success'
+						},
+						{
+							name: 'HTML',
+							theme: 'danger'
+						},
+						{
+							name: 'CSS',
+							theme: 'primary'
+						}
+					],
 					links: [
 						{
 							name: 'Github',
@@ -78,9 +101,23 @@ export default {
 											`This is a CRUD application, created by Vue.js (+ Vuex and VueRouter) and using firebase hosting.You can add, delete and update(by double click on todo title). 
 												Also have a filter for done, active and all todos.`,
 					imageSrc: 'images/aw-todo.png',
+					chips: [
+						{
+							name: 'Vue',
+							theme: 'success'
+						},
+						{
+							name: 'HTML',
+							theme: 'danger'
+						},
+						{
+							name: 'CSS',
+							theme: 'primary'
+						}
+					],
 					links: [
 						{
-							name: 'Comps',
+							name: 'Todo app',
 							to: 'https://aw-vue-todo.web.app/'
 						}
 					] 						
@@ -90,6 +127,20 @@ export default {
 					description: `Simple Vue ui component library. This portfolio created by using @vue/comps.
 												You can check more on github.`,
 					imageSrc: 'images/comps.png',
+					chips: [
+						{
+							name: 'Vue',
+							theme: 'success'
+						},
+						{
+							name: 'HTML',
+							theme: 'danger'
+						},
+						{
+							name: 'CSS',
+							theme: 'primary'
+						}
+					],
 					links: [
 						{
 							name: 'Github',
@@ -102,18 +153,31 @@ export default {
 					] 						
 				},
 				{
-					title: '@vue/comps',
-					description: `Simple Vue ui component library. This portfolio created by using @vue/comps.
-												You can check more on github.`,
-					imageSrc: 'images/comps.png',
+					title: 'Cube app',
+					description: `Cube application with awesome vue.js animations, where all side of cube is link on other page.`,
+					imageSrc: 'images/cube-app.png',
+					chips: [
+						{
+							name: 'Nuxt',
+							theme: 'success'
+						},
+						{
+							name: 'HTML',
+							theme: 'danger'
+						},
+						{
+							name: 'CSS',
+							theme: 'primary'
+						}
+					],
 					links: [
 						{
 							name: 'Github',
-							to: 'https://github.com/yuriiholskiy/comps'
+							to: 'https://github.com/yuriiholskiy/cube-app'
 						},
 						{
-							name: 'Comps',
-							to: 'https://yuriiholskiy.github.io/comps'
+							name: 'Cube app',
+							to: 'https://yuriiholskiy.github.io/cube-app'
 						}
 					] 						
 				},

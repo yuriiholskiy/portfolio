@@ -32,10 +32,10 @@ export default {
 	border-radius: .25rem;
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 	&:valid {
-	  border-color: #749C75;
+		border-color: #749C75;
 	}
 	&:invalid {
-	  border-color: #dc3545;
+		border-color: #dc3545;
 	}
 }
 </style>

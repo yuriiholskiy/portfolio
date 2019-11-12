@@ -52,11 +52,11 @@ export default {
 		margin-left: .25rem;
 	}
 	@each $key, $val in $colors {
-  	&-#{$key} {
-  		color: lighten($val, 35%);
-  		background-color: $val;
-  		border-color: darken($val, 5%);
-  	}
-  }
+		&-#{$key} {
+			color: lighten($val, 35%);
+			background-color: $val;
+			border-color: darken($val, 5%);
+		}
+	}
 }
 </style>
