@@ -10,6 +10,7 @@ export default {
 
 <style>
 #app {
+	position: relative;
 	min-height: 100vh;
 }
 </style>

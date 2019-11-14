@@ -130,7 +130,7 @@ export default {
 		border: none !important;
 	}
 	&.circle {
-		border-radius: 100%;
+		border-radius: 50%;
 	}
 	&.loading {
 		display: inline-flex;
