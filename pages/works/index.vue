@@ -22,9 +22,14 @@
 						</template>
 						<template #description>
 							{{ description }}
+							<h4 class="created-by-title mt-1 text-lighten-dark">Created by:</h4>
 							<div class="created-by mt-1">
-								<c-chip v-for="chip in chips" :key="chip.name" :theme="chip.theme">
-									{{ chip.name }}
+								<c-chip v-for="{ name, theme, rippleColor } in chips" 
+												:key="name" 
+												:theme="theme"
+												:icon-name="name"
+												v-ripple="rippleColor">
+									{{ name }}
 								</c-chip>
 							</div>
 						</template>
@@ -67,21 +72,23 @@ export default {
 			works: [
 				{
 					title: '@vue/comps',
-					description: `Simple Vue ui component library. This portfolio created by using @vue/comps.
-												You can check more on github.`,
+					description: `Simple Vue ui component library. Now have a 23 components and 2 directives. This portfolio created by using @vue/comps. You can check more on comps site. Project still in progress.`,
 					imageSrc: 'images/comps.png',
 					chips: [
 						{
-							name: 'Vue',
-							theme: 'success'
+							name: 'html',
+							theme: 'danger',
+							rippleColor: 'red'
 						},
 						{
-							name: 'HTML',
-							theme: 'danger'
+							name: 'css',
+							theme: 'primary',
+							rippleColor: 'lightblue'
 						},
 						{
-							name: 'CSS',
-							theme: 'primary'
+							name: 'vue',
+							theme: 'success',
+							rippleColor: 'green'
 						}
 					],
 					links: [
@@ -103,16 +110,19 @@ export default {
 					imageSrc: 'images/aw-todo.png',
 					chips: [
 						{
-							name: 'Vue',
-							theme: 'success'
+							name: 'html',
+							theme: 'danger',
+							rippleColor: 'red'
 						},
 						{
-							name: 'HTML',
-							theme: 'danger'
+							name: 'css',
+							theme: 'primary',
+							rippleColor: 'lightblue'
 						},
 						{
-							name: 'CSS',
-							theme: 'primary'
+							name: 'vue',
+							theme: 'success',
+							rippleColor: 'green'
 						}
 					],
 					links: [
@@ -123,51 +133,29 @@ export default {
 					] 						
 				},
 				{
-					title: '@vue/comps',
-					description: `Simple Vue ui component library. This portfolio created by using @vue/comps.
-												You can check more on github.`,
-					imageSrc: 'images/comps.png',
-					chips: [
-						{
-							name: 'Vue',
-							theme: 'success'
-						},
-						{
-							name: 'HTML',
-							theme: 'danger'
-						},
-						{
-							name: 'CSS',
-							theme: 'primary'
-						}
-					],
-					links: [
-						{
-							name: 'Github',
-							to: 'https://github.com/yuriiholskiy/comps'
-						},
-						{
-							name: 'Comps',
-							to: 'https://yuriiholskiy.github.io/comps'
-						}
-					] 						
-				},
-				{
 					title: 'Cube app',
-					description: `Cube application with awesome vue.js animations, where all side of cube is link on other page.`,
+					description: `Cube application with awesome vue.js animations, where all side of cube is link on other page. Just testing app.`,
 					imageSrc: 'images/cube-app.png',
 					chips: [
 						{
-							name: 'Nuxt',
-							theme: 'success'
+							name: 'html',
+							theme: 'danger',
+							rippleColor: 'red'
 						},
 						{
-							name: 'HTML',
-							theme: 'danger'
+							name: 'css',
+							theme: 'primary',
+							rippleColor: 'lightblue'
 						},
 						{
-							name: 'CSS',
-							theme: 'primary'
+							name: 'vue',
+							theme: 'success',
+							rippleColor: 'green'
+						},
+						{
+							name: 'nuxt',
+							theme: 'success',
+							rippleColor: 'green'
 						}
 					],
 					links: [
@@ -186,4 +174,10 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+.created-by-title {
+	font-weight: 800;
+}
+</style>
 
