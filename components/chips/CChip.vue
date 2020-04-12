@@ -1,18 +1,22 @@
 <template>
 	<div class="c-chip" :class="[themes[theme]]" v-on="$listeners">
-		<c-icon v-if="iconName && !iconRight"
-						:sprite="require('@/assets/icons/sprite.svg')" 
-						:name="iconName" 
-						width="20"
-						height="20" 
-						left />
+		<c-icon
+			v-if="iconName && !iconRight"
+			:sprite="require('@/assets/icons/sprite.svg')"
+			:name="iconName"
+			width="20"
+			height="20"
+			left
+		/>
 		<slot>Default</slot>
-		<c-icon v-if="iconName && iconRight"
-						:sprite="require('@/assets/icons/sprite.svg')" 
-						:name="iconName" 
-						width="20"
-						height="20" 
-						right />
+		<c-icon
+			v-if="iconName && iconRight"
+			:sprite="require('@/assets/icons/sprite.svg')"
+			:name="iconName"
+			width="20"
+			height="20"
+			right
+		/>
 	</div>
 </template>
 
@@ -35,7 +39,7 @@ export default {
 			default: false
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -44,12 +48,12 @@ export default {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: .5rem 1rem;
+	padding: 0.5rem 1rem;
 	border-radius: 1rem;
 	white-space: nowrap;
 	cursor: default;
 	&:not(:first-child) {
-		margin-left: .25rem;
+		margin-left: 0.25rem;
 	}
 	@each $key, $val in $colors {
 		&-#{$key} {

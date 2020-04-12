@@ -1,6 +1,6 @@
 <template>
-	<div class="c-icon-wrap" :class="[{'left': left}, {'right': right}]">
-		<svg class="c-icon" :width="width" :height="height" >
+	<div class="c-icon-wrap" :class="[{ left: left }, { right: right }]">
+		<svg class="c-icon" :width="width" :height="height">
 			<use v-bind="svgBindings" />
 		</svg>
 	</div>
@@ -46,16 +46,16 @@ export default {
 	computed: {
 		svgBindings() {
 			return {
-				'xlink:href': `${this.sprite}#${this.name}`, 
-				fill: this.color, 
+				'xlink:href': `${this.sprite}#${this.name}`,
+				fill: this.color,
 				stroke: this.strokeColor
 			};
 		}
 	}
-}
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .c-icon-wrap {
 	display: inline-flex;
 	align-items: center;
@@ -64,10 +64,10 @@ export default {
 	font-weight: 600;
 
 	&.right {
-		margin-left: .5rem;
+		margin-left: 0.5rem;
 	}
 	&.left {
-		margin-right: .5rem;
+		margin-right: 0.5rem;
 	}
 }
 .c-icon {

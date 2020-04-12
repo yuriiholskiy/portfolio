@@ -1,10 +1,12 @@
 <template>
-	<button type="button" 
-					aria-label="burger-menu"
-					class="burger-menu" 
-					:style="sizes" 
-					v-on="$listeners">
-		<span class="burger-menu-item bg-dark" :class="{active: active}"></span>
+	<button
+		type="button"
+		aria-label="burger-menu"
+		class="burger-menu"
+		:style="sizes"
+		v-on="$listeners"
+	>
+		<span class="burger-menu-item bg-dark" :class="{ active: active }"></span>
 	</button>
 </template>
 
@@ -19,10 +21,10 @@ export default {
 	},
 	computed: {
 		sizes() {
-			return { width: this.size + 'rem', height: this.size + 'rem' }
+			return { width: this.size + 'rem', height: this.size + 'rem' };
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">
@@ -38,16 +40,16 @@ export default {
 	}
 	&:focus,
 	&:active {
-		box-shadow: 0 0 0 .2rem rgba(map-get($colors, 'light'), .5);
+		box-shadow: 0 0 0 0.2rem rgba(map-get($colors, 'light'), 0.5);
 	}
-	&-item, 
+	&-item,
 	&-item::before,
 	&-item::after {
 		position: absolute;
 		display: inline-block;
 		width: 24px;
 		height: 2px;
-		transition: .3s transform;
+		transition: 0.3s transform;
 	}
 	&-item {
 		left: 50%;
@@ -75,7 +77,7 @@ export default {
 		}
 		&::after {
 			transform: translateX(-50%) rotate(-135deg);
-			top: 0
+			top: 0;
 		}
 	}
 }

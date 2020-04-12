@@ -30,18 +30,28 @@ export default {
 	},
 	render(h, { data, props, slots, listeners }) {
 		const titleSlot = slots().title ? slots().title : ['Default title'];
-		const descrSlot = slots().description ? slots().description : ['Default description'];
+		const descrSlot = slots().description
+			? slots().description
+			: ['Default description'];
 		const actionSlot = slots().action ? slots().action : ['Default action'];
 
 		const { imageSrc, imageAlt, maxWidth, bgColor, action, ripple } = props;
 
 		const cardBody = [
-			h('h3', {
-				class: 'c-card-title'
-			}, titleSlot),
-			h('div', {
-				class: 'c-card-description'
-			}, descrSlot)
+			h(
+				'h3',
+				{
+					class: 'c-card-title'
+				},
+				titleSlot
+			),
+			h(
+				'div',
+				{
+					class: 'c-card-description'
+				},
+				descrSlot
+			)
 		];
 		const children = [
 			h('img', {
@@ -51,26 +61,45 @@ export default {
 					alt: imageAlt
 				}
 			}),
-			h('div', {
-				class: 'c-card-body'
-			}, cardBody),
-			action ? h('div', {
-				class: 'c-card-action'
-			}, actionSlot) : null
-		];
-		return h('article', {
-			class: ['c-card', data.staticClass, data.class],
-			style: [ {'background-color': bgColor}, {'max-width': maxWidth + 'rem'} ],
-			directives: ripple ? [
+			h(
+				'div',
 				{
-					name: 'ripple',
-					value: bgColor
-				}
-			] : null,
-			on: listeners
-		}, children);
+					class: 'c-card-body'
+				},
+				cardBody
+			),
+			action
+				? h(
+						'div',
+						{
+							class: 'c-card-action'
+						},
+						actionSlot
+				  )
+				: null
+		];
+		return h(
+			'article',
+			{
+				class: ['c-card', data.staticClass, data.class],
+				style: [
+					{ 'background-color': bgColor },
+					{ 'max-width': maxWidth + 'rem' }
+				],
+				directives: ripple
+					? [
+							{
+								name: 'ripple',
+								value: bgColor
+							}
+					  ]
+					: null,
+				on: listeners
+			},
+			children
+		);
 	}
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -80,14 +109,14 @@ export default {
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	padding-bottom: 1rem; 
+	padding-bottom: 1rem;
 	margin: 1rem auto;
 	text-align: left;
 	border-radius: 5px;
 	color: #555;
 	box-shadow: 0 0 3px 0 #aaa;
 	background-color: map-get($colors, 'light');
-	transition: .15s box-shadow;
+	transition: 0.15s box-shadow;
 	&:hover {
 		box-shadow: 0 0 5px 0 #777;
 	}

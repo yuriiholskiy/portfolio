@@ -13,20 +13,24 @@ export default {
 		}
 	},
 	render(h, { data, props, children, listeners }) {
-		return h('div', {
-			class: [
-				'c-overlay',
-				{'is-open': props.drawer},
-				data.staticClass,
-				data.class
-			],
-			on: listeners
-		}, children);
+		return h(
+			'div',
+			{
+				class: [
+					'c-overlay',
+					{ 'is-open': props.drawer },
+					data.staticClass,
+					data.class
+				],
+				on: listeners
+			},
+			children
+		);
 	}
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .c-overlay {
 	position: fixed;
 	top: 0;
@@ -34,11 +38,11 @@ export default {
 	right: 0;
 	bottom: 0;
 	z-index: 3;
-	transition: .3s background-color ease;
-	transition-delay: .3s;
+	transition: 0.3s background-color ease;
+	transition-delay: 0.3s;
 	&.is-open {
 		z-index: 10000;
-		background-color: rgba(#000, .7);
+		background-color: rgba(#000, 0.7);
 		width: 100%;
 		height: 100%;
 	}

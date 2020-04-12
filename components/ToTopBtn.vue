@@ -1,5 +1,5 @@
 <template>
-	<button class="to-top-btn" :class="{'show': isVisible}" @click="toTop">
+	<button class="to-top-btn" :class="{ show: isVisible }" @click="toTop">
 		up
 	</button>
 </template>
@@ -12,7 +12,7 @@ export default {
 		return {
 			isVisible: false,
 			threshold: 150
-		}
+		};
 	},
 	mounted() {
 		window.addEventListener('scroll', throttle(this.scrollHandler, 180));
@@ -24,7 +24,9 @@ export default {
 	methods: {
 		scrollHandler(event) {
 			const scrollTop = document.body.scrollTop || window.pageYOffset;
-			scrollTop >= this.threshold ? this.isVisible = true : this.isVisible = false;
+			scrollTop >= this.threshold
+				? (this.isVisible = true)
+				: (this.isVisible = false);
 		},
 		toTop() {
 			window.scrollTo({
@@ -33,7 +35,7 @@ export default {
 			});
 		}
 	}
-}
+};
 </script>
 <style lang="scss">
 .to-top-btn {
@@ -49,12 +51,12 @@ export default {
 	color: #fff;
 	font-weight: 700;
 	transform: scale(0);
-	transition: .3s transform;
+	transition: 0.3s transform;
 
 	cursor: pointer;
 	&:focus {
 		outline: none;
-		box-shadow: 0 0 0 .2rem rgba(map-get($colors, 'danger'), .5);
+		box-shadow: 0 0 0 0.2rem rgba(map-get($colors, 'danger'), 0.5);
 	}
 	&.show {
 		transform: scale(1);

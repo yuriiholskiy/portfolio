@@ -1,7 +1,19 @@
 <template>
-	<div v-if="!value" class="c-banner" :class="[themes[theme]]" v-on="$listeners">
+	<div
+		v-if="!value"
+		class="c-banner"
+		:class="[themes[theme]]"
+		v-on="$listeners"
+	>
 		<slot>Simple message</slot>
-		<c-button v-if="dismissible" btn flat no-border @click="$emit('input', !value)">&times;</c-button>
+		<c-button
+			v-if="dismissible"
+			btn
+			flat
+			no-border
+			@click="$emit('input', !value)"
+			>&times;</c-button
+		>
 	</div>
 </template>
 
@@ -24,16 +36,16 @@ export default {
 			default: false
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-banner {
 	position: relative;
-	padding: .75rem 1rem;
+	padding: 0.75rem 1rem;
 	margin-bottom: 1rem;
 	border: 1px solid transparent;
-	border-radius: .25rem;
+	border-radius: 0.25rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

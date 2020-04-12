@@ -9,17 +9,21 @@ export default {
 		}
 	},
 	render(h, { data, props, children }) {
-		return h('ul', {
-			class: ['c-list-group', data.staticClass, data.class],
-			style: {
-				'max-width': props.maxWidth
-			}
-		}, children);
+		return h(
+			'ul',
+			{
+				class: ['c-list-group', data.staticClass, data.class],
+				style: {
+					'max-width': props.maxWidth
+				}
+			},
+			children
+		);
 	}
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .c-list-group {
 	display: flex;
 	flex-direction: column;

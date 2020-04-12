@@ -1,38 +1,42 @@
 <template>
-	<nuxt-link 	class="c-button"
-							v-if="!btn"
-							:to="to"
-							:class="[
-							themes[theme],
-							sizes[size],
-							{disabled: disabled},
-							{flat: flat},
-							{circle: circle},
-							{'no-border': noBorder},
-							{loading: loading}
-							]"
-							:disabled="disabled"
-							@click.native="onClick">
-	<c-spinner loading size="1" theme="light" v-if="loading"></c-spinner>
-	<slot>Button</slot>
-</nuxt-link>
-<button v-else
-				class="c-button"
-				:class="[
-				themes[theme],
-				sizes[size],
-				{disabled: disabled},
-				{flat: flat},
-				{'no-border': noBorder},
-				{circle: circle},
-				{loading: loading}
-				]"
-				type="button"
-				:disabled="disabled"
-				@click="onClick">
-<c-spinner size="1" theme="light" v-if="loading"></c-spinner>
-<slot>Button</slot>
-</button>
+	<nuxt-link
+		class="c-button"
+		v-if="!btn"
+		:to="to"
+		:class="[
+			themes[theme],
+			sizes[size],
+			{ disabled: disabled },
+			{ flat: flat },
+			{ circle: circle },
+			{ 'no-border': noBorder },
+			{ loading: loading }
+		]"
+		:disabled="disabled"
+		@click.native="onClick"
+	>
+		<c-spinner loading size="1" theme="light" v-if="loading"></c-spinner>
+		<slot>Button</slot>
+	</nuxt-link>
+	<button
+		v-else
+		class="c-button"
+		:class="[
+			themes[theme],
+			sizes[size],
+			{ disabled: disabled },
+			{ flat: flat },
+			{ 'no-border': noBorder },
+			{ circle: circle },
+			{ loading: loading }
+		]"
+		type="button"
+		:disabled="disabled"
+		@click="onClick"
+	>
+		<c-spinner size="1" theme="light" v-if="loading"></c-spinner>
+		<slot>Button</slot>
+	</button>
 </template>
 
 <script>
@@ -50,7 +54,7 @@ export default {
 			default() {
 				return {
 					path: '/'
-				}
+				};
 			}
 		},
 		theme: {
@@ -89,20 +93,20 @@ export default {
 				normal: '',
 				large: 'c-button-large'
 			}
-		}
+		};
 	},
 	methods: {
 		onClick(event) {
-			if(this.disabled) {
+			if (this.disabled) {
 				return;
 			}
 			this.$emit('click', event);
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-button {
 	position: relative;
 	min-width: 66px;
@@ -115,16 +119,17 @@ export default {
 	font-size: 1rem;
 	border-radius: 4px;
 	border: none;
-	padding: .5rem .8rem;
+	padding: 0.5rem 0.8rem;
 	cursor: pointer;
-	transition: .3s background-color, .3s transform, .3s border-color, .2s box-shadow;
+	transition: 0.3s background-color, 0.3s transform, 0.3s border-color,
+		0.2s box-shadow;
 	color: #fff;
 	&:focus {
 		outline: none;
 	}
 	&:active,
 	&:focus {
-		box-shadow: 0px 2px 5px rgba(#000, .5);
+		box-shadow: 0px 2px 5px rgba(#000, 0.5);
 	}
 	&.no-border {
 		border: none !important;
@@ -136,7 +141,7 @@ export default {
 		display: inline-flex;
 		align-items: center;
 		> div.c-spinner {
-			margin-right: .5rem;
+			margin-right: 0.5rem;
 		}
 	}
 	@each $key, $val in $colors {
@@ -151,7 +156,7 @@ export default {
 				background-color: darken($val, 10%);
 			}
 			&:focus {
-				box-shadow: 0 0 0 .2rem rgba($val, .5);
+				box-shadow: 0 0 0 0.2rem rgba($val, 0.5);
 			}
 			&.flat {
 				border: 1px solid $val;
@@ -167,10 +172,10 @@ export default {
 
 	// sizes
 	&-small {
-		padding: .3rem .5rem;
+		padding: 0.3rem 0.5rem;
 	}
 	&-large {
-		padding: .8rem 1.1rem;
+		padding: 0.8rem 1.1rem;
 	}
 
 	&.disabled {

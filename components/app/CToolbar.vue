@@ -1,5 +1,5 @@
 <template>
-	<nav class="c-toolbar" :style="[{height: height}]" :class="[themes[theme]]">
+	<nav class="c-toolbar" :style="[{ height: height }]" :class="[themes[theme]]">
 		<slot></slot>
 	</nav>
 </template>
@@ -19,10 +19,10 @@ export default {
 			default: 'light'
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-toolbar {
 	width: 100%;
 	position: fixed;
@@ -30,7 +30,7 @@ export default {
 	z-index: 10;
 	padding: 0 #{$grid-gap};
 	color: #fff;
-	box-shadow: 0 3px 15px rgba(#000, .7);
+	box-shadow: 0 3px 15px rgba(#000, 0.7);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

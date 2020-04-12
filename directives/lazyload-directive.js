@@ -5,7 +5,7 @@ export default {
 		}
 		function callback(entries, observer) {
 			entries.forEach(entry => {
-				if(entry.isIntersecting) {
+				if (entry.isIntersecting) {
 					loadImage();
 					observer.unobserve(el);
 				}
@@ -22,10 +22,10 @@ export default {
 			observer.observe(el);
 		}
 
-		if(!window['IntersectionObserver']) {
+		if (!window['IntersectionObserver']) {
 			loadImage();
 		} else {
 			createIntersectionObserver();
 		}
 	}
-}
+};

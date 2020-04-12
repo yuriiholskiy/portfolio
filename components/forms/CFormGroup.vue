@@ -18,10 +18,10 @@ export default {
 			default: ''
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .c-form {
 	&-group {
 		width: 100%;

@@ -1,20 +1,22 @@
 <template>
 	<div class="c-form-custom-checkbox">
-		<input type="checkbox" 
-					 class="c-form-checkbox"
-					 :class="[
-							themes[theme],
-							{switcher: switcher}
-					 ]"
-					 v-bind="$attrs"
-					 v-on="$listeners"
-					 :value="value"
-					 :checked="shouldBeChecked"
-					 @change="updateCheckboxInput" 
-					 />
-		<label class="c-form-checkbox-label" :for="labelFor" :class="{switcher: switcher}">
+		<input
+			type="checkbox"
+			class="c-form-checkbox"
+			:class="[themes[theme], { switcher: switcher }]"
+			v-bind="$attrs"
+			v-on="$listeners"
+			:value="value"
+			:checked="shouldBeChecked"
+			@change="updateCheckboxInput"
+		/>
+		<label
+			class="c-form-checkbox-label"
+			:for="labelFor"
+			:class="{ switcher: switcher }"
+		>
 			<slot></slot>
-		</label>			 
+		</label>
 	</div>
 </template>
 
@@ -58,7 +60,7 @@ export default {
 			return this.$attrs.id;
 		},
 		shouldBeChecked() {
-			if(this.modelChecked instanceof Array) {
+			if (this.modelChecked instanceof Array) {
 				return this.modelChecked.includes(this.value);
 			}
 			return this.modelChecked === this.trueValue;
@@ -68,24 +70,27 @@ export default {
 		updateCheckboxInput(event) {
 			const isChecked = event.target.checked;
 
-			if(this.modelChecked instanceof Array) {
+			if (this.modelChecked instanceof Array) {
 				const newValue = [...this.modelChecked];
 
-				if(isChecked) {
+				if (isChecked) {
 					newValue.push(this.value);
 				} else {
 					newValue.splice(newValue.indexOf(this.value), 1);
 				}
 				this.$emit('modelCheckedEvent', newValue);
 			} else {
-				this.$emit('modelCheckedEvent', isChecked ? this.trueValue : this.falseValue);
-			}		
+				this.$emit(
+					'modelCheckedEvent',
+					isChecked ? this.trueValue : this.falseValue
+				);
+			}
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-form {
 	&-custom-checkbox {
 		position: relative;
@@ -101,7 +106,7 @@ export default {
 		@each $key, $val in $colors {
 			&-#{$key} {
 				&:focus ~ .c-form-checkbox-label::before {
-					box-shadow: 0 0 0 0.2rem rgba($val,.25);
+					box-shadow: 0 0 0 0.2rem rgba($val, 0.25);
 				}
 				&:checked ~ .c-form-checkbox-label::before {
 					color: #fff;
@@ -112,7 +117,7 @@ export default {
 					background-image: url('~@/assets/icons/checked.svg');
 				}
 				&:focus:not(:checked) ~ .c-form-checkbox-label::before {
-					border-color: rgba($val,.25);
+					border-color: rgba($val, 0.25);
 				}
 				&.switcher {
 					&:checked ~ .c-form-checkbox-label::after {
@@ -133,10 +138,11 @@ export default {
 			content: '';
 			width: 1rem;
 			height: 1rem;
-			transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-			border-radius: .25rem;
-			padding-right: .8rem;
-			margin-right: .5rem;
+			transition: background-color 0.15s ease-in-out,
+				border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+			border-radius: 0.25rem;
+			padding-right: 0.8rem;
+			margin-right: 0.5rem;
 			pointer-events: none;
 			background-color: #fff;
 			border: 1px solid #adb5bd;
@@ -154,16 +160,16 @@ export default {
 				content: '';
 				display: block;
 				width: 2rem;
-				border-radius: .5rem;
+				border-radius: 0.5rem;
 			}
 			&::after {
 				content: '';
 				position: absolute;
-				top: calc(50% - .25rem);
-				left: .2rem;
-				transition: left .25s, background-color .3s;
-				width: .5rem;
-				height: .5rem;
+				top: calc(50% - 0.25rem);
+				left: 0.2rem;
+				transition: left 0.25s, background-color 0.3s;
+				width: 0.5rem;
+				height: 0.5rem;
 				border-radius: 50%;
 				background-color: $switcher-disabled-color;
 			}

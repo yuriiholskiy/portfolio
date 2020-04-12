@@ -22,7 +22,7 @@ export default {
 		size: {
 			type: [Number, String],
 			default: 5
-		},
+		}
 	},
 	computed: {
 		sizes() {
@@ -30,13 +30,13 @@ export default {
 				width: this.size + 'rem',
 				height: this.size + 'rem',
 				borderWidth: this.size / 20 + 'rem'
-			}
+			};
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-spinner {
 	position: relative;
 	height: 100%;
@@ -46,10 +46,10 @@ export default {
 	@each $key, $val in $colors {
 		&-#{$key} {
 			> .c-spinner-circle {
-				border-top: .2rem solid $val;
-				border-left:  .2rem solid $val;
-				border-right: .2rem solid $val;
-				border-bottom: .2rem solid transparent;
+				border-top: 0.2rem solid $val;
+				border-left: 0.2rem solid $val;
+				border-right: 0.2rem solid $val;
+				border-bottom: 0.2rem solid transparent;
 			}
 			> .c-spinner-pulse {
 				background-color: $val;
@@ -63,7 +63,7 @@ export default {
 	&-circle {
 		width: 5rem;
 		height: 5rem;
-		animation: circleSpinner .8s infinite linear backwards;
+		animation: circleSpinner 0.8s infinite linear backwards;
 	}
 	&-pulse {
 		animation: pulseSpinner 1s infinite linear;
@@ -78,7 +78,8 @@ export default {
 	from {
 		transform: scale(0);
 		opacity: 0;
-	} to {
+	}
+	to {
 		transform: scale(1.5);
 		opacity: 1;
 	}

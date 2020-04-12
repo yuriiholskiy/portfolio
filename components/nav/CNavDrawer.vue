@@ -1,7 +1,9 @@
 <template>
-	<aside class="c-nav-drawer" 
-			 :style="{width: width}" 
-			 :class="{'is-open': drawer, dark: dark, [position]: position}">
+	<aside
+		class="c-nav-drawer"
+		:style="{ width: width }"
+		:class="{ 'is-open': drawer, dark: dark, [position]: position }"
+	>
 		<slot></slot>
 	</aside>
 </template>
@@ -32,26 +34,26 @@ export default {
 		position: {
 			type: String,
 			default: 'left'
-		},
+		}
 	},
 	beforeUpdate() {
-		if(this.push) {
-			if(this.position === 'left') {
-				this.drawer ? 
-						document.body.classList.add('push-content-left') : 
-						document.body.classList.remove('push-content-left');
+		if (this.push) {
+			if (this.position === 'left') {
+				this.drawer
+					? document.body.classList.add('push-content-left')
+					: document.body.classList.remove('push-content-left');
 			}
-			if(this.position === 'right') {
-				this.drawer ? 
-						document.body.classList.add('push-content-right') : 
-						document.body.classList.remove('push-content-right');
+			if (this.position === 'right') {
+				this.drawer
+					? document.body.classList.add('push-content-right')
+					: document.body.classList.remove('push-content-right');
 			}
 		}
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-nav-drawer {
 	position: fixed;
 	top: 0;
@@ -60,8 +62,8 @@ export default {
 	width: 250px;
 	height: 100vh;
 	background-color: darken(#fff, 15%);
-	box-shadow: 1px 2px 15px rgba(#000, .7);
-	transition: .3s transform;
+	box-shadow: 1px 2px 15px rgba(#000, 0.7);
+	transition: 0.3s transform;
 	&.left {
 		left: 0;
 		transform: translateX(-110%);

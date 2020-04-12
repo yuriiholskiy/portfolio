@@ -13,27 +13,29 @@ export default {
 			class: 'margin-transition'
 		},
 		meta: [
-			{ 
-				charset: 'utf-8' 
+			{
+				charset: 'utf-8'
 			},
-			{ 
-				name: 'viewport', 
-				content: 'width=device-width, initial-scale=1' 
+			{
+				name: 'viewport',
+				content: 'width=device-width, initial-scale=1'
 			},
 			{
 				hid: 'author',
 				name: 'author',
 				content: 'Yurii Golskyi'
 			},
-			{ 
-				hid: 'description', 
-				name: 'description', 
-				content: 'Yurii Golskyi Front-end developer portfolio created by nuxt.js' 
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'Yurii Golskyi Front-end developer portfolio created by nuxt.js'
 			},
 			{
 				hid: 'keyword',
 				name: 'keyword',
-				content: 'Yurii Golskyi, Yurii Golskyi Portfolio, Portfolio, Frontend, Frond-end developer, HTML, CSS, Github, JavaScript, Vue, Nuxt'
+				content:
+					'Yurii Golskyi, Yurii Golskyi Portfolio, Portfolio, Frontend, Frond-end developer, HTML, CSS, Github, JavaScript, Vue, Nuxt'
 			},
 			{
 				hid: 'url',
@@ -41,10 +43,8 @@ export default {
 				content: 'https://yuriiholskiy.github.io/portfolio'
 			}
 		],
-		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' },
-		]
-	}, 
+		link: [{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' }]
+	},
 	loading: { color: 'blue' },
 	layoutTransition: {
 		name: 'layout-fade',
@@ -54,9 +54,7 @@ export default {
 		name: 'page-fade',
 		mode: 'out-in'
 	},
-	css: [
-		'~/assets/style.scss'
-	],
+	css: ['~/assets/style.scss'],
 	plugins: [
 		{
 			src: '~/plugins/comps',
@@ -68,6 +66,6 @@ export default {
 		scss: '~/assets/_vars.scss'
 	},
 	build: {
-		publicPath: '/assets/',
+		publicPath: '/assets/'
 	}
-}
+};

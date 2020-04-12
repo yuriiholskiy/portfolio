@@ -10,7 +10,6 @@
 	</c-app>
 </template>
 
-
 <script>
 import AppHeader from '~/components/AppHeader';
 import ToTopBtn from '~/components/ToTopBtn';
@@ -19,6 +18,5 @@ export default {
 		AppHeader,
 		ToTopBtn
 	}
-}
+};
 </script>
-

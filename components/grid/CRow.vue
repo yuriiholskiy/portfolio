@@ -16,32 +16,36 @@ export default {
 	},
 	render(h, { data, props, children }) {
 		const classes = [];
-		if(props.justify !== '') {
+		if (props.justify !== '') {
 			const jarrs = props.justify.split(' ');
 			jarrs.forEach(j => {
 				classes.push(`justify-${j}`);
 			});
 		}
-		if(props.align !== '') {
+		if (props.align !== '') {
 			const alarrs = props.align.split(' ');
 			alarrs.forEach(a => {
 				classes.push(`align-${a}`);
 			});
 		}
-		return h('div', {
-			class: ['c-row', data.staticClass, data.class, ...classes]
-		}, children);
+		return h(
+			'div',
+			{
+				class: ['c-row', data.staticClass, data.class, ...classes]
+			},
+			children
+		);
 	}
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 $justifies: (center, flex-start, flex-end, space-between, space-around);
 $aligns: (center, flex-start, flex-end, stretch, baseline);
 
 .c-row {
 	margin-left: #{$grid-gap-one-side * -1};
-	margin-right:  #{$grid-gap-one-side * -1};
+	margin-right: #{$grid-gap-one-side * -1};
 	display: flex;
 	flex-wrap: wrap;
 	@each $k, $v in $grid-breakpoints {

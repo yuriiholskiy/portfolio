@@ -1,7 +1,14 @@
 <template>
-	<li class="c-list-item" 
-			:class="[themes[theme], {active: active}, {disabled: disabled}, {flex: flex}]" 
-			v-on="$listeners">
+	<li
+		class="c-list-item"
+		:class="[
+			themes[theme],
+			{ active: active },
+			{ disabled: disabled },
+			{ flex: flex }
+		]"
+		v-on="$listeners"
+	>
 		<slot></slot>
 	</li>
 </template>
@@ -37,22 +44,21 @@ export default {
 				success: 'c-list-item-success',
 				dark: 'c-list-item-dark',
 				light: 'c-list-item-light'
-			},
-
-		}
+			}
+		};
 	}
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .c-list-item {
 	position: relative;
 	z-index: 5;
 	display: block;
-	padding: .75rem 1rem;
+	padding: 0.75rem 1rem;
 	background-color: #fff;
-	border: 1px solid rgba(0, 0, 0, .125);
-	transition: .3s background-color;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	transition: 0.3s background-color;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -89,5 +95,4 @@ export default {
 		}
 	}
 }
-
 </style>

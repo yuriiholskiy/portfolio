@@ -1,14 +1,18 @@
 <script>
 export default {
 	functional: true,
-	name: "CContainer",
+	name: 'CContainer',
 	render(h, { data, children }) {
-		return h('div', { class: ['c-container', data.staticClass, data.class] }, children);
+		return h(
+			'div',
+			{ class: ['c-container', data.staticClass, data.class] },
+			children
+		);
 	}
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .c-container {
 	max-width: #{$container-width};
 	margin-left: auto;

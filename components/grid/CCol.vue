@@ -7,59 +7,63 @@ export default {
 			type: String,
 			default: ''
 		},
-		sm:  {
+		sm: {
 			type: String,
 			default: ''
 		},
-		md:  {
+		md: {
 			type: String,
 			default: ''
 		},
-		lg:  {
+		lg: {
 			type: String,
 			default: ''
 		},
-		xl:  {
+		xl: {
 			type: String,
 			default: ''
-		},
+		}
 	},
 	render(h, { data, props, children }) {
 		const classes = [];
-		if(props.xs !== '') classes.push('xs-' + props.xs)
-		if(props.sm !== '') classes.push('sm-' + props.sm)
-		if(props.md !== '') classes.push('md-' + props.md)
-		if(props.lg !== '') classes.push('lg-' + props.lg)
-		if(props.xl !== '') classes.push('xl-' + props.xl)
-		return h('div', {
-			class: ['c-col', data.staticClass, data.class, ...classes]
-		}, children);
+		if (props.xs !== '') classes.push('xs-' + props.xs);
+		if (props.sm !== '') classes.push('sm-' + props.sm);
+		if (props.md !== '') classes.push('md-' + props.md);
+		if (props.lg !== '') classes.push('lg-' + props.lg);
+		if (props.xl !== '') classes.push('xl-' + props.xl);
+		return h(
+			'div',
+			{
+				class: ['c-col', data.staticClass, data.class, ...classes]
+			},
+			children
+		);
 	}
-}
+};
 </script>
 
-<style lang='scss'>
-	.c-col {
-		box-sizing: border-box;
-		word-wrap: break-word;
-		max-width: 100%;
-		min-height: 1px;
-		margin-left: #{$grid-gap-one-side};
-		margin-right: #{$grid-gap-one-side};
+<style lang="scss">
+.c-col {
+	box-sizing: border-box;
+	word-wrap: break-word;
+	max-width: 100%;
+	min-height: 1px;
+	margin-left: #{$grid-gap-one-side};
+	margin-right: #{$grid-gap-one-side};
 
-		@each $k, $v in $grid-breakpoints {
-			@for $i from 1 through $grid-columns {
-				@media (min-width: $v) {
-					&.#{$k}-size-#{$i} {
-						flex-basis: calc(#{(100% / $grid-columns) * $i - #{$grid-gap}});
-					}
-				}
-			}
+	@each $k, $v in $grid-breakpoints {
+		@for $i from 1 through $grid-columns {
 			@media (min-width: $v) {
-				&.#{$k}-flex {
-					flex: 1;
+				&.#{$k}-size-#{$i} {
+					flex-basis: calc(#{(100% / $grid-columns) * $i - #{$grid-gap}});
 				}
 			}
 		}
+		@media (min-width: $v) {
+			&.#{$k}-flex {
+				flex: 1;
+			}
+		}
 	}
+}
 </style>

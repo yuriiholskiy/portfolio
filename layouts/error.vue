@@ -4,17 +4,21 @@
 			Sorry, we have error there.
 			<span>Looks like this page doesn't exist.</span>
 		</p>
-		<img src="~/assets/icons/error-icon.svg" alt="Error icon" class="mt-2 error-icon" />
-		<c-button :to="{name: 'index'}" class="mt-2" theme="danger">
+		<img
+			src="~/assets/icons/error-icon.svg"
+			alt="Error icon"
+			class="mt-2 error-icon"
+		/>
+		<c-button :to="{ name: 'index' }" class="mt-2" theme="danger">
 			Back to home
-		</c-button>	
+		</c-button>
 	</div>
 </template>
 
 <script>
 export default {
-	layout: 'error-layout',
-}
+	layout: 'error-layout'
+};
 </script>
 
 <style scoped lang="scss">
@@ -26,7 +30,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center; 
+	align-items: center;
 	&-text {
 		span {
 			display: block;
@@ -35,7 +39,6 @@ export default {
 	&-icon {
 		width: 8rem;
 		height: 8rem;
-		
 	}
 }
 </style>
