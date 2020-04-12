@@ -1,48 +1,53 @@
 <template>
 	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
-		<h1 class="display-1" :class="{'anim-trY-fast': isAnimation}">
+		<h1 class="display-1" :class="{ 'anim-trY-fast': isAnimation }">
 			Hello there,
-			<span class="db mt-1 display">I am 
-				<strong>frontend developer</strong>, 
-				<strong>physicist</strong>, 
-				<strong>thinker</strong>, 
-				<strong>philosopher</strong>.
+			<span class="db mt-1 display"
+				>I am <strong>frontend developer</strong>, <strong>physicist</strong>,
+				<strong>thinker</strong>, <strong>philosopher</strong>.
 			</span>
 		</h1>
-		<p class="title-1 mt-2" :class="{'anim-trY-middle': isAnimation}">
-			I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.
+		<p class="title-1 mt-2" :class="{ 'anim-trY-middle': isAnimation }">
+			I like creating frontend apps, and I find happiness in being a better me
+			today than the me yesterday.
 		</p>
 
-		<div class="mt-4 mt-xs-2 text-secondary text-center" 
-				 :class="{'anim-trY-slow': isAnimation}"
-				 ref="slowAnimEl">
+		<div
+			class="mt-4 mt-xs-2 text-secondary text-center"
+			:class="{ 'anim-trY-slow': isAnimation }"
+			ref="slowAnimEl"
+		>
 			<h2 class="display">Want to check my works? Or read about me?</h2>
 			<div class="links mt-2 title-2">
-				<c-button :to="{name: 'works'}" theme="secondary" flat>
+				<c-button :to="{ name: 'works' }" theme="secondary" flat>
 					Works
 				</c-button>
-				<c-button :to="{name: 'about'}" theme="secondary" flat class="ml-2">
+				<c-button :to="{ name: 'about' }" theme="secondary" flat class="ml-2">
 					About
 				</c-button>
 			</div>
 		</div>
 
-		<div class="mt-4 mt-xs-2 text-secondary text-center" :class="{'anim-trY-slow': isAnimation}">
+		<div
+			class="mt-4 mt-xs-2 text-secondary text-center"
+			:class="{ 'anim-trY-slow': isAnimation }"
+		>
 			<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-2 title-2">
-				<a v-for="(link, index) in links" 
-					 class="link"
-					 :class="{'mt-xs-1': index === linksLength}"
-					 :key="link.id" 
-					 :href="link.url"
-					 target="_blank"
-					 rel="noopener"
-					 aria-label="External link">
+				<a
+					v-for="(link, index) in links"
+					class="link"
+					:class="{ 'mt-xs-1': index === linksLength }"
+					:key="link.id"
+					:href="link.url"
+					target="_blank"
+					rel="noopener"
+					aria-label="External link"
+				>
 					{{ link.name }}
 				</a>
 			</div>
 		</div>
-
 	</section>
 </template>
 
@@ -75,14 +80,14 @@ export default {
 					id: uuid()
 				}
 			]
-		}
+		};
 	},
 	computed: {
 		linksLength() {
 			return this.links.length - 1;
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">
@@ -95,7 +100,7 @@ export default {
 	position: relative;
 	color: map-get($colors, dark);
 	border-radius: 5px;
-	padding: .2rem;
+	padding: 0.2rem;
 	&:not(:first-child) {
 		margin-left: 1rem;
 	}
@@ -117,7 +122,7 @@ export default {
 		content: '';
 		position: absolute;
 		bottom: 0;
-		transition: .25s transform;
+		transition: 0.25s transform;
 		transform: scale(0);
 		width: 100%;
 		height: 1px;

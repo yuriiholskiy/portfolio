@@ -57,7 +57,7 @@ export default {
 			h('img', {
 				class: 'c-card-image',
 				attrs: {
-					src: imageSrc ? require(`@/assets/${imageSrc}`) : '',
+					src: imageSrc || '',
 					alt: imageAlt
 				}
 			}),

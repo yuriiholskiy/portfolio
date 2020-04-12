@@ -46,10 +46,6 @@ export default {
 		link: [{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' }]
 	},
 	loading: { color: 'blue' },
-	layoutTransition: {
-		name: 'layout-fade',
-		mode: 'out-in'
-	},
 	pageTransition: {
 		name: 'page-fade',
 		mode: 'out-in'
