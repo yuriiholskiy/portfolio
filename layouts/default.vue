@@ -1,22 +1,17 @@
 <template>
-	<c-app class="bg-light full-height">
+	<div>
 		<app-header />
-
-		<c-container class="pt-5">
+		<div class="container px-2">
 			<nuxt />
-		</c-container>
-
-		<to-top-btn />
-	</c-app>
+		</div>
+	</div>
 </template>
 
 <script>
 import AppHeader from '~/components/AppHeader';
-import ToTopBtn from '~/components/ToTopBtn';
 export default {
 	components: {
-		AppHeader,
-		ToTopBtn
+		AppHeader
 	}
 };
 </script>

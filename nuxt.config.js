@@ -51,13 +51,8 @@ export default {
 		mode: 'out-in'
 	},
 	css: ['~/assets/style.scss'],
-	plugins: [
-		{
-			src: '~/plugins/comps',
-			ssr: true
-		}
-	],
-	modules: ['@nuxtjs/style-resources'],
+	plugins: ['~/plugins/ripple-directive'],
+	modules: ['@nuxtjs/style-resources', 'nuxt-buefy'],
 	styleResources: {
 		scss: '~/assets/_vars.scss'
 	},

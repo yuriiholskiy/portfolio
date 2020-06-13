@@ -9,9 +9,9 @@
 			alt="Error icon"
 			class="mt-2 error-icon"
 		/>
-		<c-button :to="{ name: 'index' }" class="mt-2" theme="danger">
+		<b-button tag="nuxt-link" :to="{ name: 'index' }" class="is-info mt-2">
 			Back to home
-		</c-button>
+		</b-button>
 	</div>
 </template>
 

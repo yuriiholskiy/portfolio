@@ -1,14 +1,10 @@
 <template>
 	<div class="section-wrap py-2 text-lighten-dark">
 		<section class="about">
-			<h2 class="display-1" :class="{ 'anim-trY-fast': isAnimation }">
+			<h2 class="display-1">
 				About me,
 			</h2>
-			<div
-				class="about-content text-left title-2"
-				:class="{ 'anim-trY-slow': isAnimation }"
-				ref="slowAnimEl"
-			>
+			<div class="about-content text-left title-2">
 				<p class="mt-1">
 					I am Front-end developer and post graduate student in Ivan Franko Lviv
 					National University.
@@ -29,14 +25,15 @@
 		</section>
 
 		<section class="skills mt-2">
-			<h2 class="display-1" :class="{ 'anim-trY-fast': isAnimation }">
+			<h2 class="display-1">
 				My skills,
 			</h2>
-			<c-list-group class="mt-2" :class="{ 'anim-trY-slow': isAnimation }">
+			<c-list-group class="mt-2 mx-auto" max-width="800px">
 				<c-list-item
 					v-for="({ name, percent, theme, icon }, idx) in skills"
 					:key="name"
 					class="skill-list title-2"
+					v-ripple
 				>
 					<div class="skill-content">
 						<c-icon
@@ -46,20 +43,23 @@
 						/>
 						<span class="skill-name"> #{{ idx + 1 }} \ {{ name }} </span>
 					</div>
-
-					<c-progress :value="percent" :theme="theme" class="mt-sm-1 mt-xs-1" />
+					<b-progress
+						:type="`is-${theme}`"
+						size="is-medium"
+						:value="+percent"
+						show-value
+						class="mb-0 mt-sm-1 mt-xs-1"
+					>
+					</b-progress>
 				</c-list-item>
 			</c-list-group>
 		</section>
 
 		<section class="hobbies mt-2">
-			<h2 class="display-1" :class="{ 'anim-trY-fast': isAnimation }">
+			<h2 class="display-1">
 				My hobbies,
 			</h2>
-			<div
-				class="about-content text-left title-2"
-				:class="{ 'anim-trY-slow': isAnimation }"
-			>
+			<div class="about-content text-left title-2">
 				<p class="mt-1">
 					My hoobies is reading books (much prefer fantastic like "Harry
 					Potter", "Lord of the ring", etc.), I enjoy word games like crosswords
@@ -81,7 +81,9 @@
 </template>
 
 <script>
-import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
+import CListGroup from '~/components/list/CListGroup';
+import CListItem from '~/components/list/CListItem';
+import CIcon from '~/components/CIcon';
 export default {
 	head() {
 		return {
@@ -94,7 +96,6 @@ export default {
 			]
 		};
 	},
-	mixins: [removeAnimClassMixin],
 	data() {
 		return {
 			skills: [
@@ -136,6 +137,11 @@ export default {
 				}
 			]
 		};
+	},
+	components: {
+		CListGroup,
+		CListItem,
+		CIcon
 	}
 };
 </script>
@@ -151,9 +157,6 @@ export default {
 	}
 }
 .skill-list {
-	.c-progress {
-		width: 80%;
-	}
 	display: flex;
 	flex-direction: column;
 	.skill-content {
@@ -175,5 +178,8 @@ export default {
 			margin-right: auto;
 		}
 	}
+}
+.progress-wrapper {
+	width: 75%;
 }
 </style>

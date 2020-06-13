@@ -19,17 +19,17 @@
 		>
 			<h2 class="display">Want to check my works? Or read about me?</h2>
 			<div class="links mt-2 title-2">
-				<c-button :to="{ name: 'works' }" theme="secondary" flat>
+				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'works' }">
 					Works
-				</c-button>
-				<c-button :to="{ name: 'about' }" theme="secondary" flat class="ml-2">
+				</b-button>
+				<b-button tag="nuxt-link" class="is-link ml-2" :to="{ name: 'about' }">
 					About
-				</c-button>
+				</b-button>
 			</div>
 		</div>
 
 		<div
-			class="mt-4 mt-xs-2 text-secondary text-center"
+			class="mt-2 mt-xs-2 text-secondary text-center"
 			:class="{ 'anim-trY-slow': isAnimation }"
 		>
 			<h2 class="display">Links that You might be interesting:</h2>
