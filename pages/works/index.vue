@@ -3,9 +3,9 @@
 		<h2 class="display-1">
 			My works,
 		</h2>
-		<div class="mt-1 columns fww">
+		<div class="mt-1 columns jcc fww">
 			<div
-				class="column is-6"
+				class="column is-5-desktop is-6-tablet"
 				v-for="{ title, description, imageSrc, chips, links } in works"
 				:key="title"
 			>

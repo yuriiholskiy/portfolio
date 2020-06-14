@@ -2,7 +2,8 @@ const base = '/portfolio/';
 
 export default {
 	router: {
-		base
+		base,
+		trailingSlash: false
 	},
 	head: {
 		title: 'Yurii Golskyi portfolio',
@@ -44,6 +45,10 @@ export default {
 			}
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' }]
+	},
+	server: {
+		port: 3000,
+		host: '0.0.0.0'
 	},
 	loading: { color: 'blue' },
 	pageTransition: {

@@ -24,25 +24,26 @@
 		<b-navbar :mobile-burger="false" type="is-dark" class="py-1">
 			<template slot="brand">
 				<div class="buttons">
-					<b-navbar-item>
-						<burger-menu
-							class="bg-light ml-1"
-							size="2.5"
-							@click="drawer = true"
-							:active="drawer"
-						/>
-					</b-navbar-item>
-					<figure class="df aic ml-2">
-						<img
-							src="~/assets/images/yurii.jpg"
-							alt="Yurii Golskyi"
-							class="img-responsive hero-image"
-						/>
-						<figcaption class="display text-white">
-							Yurii Golskyi,
-							<span class="custom-title db">more than developer.</span>
-						</figcaption>
-					</figure>
+					<burger-menu
+						class="bg-light ml-1"
+						size="2.5"
+						@click="drawer = true"
+						:active="drawer"
+					/>
+					<nuxt-link :to="{ name: 'index' }" class="ml-1">
+						<figure class="df aic">
+							<img
+								src="~/assets/images/yurii.jpg"
+								alt="Yurii Golskyi"
+								class="img-responsive hero-image"
+							/>
+
+							<figcaption class="display text-white">
+								Yurii Golskyi,
+								<span class="custom-title db">more than developer.</span>
+							</figcaption>
+						</figure>
+					</nuxt-link>
 				</div>
 			</template>
 

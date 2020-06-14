@@ -19,11 +19,11 @@
 		>
 			<h2 class="display">Want to check my works? Or read about me?</h2>
 			<div class="links mt-2 title-2">
-				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'works' }">
-					Works
-				</b-button>
-				<b-button tag="nuxt-link" class="is-link ml-2" :to="{ name: 'about' }">
+				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'about' }">
 					About
+				</b-button>
+				<b-button tag="nuxt-link" class="is-link ml-2" :to="{ name: 'works' }">
+					Works
 				</b-button>
 			</div>
 		</div>
