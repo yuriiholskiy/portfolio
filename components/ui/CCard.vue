@@ -110,7 +110,7 @@ export default {
 	width: 100%;
 	height: 100%;
 	padding-bottom: 1rem;
-	margin: 1rem auto;
+	margin: 0 auto;
 	text-align: left;
 	border-radius: 5px;
 	color: #555;
@@ -124,7 +124,8 @@ export default {
 
 .c-card-image {
 	border-radius: 5px 5px 0 0;
-	height: auto;
+	// height: auto;
+	height: 200px;
 }
 
 .c-card-body {

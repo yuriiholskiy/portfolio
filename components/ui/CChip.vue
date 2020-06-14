@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import CIcon from '~/components/ui/CIcon';
 import themesMixin from '@/mixins/themes.mixin';
 export default {
 	name: 'CChip',
@@ -38,6 +39,9 @@ export default {
 			type: Boolean,
 			default: false
 		}
+	},
+	components: {
+		CIcon
 	}
 };
 </script>

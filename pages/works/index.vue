@@ -1,69 +1,58 @@
 <template>
 	<section class="works py-2 text-lighten-dark">
-		<h2 class="display-1" :class="{ 'anim-trY-fast': isAnimation }">
+		<h2 class="display-1">
 			My works,
 		</h2>
-		<div ref="slowAnimEl" :class="{ 'anim-trY-slow': isAnimation }">
-			<c-row class="works-row" justify="xs-center">
-				<c-col
-					xs="size-12"
-					sm="size-10"
-					md="size-6"
-					v-for="{ title, description, imageSrc, chips, links } in works"
-					:key="title"
-					class="mt-1"
-				>
-					<c-card
-						action
-						:image-src="imageSrc"
-						:image-alt="title"
-						max-width="40"
-					>
-						<template #title>
-							{{ title }}
-						</template>
-						<template #description>
-							{{ description }}
-							<h4 class="created-by-title mt-1 text-lighten-dark">
-								Created by:
-							</h4>
-							<div class="created-by mt-1">
-								<c-chip
-									v-for="{ name, theme, rippleColor } in chips"
-									:key="name"
-									:theme="theme"
-									:icon-name="name"
-									v-ripple="rippleColor"
-									class="mt-xs-1"
-								>
-									{{ name }}
-								</c-chip>
-							</div>
-						</template>
-						<template #action>
-							<c-button
-								v-for="{ name, to } in links"
-								:key="to"
-								theme="secondary"
-								class="mr-1"
-								target="_blank"
-								rel="noopener"
-								:href="to"
+		<div class="mt-1 columns fww">
+			<div
+				class="column is-6"
+				v-for="{ title, description, imageSrc, chips, links } in works"
+				:key="title"
+			>
+				<c-card action :image-src="imageSrc" :image-alt="title" max-width="40">
+					<template #title>
+						{{ title }}
+					</template>
+					<template #description>
+						{{ description }}
+						<h4 class="created-by-title mt-1 text-lighten-dark">
+							Created by:
+						</h4>
+						<div class="created-by mt-1">
+							<c-chip
+								v-for="{ name, theme, rippleColor } in chips"
+								:key="name"
+								:theme="theme"
+								:icon-name="name"
+								v-ripple="rippleColor"
+								class="mt-xs-1"
 							>
 								{{ name }}
-							</c-button>
-						</template>
-					</c-card>
-				</c-col>
-			</c-row>
+							</c-chip>
+						</div>
+					</template>
+					<template #action>
+						<a
+							v-for="{ name, to } in links"
+							:key="to"
+							class="mr-1 button is-link"
+							target="_blank"
+							rel="noopener"
+							:href="to"
+						>
+							{{ name }}
+						</a>
+					</template>
+				</c-card>
+			</div>
 		</div>
 	</section>
 </template>
 
 <script>
-import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
+import CCard from '~/components/ui/CCard';
+import CChip from '~/components/ui/CChip';
 export default {
-	mixins: [removeAnimClassMixin],
 	head() {
 		return {
 			title: 'My works',
@@ -81,7 +70,7 @@ export default {
 			works: [
 				{
 					title: '@vue/comps',
-					description: `Simple Vue ui component library. Now have a 23 components and 2 directives. This portfolio created by using @vue/comps. You can check more on comps site. Project still in progress.`,
+					description: `Simple Vue ui component library. Now have a 23 components and 2 directives. You can check more on comps site. Project still in progress.`,
 					imageSrc: require('~/assets/images/comps.png'),
 					chips: [
 						{
@@ -211,6 +200,10 @@ export default {
 				}
 			]
 		};
+	},
+	components: {
+		CCard,
+		CChip
 	}
 };
 </script>
@@ -220,3 +213,58 @@ export default {
 	font-weight: 800;
 }
 </style>
+
+<!--
+<c-row class="works-row" justify="xs-center">
+				<c-col
+					xs="size-12"
+					sm="size-10"
+					md="size-6"
+					v-for="{ title, description, imageSrc, chips, links } in works"
+					:key="title"
+					class="mt-1"
+				>
+					<c-card
+						action
+						:image-src="imageSrc"
+						:image-alt="title"
+						max-width="40"
+					>
+						<template #title>
+							{{ title }}
+						</template>
+						<template #description>
+							{{ description }}
+							<h4 class="created-by-title mt-1 text-lighten-dark">
+								Created by:
+							</h4>
+							<div class="created-by mt-1">
+								<c-chip
+									v-for="{ name, theme, rippleColor } in chips"
+									:key="name"
+									:theme="theme"
+									:icon-name="name"
+									v-ripple="rippleColor"
+									class="mt-xs-1"
+								>
+									{{ name }}
+								</c-chip>
+							</div>
+						</template>
+						<template #action>
+							<c-button
+								v-for="{ name, to } in links"
+								:key="to"
+								theme="secondary"
+								class="mr-1"
+								target="_blank"
+								rel="noopener"
+								:href="to"
+							>
+								{{ name }}
+							</c-button>
+						</template>
+					</c-card>
+				</c-col>
+			</c-row>
+  -->

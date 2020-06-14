@@ -68,8 +68,7 @@
 					tennis. Also, I often listen to music.
 				</p>
 				<p class="mt-1">
-					My <strong>"personal motivators"</strong> is: supervisor in
-					University, family and friends;
+					My <strong>"personal motivators"</strong> is: family and friends;
 					<span class="db"
 						>My <strong>"energy fillers"</strong> is: listen to music and doing
 						sports.</span
@@ -81,9 +80,9 @@
 </template>
 
 <script>
-import CListGroup from '~/components/list/CListGroup';
-import CListItem from '~/components/list/CListItem';
-import CIcon from '~/components/CIcon';
+import CListGroup from '~/components/ui/CListGroup';
+import CListItem from '~/components/ui/CListItem';
+import CIcon from '~/components/ui/CIcon';
 export default {
 	head() {
 		return {
