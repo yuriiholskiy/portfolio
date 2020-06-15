@@ -46,10 +46,6 @@ export default {
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' }]
 	},
-	server: {
-		port: 3000,
-		host: '0.0.0.0'
-	},
 	loading: { color: 'aqua' },
 	pageTransition: {
 		name: 'page-fade',
@@ -58,6 +54,9 @@ export default {
 	css: ['~/assets/style.scss'],
 	plugins: ['~/plugins/custom-directives'],
 	modules: ['@nuxtjs/style-resources', 'nuxt-buefy'],
+	buefy: {
+		materialDesignIcons: false
+	},
 	styleResources: {
 		scss: '~/assets/_vars.scss'
 	},

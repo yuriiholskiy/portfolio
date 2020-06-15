@@ -1,22 +1,18 @@
 <template>
 	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
-		<h1 class="display-1" :class="{ 'anim-trY-fast': isAnimation }">
+		<h1 class="display-1">
 			Hello there,
 			<span class="db mt-1 display"
 				>I am <strong>frontend developer</strong>, <strong>physicist</strong>,
 				<strong>thinker</strong>, <strong>philosopher</strong>.
 			</span>
 		</h1>
-		<p class="title-1 mt-2" :class="{ 'anim-trY-middle': isAnimation }">
+		<p class="title-1 mt-2">
 			I like creating frontend apps, and I find happiness in being a better me
 			today than the me yesterday.
 		</p>
 
-		<div
-			class="mt-4 mt-xs-2 text-secondary text-center"
-			:class="{ 'anim-trY-slow': isAnimation }"
-			ref="slowAnimEl"
-		>
+		<div class="mt-4 mt-xs-2 text-secondary text-center">
 			<h2 class="display">Want to check my works? Or read about me?</h2>
 			<div class="links mt-2 title-2">
 				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'about' }">
@@ -28,10 +24,7 @@
 			</div>
 		</div>
 
-		<div
-			class="mt-2 mt-xs-2 text-secondary text-center"
-			:class="{ 'anim-trY-slow': isAnimation }"
-		>
+		<div class="mt-2 mt-xs-2 text-secondary text-center">
 			<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-2 title-2">
 				<a
@@ -53,9 +46,7 @@
 
 <script>
 import { uuid } from '~/utils/helpers';
-import removeAnimClassMixin from '~/mixins/remove-anim-class.mixin';
 export default {
-	mixins: [removeAnimClassMixin],
 	data() {
 		return {
 			links: [
