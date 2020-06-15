@@ -35,7 +35,15 @@ export default {
 			: ['Default description'];
 		const actionSlot = slots().action ? slots().action : ['Default action'];
 
-		const { imageSrc, imageAlt, maxWidth, bgColor, action, ripple } = props;
+		const {
+			imageSrc,
+			imageAlt,
+			maxWidth,
+			bgColor,
+			action,
+			ripple,
+			image
+		} = props;
 
 		const cardBody = [
 			h(
@@ -54,18 +62,19 @@ export default {
 			)
 		];
 		const children = [
-			h('img', {
-				class: 'c-card-image',
-				attrs: {
-					'data-src': imageSrc,
-					alt: imageAlt
-				},
-				directives: [
-					{
-						name: 'lazyload'
-					}
-				]
-			}),
+			imageSrc &&
+				h('img', {
+					class: 'c-card-image',
+					attrs: {
+						'data-src': imageSrc,
+						alt: imageAlt
+					},
+					directives: [
+						{
+							name: 'lazyload'
+						}
+					]
+				}),
 			h(
 				'div',
 				{
@@ -73,15 +82,14 @@ export default {
 				},
 				cardBody
 			),
-			action
-				? h(
-						'div',
-						{
-							class: 'c-card-action'
-						},
-						actionSlot
-				  )
-				: null
+			action &&
+				h(
+					'div',
+					{
+						class: 'c-card-action'
+					},
+					actionSlot
+				)
 		];
 		return h(
 			'article',
@@ -128,9 +136,14 @@ export default {
 }
 
 .c-card-image {
-	border-radius: 5px 5px 0 0;
-	// height: auto;
-	height: 200px;
+	height: 20rem;
+	border-radius: 5px;
+	padding: 0.25rem;
+	object-fit: cover;
+	@media screen and (max-width: 600px) {
+		height: 10rem;
+		object-fit: contain;
+	}
 }
 
 .c-card-body {
@@ -154,6 +167,6 @@ export default {
 
 .c-card-action {
 	margin-left: 1rem;
-	margin-top: auto;
+	// margin-top: auto;
 }
 </style>

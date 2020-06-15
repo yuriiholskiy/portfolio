@@ -12,6 +12,14 @@ import AppHeader from '~/components/AppHeader';
 export default {
 	components: {
 		AppHeader
+	},
+	head() {
+		const canonical = `https://yuriiholskiy.github.io/${this.$route.path
+			.toLowerCase()
+			.replace(/\/$/, '')}`;
+		return {
+			link: [{ rel: 'canonical', href: canonical }]
+		};
 	}
 };
 </script>

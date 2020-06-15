@@ -5,53 +5,107 @@
 		</h2>
 		<div class="mt-1 columns jcc fww">
 			<div
-				class="column is-5-desktop is-6-tablet"
-				v-for="{ title, description, imageSrc, chips, links } in works"
-				:key="title"
+				class="column is-6"
+				v-for="(item, index) in worksData"
+				:key="item.title"
 			>
-				<c-card action :image-src="imageSrc" :image-alt="title" max-width="40">
+				<c-card action max-width="50">
 					<template #title>
-						{{ title }}
+						{{ item.title }}
 					</template>
 					<template #description>
-						{{ description }}
-						<h4 class="created-by-title mt-1 text-lighten-dark">
-							Created by:
+						{{ item.description.slice(0, 40) }} ...
+						<h4 class="created-by-title mt-2 text-lighten-dark">
+							Used techonologies:
 						</h4>
-						<div class="created-by mt-1">
+						<div class="mt-half df aic fww acsa">
 							<c-chip
-								v-for="{ name, theme, rippleColor } in chips"
+								v-for="{ name, theme, rippleColor } in item.chips.slice(
+									0,
+									item.chipsCountShow
+								)"
 								:key="name"
 								:theme="theme"
 								:icon-name="name"
 								v-ripple="rippleColor"
-								class="mt-xs-1"
+								class="mt-half"
 							>
 								{{ name }}
 							</c-chip>
+							<b-button
+								rounded
+								title="Show all techonologies"
+								class="button is-small mt-xs-1"
+								v-if="item.chips.length > item.chipsCountShow"
+								@click="showAllChips(item.chips, index)"
+							>
+								...
+							</b-button>
 						</div>
 					</template>
 					<template #action>
-						<a
-							v-for="{ name, to } in links"
+						<div class="buttons">
+							<b-button class="button is-primary" @click="showDetails(item)">
+								Show more
+							</b-button>
+							<b-button
+								tag="a"
+								v-for="{ name, to } in item.links"
+								:key="to"
+								class="button is-link"
+								target="_blank"
+								rel="noopener"
+								:href="to"
+							>
+								{{ name }}
+							</b-button>
+						</div>
+					</template>
+				</c-card>
+			</div>
+		</div>
+		<c-modal v-model="isModalActive" class="px-1">
+			<c-card
+				action
+				:image-src="activeItem.imageSrc"
+				:image-alt="activeItem.title"
+				max-width="50"
+			>
+				<template #title>
+					{{ activeItem.title }}
+				</template>
+				<template #description>
+					{{ activeItem.description }}
+				</template>
+				<template #action>
+					<p class="title-2">
+						See more on:
+					</p>
+					<div class="buttons">
+						<b-button
+							tag="a"
+							v-for="{ name, to } in activeItem.links"
 							:key="to"
-							class="mr-1 button is-link"
+							class="button is-link"
 							target="_blank"
 							rel="noopener"
 							:href="to"
 						>
 							{{ name }}
-						</a>
-					</template>
-				</c-card>
-			</div>
-		</div>
+						</b-button>
+					</div>
+				</template>
+			</c-card>
+		</c-modal>
 	</section>
 </template>
 
 <script>
 import CCard from '~/components/ui/CCard';
 import CChip from '~/components/ui/CChip';
+import CModal from '~/components/ui/CModal';
+import worksData from '~/utils/works-item.data';
+
 export default {
 	head() {
 		return {
@@ -67,138 +121,26 @@ export default {
 	},
 	data() {
 		return {
-			works: [
-				{
-					title: 'comps',
-					description: `Simple Vue ui component library. Now have a 23 components and 2 directives. You can check more on comps site. Project still in progress.`,
-					imageSrc: require('~/assets/images/comps.png'),
-					chips: [
-						{
-							name: 'html',
-							theme: 'danger',
-							rippleColor: 'red'
-						},
-						{
-							name: 'css',
-							theme: 'primary',
-							rippleColor: 'lightblue'
-						},
-						{
-							name: 'vue',
-							theme: 'success',
-							rippleColor: 'green'
-						}
-					],
-					links: [
-						{
-							name: 'Github',
-							to: 'https://github.com/yuriiholskiy/comps'
-						},
-						{
-							name: 'Comps',
-							to: 'https://yuriiholskiy.github.io/comps'
-						}
-					]
-				},
-				{
-					title: 'Awesome todo app',
-					description: `This is a CRUD application, created by Vue.js (+ Vuex and VueRouter) and using firebase hosting.You can add, delete and update(by double click on todo title). 
-												Also have a filter for done, active and all todos.`,
-					imageSrc: require('~/assets/images/aw-todo.png'),
-					chips: [
-						{
-							name: 'html',
-							theme: 'danger',
-							rippleColor: 'red'
-						},
-						{
-							name: 'css',
-							theme: 'primary',
-							rippleColor: 'lightblue'
-						},
-						{
-							name: 'vue',
-							theme: 'success',
-							rippleColor: 'green'
-						}
-					],
-					links: [
-						{
-							name: 'Todo app',
-							to: 'https://aw-vue-todo.web.app/'
-						}
-					]
-				},
-				{
-					title: 'Pokedex app',
-					description: 'Pokedex app using pokemon api',
-					imageSrc: require('~/assets/images/pokedex.jpg'),
-					chips: [
-						{
-							name: 'html',
-							theme: 'danger',
-							rippleColor: 'red'
-						},
-						{
-							name: 'css',
-							theme: 'primary',
-							rippleColor: 'lightblue'
-						},
-						{
-							name: 'vue',
-							theme: 'success',
-							rippleColor: 'green'
-						}
-					],
-					links: [
-						{
-							name: 'Github',
-							to: 'https://github.com/yuriiholskiy/pokedex'
-						},
-						{
-							name: 'Pokedex',
-							to: 'https://yuriiholskiy.github.io/pokedex'
-						}
-					]
-				},
-				{
-					title: 'vtrello',
-					description: 'Trello clone build with Vue and tailwindcss',
-					imageSrc: require('~/assets/images/trello-clone.png'),
-					chips: [
-						{
-							name: 'html',
-							theme: 'danger',
-							rippleColor: 'red'
-						},
-						{
-							name: 'css',
-							theme: 'primary',
-							rippleColor: 'lightblue'
-						},
-						{
-							name: 'vue',
-							theme: 'success',
-							rippleColor: 'green'
-						}
-					],
-					links: [
-						{
-							name: 'Github',
-							to: 'https://github.com/yuriiholskiy/vtrello'
-						},
-						{
-							name: 'Vtrello',
-							to: 'https://yuriiholskiy.github.io/vtrello'
-						}
-					]
-				}
-			]
+			worksData,
+			isModalActive: false,
+			activeItem: {}
 		};
+	},
+	methods: {
+		showAllChips(chips, index) {
+			const el = this.worksData.find((_, idx) => idx === index);
+			const sub = chips.length - el.chipsCountShow;
+			el.chipsCountShow = chips.length + sub;
+		},
+		showDetails(item) {
+			this.activeItem = item;
+			this.isModalActive = true;
+		}
 	},
 	components: {
 		CCard,
-		CChip
+		CChip,
+		CModal
 	}
 };
 </script>

@@ -2,7 +2,6 @@
 	<div class="c-chip" :class="[themes[theme]]" v-on="$listeners">
 		<c-icon
 			v-if="iconName && !iconRight"
-			:sprite="require('@/assets/icons/sprite.svg')"
 			:name="iconName"
 			width="20"
 			height="20"
@@ -11,7 +10,6 @@
 		<slot>Default</slot>
 		<c-icon
 			v-if="iconName && iconRight"
-			:sprite="require('@/assets/icons/sprite.svg')"
 			:name="iconName"
 			width="20"
 			height="20"
@@ -52,12 +50,12 @@ export default {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.5rem 1rem;
+	padding: 0.3rem 0.7rem;
 	border-radius: 1rem;
 	white-space: nowrap;
 	cursor: default;
-	&:not(:first-child) {
-		margin-left: 0.25rem;
+	&:not(:last-child) {
+		margin-right: 0.25rem;
 	}
 	@each $key, $val in $colors {
 		&-#{$key} {

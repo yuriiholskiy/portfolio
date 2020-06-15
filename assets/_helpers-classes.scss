@@ -178,7 +178,18 @@
 		}
 	}
 }
-
+.mt-half {
+	margin-top: 0.5rem;
+}
+.ml-half {
+	margin-left: 0.5rem;
+}
+.mr-half {
+	margin-right: 0.5rem;
+}
+.mb-half {
+	margin-bottom: 0.5rem;
+}
 .mx-auto {
 	margin-left: auto !important;
 	margin-right: auto !important;
@@ -219,6 +230,9 @@
 }
 .fww {
 	flex-wrap: wrap;
+}
+.acsa {
+	align-content: space-around;
 }
 .display-1 {
 	font-size: calc(2vmin + 2rem);

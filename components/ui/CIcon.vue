@@ -1,8 +1,9 @@
 <template>
 	<div class="c-icon-wrap" :class="[{ left: left }, { right: right }]">
-		<svg class="c-icon" :width="width" :height="height">
+		<svg class="c-icon" :width="width" :height="height" v-if="sprite">
 			<use v-bind="svgBindings" />
 		</svg>
+		<iconify-icon v-else :icon="name" width="20" height="20" />
 	</div>
 </template>
 
@@ -10,6 +11,10 @@
 export default {
 	name: 'CIcon',
 	props: {
+		sprite: {
+			type: String,
+			default: ''
+		},
 		width: {
 			type: [Number, String],
 			default: 24
@@ -17,10 +22,6 @@ export default {
 		height: {
 			type: [Number, String],
 			default: 24
-		},
-		sprite: {
-			type: String,
-			default: ''
 		},
 		name: {
 			type: String,
