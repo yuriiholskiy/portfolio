@@ -1,5 +1,5 @@
 <template>
-	<section class="hero py-2 mt-5 mt-sm-2 mt-xs-0 text-lighten-dark">
+	<section class="hero py-2 mt-3 mt-sm-2 mt-xs-0 text-lighten-dark">
 		<h1 class="display-1">
 			Hello there,
 			<span class="db mt-1 display"
@@ -12,9 +12,9 @@
 			today than the me yesterday.
 		</p>
 
-		<div class="mt-4 mt-xs-2 text-secondary text-center">
+		<div class="mt-2 mt-xs-2 text-secondary text-center">
 			<h2 class="display">Want to check my works? Or read about me?</h2>
-			<div class="links mt-2 title-2">
+			<div class="links mt-2 mt-xs-1 title-2">
 				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'about' }">
 					About
 				</b-button>
@@ -24,9 +24,9 @@
 			</div>
 		</div>
 
-		<div class="mt-2 mt-xs-2 text-secondary text-center">
+		<div class="mt-2 mt-xs-1 text-secondary text-center">
 			<h2 class="display">Links that You might be interesting:</h2>
-			<div class="links mt-2 title-2">
+			<div class="links mt-1 title-2">
 				<a
 					v-for="(link, index) in links"
 					class="link"
@@ -82,9 +82,6 @@ export default {
 </script>
 
 <style lang="scss">
-.hero {
-	overflow: hidden;
-}
 .link {
 	text-decoration: none;
 	display: inline-block;

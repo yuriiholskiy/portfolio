@@ -152,7 +152,7 @@ export default {
 
 	@media screen and (min-width: map-get($grid-breakpoints, 'xs')) {
 		max-width: 50rem;
-		margin: 2rem auto 0 auto;
+		margin: 1rem auto 0 auto;
 	}
 }
 .skill-list {

@@ -30,20 +30,20 @@
 						@click="drawer = true"
 						:active="drawer"
 					/>
-					<nuxt-link :to="{ name: 'index' }" class="ml-1">
-						<figure class="df aic">
+
+					<figure class="df aic">
+						<nuxt-link :to="{ name: 'index' }" class="ml-1">
 							<img
 								src="~/assets/images/yurii.jpg"
 								alt="Yurii Golskyi"
 								class="img-responsive hero-image"
 							/>
-
-							<figcaption class="display text-white">
-								Yurii Golskyi,
-								<span class="custom-title db">more than developer.</span>
-							</figcaption>
-						</figure>
-					</nuxt-link>
+						</nuxt-link>
+						<figcaption class="display text-white">
+							Yurii Golskyi,
+							<span class="custom-title db mtn-1">more than developer.</span>
+						</figcaption>
+					</figure>
 				</div>
 			</template>
 

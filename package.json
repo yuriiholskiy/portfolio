@@ -12,8 +12,8 @@
 		"predeploy": "nuxt generate"
 	},
 	"dependencies": {
-		"nuxt": "^2.0.0",
-		"nuxt-buefy": "^0.3.31"
+		"buefy": "^0.8.20",
+		"nuxt": "^2.0.0"
 	},
 	"devDependencies": {
 		"@nuxtjs/style-resources": "^1.0.0",

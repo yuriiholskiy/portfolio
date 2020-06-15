@@ -31,7 +31,7 @@
 	}
 }
 .anim-trX-fast {
-	animation: fadeAndTranslateXEl .8s;
+	animation: fadeAndTranslateXEl 0.8s;
 }
 
 .anim-trX-middle {
@@ -42,7 +42,7 @@
 	animation: fadeAndTranslateXEl 1.8s;
 }
 .anim-trX-fast-delay {
-	animation: fadeAndTranslateXEl .8s .8s;
+	animation: fadeAndTranslateXEl 0.8s 0.8s;
 }
 
 .anim-trX-middle-delay {
@@ -54,7 +54,7 @@
 }
 
 .anim-trY-fast {
-	animation: fadeAndTranslateYUpEl .8s;
+	animation: fadeAndTranslateYUpEl 0.8s;
 }
 
 .anim-trY-middle {
@@ -65,9 +65,8 @@
 	animation: fadeAndTranslateYUpEl 1.8s;
 }
 
-
 .anim-trY-down-fast {
-	animation: fadeAndTranslateYDownEl .8s;
+	animation: fadeAndTranslateYDownEl 0.8s;
 }
 
 .anim-trY-down-middle {
@@ -76,4 +75,17 @@
 
 .anim-trY-down-slow {
 	animation: fadeAndTranslateYDownEl 1.8s;
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+	transition: opacity 0.3s, 0.4s transform;
+}
+.page-fade-enter {
+	opacity: 0;
+	transform: skew(4deg);
+}
+.page-fade-leave-to {
+	opacity: 0;
+	transform: skew(-4deg);
 }

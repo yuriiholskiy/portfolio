@@ -11,7 +11,7 @@
 	.mb-#{$i} {
 		margin-bottom: #{$i}rem !important;
 	}
-	
+
 	.mx-#{$i} {
 		margin-right: #{$i}rem;
 		margin-left: #{$i}rem;
@@ -183,6 +183,9 @@
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
+.mtn-1 {
+	margin-top: -0.5rem;
+}
 
 .text-center {
 	text-align: center;
@@ -199,7 +202,7 @@
 }
 
 .db {
-	display: block;
+	display: block !important;
 }
 .dib {
 	display: inline-block;
@@ -213,6 +216,9 @@
 }
 .jcc {
 	justify-content: center;
+}
+.fww {
+	flex-wrap: wrap;
 }
 .display-1 {
 	font-size: calc(2vmin + 2rem);
@@ -229,7 +235,8 @@
 .title-2 {
 	font-size: 1.2rem;
 }
-.title {
+
+.custom-title {
 	font-size: 1rem;
 }
 
@@ -237,6 +244,10 @@
 	display: block;
 	width: 100%;
 	height: auto;
+}
+
+.height-100 {
+	min-height: 100vh;
 }
 
 .full-height {

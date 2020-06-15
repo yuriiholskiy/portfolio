@@ -10,9 +10,6 @@ export default {
 		htmlAttrs: {
 			lang: 'en'
 		},
-		bodyAttrs: {
-			class: 'margin-transition'
-		},
 		meta: [
 			{
 				charset: 'utf-8'
@@ -52,11 +49,8 @@ export default {
 		mode: 'out-in'
 	},
 	css: ['~/assets/style.scss'],
-	plugins: ['~/plugins/custom-directives'],
-	modules: ['@nuxtjs/style-resources', 'nuxt-buefy'],
-	buefy: {
-		materialDesignIcons: false
-	},
+	plugins: ['~/plugins/buefy', '~/plugins/custom-directives'],
+	modules: ['@nuxtjs/style-resources'],
 	styleResources: {
 		scss: '~/assets/_vars.scss'
 	},
