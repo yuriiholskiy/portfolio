@@ -35,7 +35,7 @@
 							<b-button
 								rounded
 								title="Show all techonologies"
-								class="button is-small mt-xs-1"
+								class="button is-small mt-half"
 								v-if="item.chips.length > item.chipsCountShow"
 								@click="showAllChips(item.chips, index)"
 							>

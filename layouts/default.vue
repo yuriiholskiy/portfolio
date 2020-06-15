@@ -14,7 +14,7 @@ export default {
 		AppHeader
 	},
 	head() {
-		const canonical = `https://yuriiholskiy.github.io/${this.$route.path
+		const canonical = `https://yuriiholskiy.github.io${this.$route.path
 			.toLowerCase()
 			.replace(/\/$/, '')}`;
 		return {
