@@ -48,7 +48,7 @@
 						size="is-medium"
 						:value="+percent"
 						show-value
-						class="mb-0 mt-sm-1 mt-xs-1"
+						class="mt-md-1"
 					>
 					</b-progress>
 				</c-list-item>
@@ -180,5 +180,8 @@ export default {
 }
 .progress-wrapper {
 	width: 75%;
+	&:not(:last-child) {
+		margin-bottom: 0;
+	}
 }
 </style>

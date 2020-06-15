@@ -11,6 +11,7 @@ export default {
 		base,
 		trailingSlash: true
 	},
+	rootDir: __dirname,
 	head: {
 		title: 'Yurii Golskyi portfolio',
 		htmlAttrs: {

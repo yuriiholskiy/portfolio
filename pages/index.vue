@@ -1,5 +1,5 @@
 <template>
-	<section class="hero py-2 mt-3 mt-sm-2 mt-xs-0 text-lighten-dark">
+	<section class="hero py-2 mt-3 mt-sm-2 text-lighten-dark">
 		<h1 class="display-1">
 			Hello there,
 			<span class="db mt-1 display"
