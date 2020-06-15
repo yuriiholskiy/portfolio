@@ -11,11 +11,11 @@
 					Navigation
 				</h3>
 				<b-button
-					tag="nuxt-link"
+					tag="a"
 					v-for="link in menuLinks"
-					:to="{ name: link.path }"
 					:key="link.path"
 					class="mt-1 is-link db"
+					@click="goTo(link.path)"
 				>
 					{{ link.name }}
 				</b-button>
@@ -89,9 +89,10 @@ export default {
 			]
 		};
 	},
-	watch: {
-		'$route.fullPath'() {
+	methods: {
+		goTo(name) {
 			this.drawer = false;
+			this.$router.push({ name });
 		}
 	},
 	components: {
