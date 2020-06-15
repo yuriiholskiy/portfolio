@@ -139,10 +139,9 @@ export default {
 	height: 20rem;
 	border-radius: 5px;
 	padding: 0.25rem;
-	object-fit: cover;
+	object-fit: fill;
 	@media screen and (max-width: 600px) {
 		height: 10rem;
-		object-fit: contain;
 	}
 }
 

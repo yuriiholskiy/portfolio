@@ -9,7 +9,7 @@ export default {
 	}),
 	router: {
 		base,
-		trailingSlash: false
+		trailingSlash: true
 	},
 	head: {
 		title: 'Yurii Golskyi portfolio',
@@ -44,7 +44,7 @@ export default {
 			{
 				hid: 'url',
 				name: 'url',
-				content: 'https://yuriiholskiy.github.io/portfolio'
+				content: 'https://yuriiholskiy.github.io/portfolio/'
 			}
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' }]

@@ -142,10 +142,6 @@ export default [
 			{
 				name: 'Github',
 				to: 'https://github.com/LV-469/defibrillator'
-			},
-			{
-				name: 'Def app',
-				to: 'https://yuriiholskiy.github.io/vtrello'
 			}
 		]
 	}

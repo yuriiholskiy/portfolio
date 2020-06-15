@@ -14,9 +14,11 @@ export default {
 		AppHeader
 	},
 	head() {
-		const canonical = `https://yuriiholskiy.github.io${this.$route.path
+		console.log();
+		const canonical = `https://yuriiholskiy.github.io/portfolio${this.$route.path
 			.toLowerCase()
-			.replace(/\/$/, '')}`;
+			.replace(/\/$/, '')}/`;
+		console.log(canonical);
 		return {
 			link: [{ rel: 'canonical', href: canonical }]
 		};

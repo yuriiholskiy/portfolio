@@ -45,7 +45,11 @@
 					</template>
 					<template #action>
 						<div class="buttons">
-							<b-button class="button is-primary" @click="showDetails(item)">
+							<b-button
+								tag="a"
+								class="button is-link"
+								@click.prevent="showDetails(item)"
+							>
 								Show more
 							</b-button>
 							<b-button
