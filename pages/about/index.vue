@@ -150,7 +150,7 @@ export default {
 	line-height: 2rem;
 	max-width: 100%;
 
-	@media screen and (min-width: map-get($grid-breakpoints, 'xs')) {
+	@media screen and (min-width: map-get($breakpoints, 'phone')) {
 		max-width: 50rem;
 		margin: 1rem auto 0 auto;
 	}
@@ -168,7 +168,7 @@ export default {
 	.skill-name {
 		margin-right: 0;
 	}
-	@media screen and (min-width: map-get($grid-breakpoints, 'md')) {
+	@media screen and (min-width: map-get($breakpoints, 'tablet')) {
 		flex-direction: row;
 		.skill-icon {
 			margin-right: 0.5rem;

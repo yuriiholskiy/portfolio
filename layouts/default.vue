@@ -18,7 +18,6 @@ export default {
 		const canonical = `https://yuriiholskiy.github.io/portfolio${this.$route.path
 			.toLowerCase()
 			.replace(/\/$/, '')}/`;
-		console.log(canonical);
 		return {
 			link: [{ rel: 'canonical', href: canonical }]
 		};

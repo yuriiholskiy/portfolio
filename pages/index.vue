@@ -14,7 +14,7 @@
 
 		<div class="mt-2 mt-xs-2 text-secondary text-center">
 			<h2 class="display">Want to check my works? Or read about me?</h2>
-			<div class="links mt-2 mt-xs-1 title-2">
+			<div class="links mt-2 mt-sm-1 title-2">
 				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'about' }">
 					About
 				</b-button>
@@ -24,13 +24,13 @@
 			</div>
 		</div>
 
-		<div class="mt-2 mt-xs-1 text-secondary text-center">
+		<div class="mt-2 mt-sm-1 text-secondary text-center">
 			<h2 class="display">Links that You might be interesting:</h2>
 			<div class="links mt-1 title-2">
 				<a
 					v-for="(link, index) in links"
 					class="link"
-					:class="{ 'mt-xs-1': index === linksLength }"
+					:class="{ 'mt-sm-1': index === linksLength }"
 					:key="link.id"
 					:href="link.url"
 					target="_blank"

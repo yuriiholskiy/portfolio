@@ -1,20 +1,23 @@
-$grid-breakpoints: ( 
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
+$breakpoints: (
+	'phone': 320px,
+	'phone-wide': 480px,
+	'phablet': 560px,
+	'tablet-small': 640px,
+	'tablet': 768px,
+	'tablet-wide': 1024px,
+	'desktop': 1248px,
+	'desktop-wide': 1440px
 );
 $container-width: 1200px;
 $grid-columns: 12;
 $grid-gap: 1rem;
 $grid-gap-one-side: 1rem / 2;
 
-$colors: ( 
-	primary:    #007bff,
+$colors: (
+	primary: #007bff,
 	secondary: #6c757d,
-	danger:     #dc3545,
-	success:  #28a745,
+	danger: #dc3545,
+	success: #28a745,
 	warning: #ffc107,
 	dark: #1a2424,
 	light: #e8e9e9
