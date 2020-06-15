@@ -1,18 +1,16 @@
 export default {
 	inserted(el) {
-		function loadImage() {
-			el.src = el.dataset.src;
-		}
-		function callback(entries, observer) {
+		const loadImage = () => (el.src = el.dataset.src);
+		const callback = (entries, observer) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					loadImage();
 					observer.unobserve(el);
 				}
 			});
-		}
+		};
 
-		function createIntersectionObserver() {
+		const createIntersectionObserver = () => {
 			const options = {
 				root: null,
 				threshold: 0
@@ -20,7 +18,7 @@ export default {
 
 			const observer = new IntersectionObserver(callback, options);
 			observer.observe(el);
-		}
+		};
 
 		if (!window['IntersectionObserver']) {
 			loadImage();

@@ -50,13 +50,13 @@ export default {
 		port: 3000,
 		host: '0.0.0.0'
 	},
-	loading: { color: 'blue' },
+	loading: { color: 'aqua' },
 	pageTransition: {
 		name: 'page-fade',
 		mode: 'out-in'
 	},
 	css: ['~/assets/style.scss'],
-	plugins: ['~/plugins/ripple-directive'],
+	plugins: ['~/plugins/custom-directives'],
 	modules: ['@nuxtjs/style-resources', 'nuxt-buefy'],
 	styleResources: {
 		scss: '~/assets/_vars.scss'

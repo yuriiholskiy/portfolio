@@ -57,9 +57,14 @@ export default {
 			h('img', {
 				class: 'c-card-image',
 				attrs: {
-					src: imageSrc || '',
+					'data-src': imageSrc,
 					alt: imageAlt
-				}
+				},
+				directives: [
+					{
+						name: 'lazyload'
+					}
+				]
 			}),
 			h(
 				'div',
