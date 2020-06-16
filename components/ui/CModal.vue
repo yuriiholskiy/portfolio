@@ -43,10 +43,19 @@ export default {
 			default: true
 		}
 	},
+	watch: {
+		modelValue: {
+			handler(val) {
+				if (val && this.lockScroll) {
+					document.body.style.overflow = 'hidden';
+				} else {
+					document.body.style.overflow = '';
+				}
+			}
+		},
+		immediate: true
+	},
 	mounted() {
-		if (this.modelValue && this.lockScroll) {
-			document.body.style.overflow = 'hidden';
-		}
 		const handler = ({ code }) => {
 			if (this.cancelOnEscape && code === 'Escape') {
 				this.closeModal();
@@ -61,7 +70,6 @@ export default {
 	methods: {
 		closeModal() {
 			this.$emit('update:modelValue', false);
-			document.body.style.overflow = '';
 		}
 	}
 };
@@ -87,7 +95,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	color: var(--dark-color);
-	min-height: 400px;
+	max-height: 650px;
 	flex-basis: 70%;
 	@media screen and(max-width: map-get($breakpoints, 'tablet')) {
 		flex-basis: 100%;
@@ -119,7 +127,7 @@ export default {
 .c-modal-footer {
 	border-top: 1px solid var(--dark-color);
 	flex-direction: column;
-	justify-content: flex-end;
+	align-items: flex-end;
 	margin-top: auto;
 }
 

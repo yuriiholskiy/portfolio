@@ -75,7 +75,7 @@
 			</template>
 			<template #body>
 				<img
-					class="img-responsive"
+					class="img-responsive fit"
 					:src="activeItem.imageSrc"
 					:alt="activeItem.title"
 				/>
@@ -140,7 +140,6 @@ export default {
 		showDetails(item) {
 			this.activeItem = item;
 			this.isModalActive = true;
-			document.body.style.overflow = 'hidden';
 		}
 	},
 	components: {
@@ -152,6 +151,9 @@ export default {
 </script>
 
 <style lang="scss">
+.fit {
+	object-fit: cover;
+}
 .created-by-title {
 	font-weight: 800;
 }

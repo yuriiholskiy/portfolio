@@ -28,6 +28,7 @@
 			<h2 class="display">Links that You might be interesting:</h2>
 			<div class="buttons jcc mt-1 title-2">
 				<c-button
+					tag="a"
 					v-for="(link, index) in links"
 					class="is-primary"
 					:class="{ 'mt-xs-1': index === linksLength }"
