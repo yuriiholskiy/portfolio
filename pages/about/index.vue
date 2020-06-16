@@ -97,12 +97,11 @@ export default {
 		};
 	},
 	created() {
-		let intervalId = null;
-		for (let i = 0; i < this.skills.length; i++) {
-			intervalId = setInterval(() => {
+		const intervalId = setInterval(() => {
+			for (let i = 0; i < this.skills.length; i++) {
 				this.skills[i].percent = values[i];
-			}, 50 * (i * 4 + 1));
-		}
+			}
+		}, 150);
 		this.$once('hook:beforeDestroy', () => {
 			clearInterval(intervalId);
 		});
