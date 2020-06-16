@@ -1,8 +1,0 @@
-@each $theme, $color in $colors {
-	.bg-#{$theme} {
-		background-color: #{$color} !important;
-	}
-	.text-#{$theme} {
-		color: #{$color} !important;
-	}
-}

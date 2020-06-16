@@ -9,9 +9,9 @@
 			alt="Error icon"
 			class="mt-2 error-icon"
 		/>
-		<b-button tag="nuxt-link" :to="{ name: 'index' }" class="is-info mt-2">
+		<c-button tag="nuxt-link" :to="{ name: 'index' }" class="is-positive mt-2">
 			Back to home
-		</b-button>
+		</c-button>
 	</div>
 </template>
 
@@ -23,9 +23,10 @@ export default {
 
 <style scoped lang="scss">
 .error {
-	height: 100vh;
-	background-color: #235789;
-	color: #fff;
+	min-height: 100vh;
+	width: 100%;
+	background-color: var(--primary-color);
+	color: var(--light-color);
 	font-size: 3rem;
 	display: flex;
 	flex-direction: column;

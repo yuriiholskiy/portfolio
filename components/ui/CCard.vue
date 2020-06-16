@@ -15,10 +15,6 @@ export default {
 			type: [String, Number],
 			default: '30'
 		},
-		bgColor: {
-			type: String,
-			default: '#e8e9e9'
-		},
 		action: {
 			type: Boolean,
 			default: false
@@ -35,15 +31,7 @@ export default {
 			: ['Default description'];
 		const actionSlot = slots().action ? slots().action : ['Default action'];
 
-		const {
-			imageSrc,
-			imageAlt,
-			maxWidth,
-			bgColor,
-			action,
-			ripple,
-			image
-		} = props;
+		const { imageSrc, imageAlt, maxWidth, action, ripple, image } = props;
 
 		const cardBody = [
 			h(
@@ -95,10 +83,7 @@ export default {
 			'article',
 			{
 				class: ['c-card', data.staticClass, data.class],
-				style: [
-					{ 'background-color': bgColor },
-					{ 'max-width': maxWidth + 'rem' }
-				],
+				style: [{ 'max-width': maxWidth + 'rem' }],
 				directives: ripple
 					? [
 							{
@@ -128,8 +113,9 @@ export default {
 	border-radius: 5px;
 	color: #555;
 	box-shadow: 0 0 3px 0 #aaa;
-	background-color: map-get($colors, 'light');
+	background-color: var(--dark-color, '#666');
 	transition: 0.15s box-shadow;
+	color: var(--light-color);
 	&:hover {
 		box-shadow: 0 0 5px 0 #777;
 	}
@@ -149,6 +135,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
+	border-bottom: 1px solid var(--light-color);
 }
 
 .c-card-body h3 {
@@ -161,11 +148,10 @@ export default {
 	line-height: 1.3rem;
 	margin: 1rem 0 0;
 	font-size: 1.2rem;
-	color: $card-color;
+	color: var(--light-color);
 }
 
 .c-card-action {
 	margin-left: 1rem;
-	// margin-top: auto;
 }
 </style>

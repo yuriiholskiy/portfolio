@@ -1,0 +1,71 @@
+:root {
+	--header-color: #314766;
+	--light-color: #e8e9e9;
+	--light-light-color: #fff;
+	--light-dark-color: #828686;
+	--dark-color: #1a2424;
+	--dark-light-color: rgba(29, 28, 28, 0.4);
+	--secondary-color: #6c757d;
+	--secondary-light-color: #939aa0;
+	--secondary-dark-color: #585b5e;
+	--primary-color: #276f86;
+	--primary-light-color: #318aa8;
+	--primary-dark-color: #1f596d;
+	--positive-color: #4fc08d;
+	--positive-light-color: #6bd3a4;
+	--positive-dark-color: #308860;
+	--negative-color: #dd0031;
+	--negative-light-color: #e7305b;
+	--negative-dark-color: #880521;
+	--info-color: #ffd700;
+	--info-light-color: #f5e483;
+	--info-dark-color: #a08907;
+	--default-font-size: 16px;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: var(--default-font-size);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	overflow-x: hidden;
+	font-family: serif;
+}
+a,
+button {
+	font-family: inherit;
+	line-height: 1.5;
+}
+::-webkit-progress-value {
+	background-color: transparent;
+}
+::-webkit-progress-bar {
+	background-color: transparent;
+}
+.section-wrap {
+	padding-top: 6rem;
+	padding-bottom: 1rem;
+	@media screen and(max-width: map-get($breakpoints, 'tablet')) {
+		padding: 5rem 0 1rem 0;
+	}
+}
+input,
+textarea {
+	outline: none;
+	&:focus:required:invalid {
+		border-color: red;
+	}
+	&:required:valid {
+		border-color: green;
+	}
+}

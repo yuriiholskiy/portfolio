@@ -1,31 +1,27 @@
 <template>
 	<div class="app-header">
-		<b-sidebar
-			type="is-dark"
-			:fullheight="true"
-			:overlay="true"
-			:open.sync="drawer"
-		>
-			<div class="text-center mt-2 px-1">
-				<h3 class="title-1 text-white">
+		<c-overlay :is-open="drawer" @click.self="drawer = false" />
+		<c-nav-drawer v-model="drawer" class="bg-color-dark text-color-light">
+			<div class="full-width text-center mt-2 px-1">
+				<h3 class="title-1 text-color-light">
 					Navigation
 				</h3>
-				<b-button
+				<c-button
 					tag="a"
 					v-for="link in menuLinks"
 					:key="link.path"
-					class="mt-1 is-link db"
+					class="mt-1 is-primary db is-big"
 					@click="goTo(link.path)"
 				>
 					{{ link.name }}
-				</b-button>
+				</c-button>
 			</div>
-		</b-sidebar>
-		<b-navbar :mobile-burger="false" type="is-dark" class="py-1">
-			<template slot="brand">
+		</c-nav-drawer>
+		<c-toolbar class="bg-color-dark">
+			<template #start>
 				<div class="buttons">
 					<burger-menu
-						class="bg-light ml-1"
+						class="bg-color-light"
 						size="2.5"
 						@click="drawer = true"
 						:active="drawer"
@@ -39,34 +35,34 @@
 								class="img-responsive hero-image"
 							/>
 						</nuxt-link>
-						<figcaption class="display text-white">
+						<figcaption class="display text-color-light">
 							Yurii Golskyi,
 							<span class="custom-title db mtn-1">more than developer.</span>
 						</figcaption>
 					</figure>
 				</div>
 			</template>
-
-			<template slot="end">
-				<b-navbar-item tag="div">
-					<div class="buttons">
-						<b-button
-							tag="nuxt-link"
-							v-for="link in menuLinks"
-							:to="{ name: link.path }"
-							:key="link.path"
-							class="is-link"
-						>
-							{{ link.name }}
-						</b-button>
-					</div>
-				</b-navbar-item>
+			<template #end>
+				<div class="buttons hide-md-and-down">
+					<c-button
+						tag="nuxt-link"
+						v-for="link in menuLinks"
+						:to="{ name: link.path }"
+						:key="link.path"
+						class="is-primary"
+					>
+						{{ link.name }}
+					</c-button>
+				</div>
 			</template>
-		</b-navbar>
+		</c-toolbar>
 	</div>
 </template>
 
 <script>
+import CToolbar from '~/components/ui/CToolbar';
+import CNavDrawer from '~/components/ui/CNavDrawer';
+import COverlay from '~/components/ui/COverlay';
 import BurgerMenu from '~/components/BurgerMenu';
 export default {
 	data() {
@@ -95,9 +91,7 @@ export default {
 			this.$router.push({ name });
 		}
 	},
-	components: {
-		BurgerMenu
-	}
+	components: { CToolbar, CNavDrawer, COverlay, BurgerMenu }
 };
 </script>
 
@@ -105,7 +99,7 @@ export default {
 .hero-image {
 	width: 50px;
 	height: 50px;
-	border: 1px solid map-get($colors, dark);
+	border: 1px solid var(--dark-color);
 	border-radius: 50%;
 }
 </style>

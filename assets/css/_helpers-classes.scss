@@ -1,15 +1,15 @@
 @for $i from 1 through 4 {
 	.mt-#{$i} {
-		margin-top: #{$i}rem !important;
+		margin-top: #{$i}rem;
 	}
 	.mr-#{$i} {
-		margin-right: #{$i}rem !important;
+		margin-right: #{$i}rem;
 	}
 	.ml-#{$i} {
-		margin-left: #{$i}rem !important;
+		margin-left: #{$i}rem;
 	}
 	.mb-#{$i} {
-		margin-bottom: #{$i}rem !important;
+		margin-bottom: #{$i}rem;
 	}
 
 	.mx-#{$i} {
@@ -23,20 +23,20 @@
 	}
 
 	.ma-#{$i} {
-		margin: #{$i}rem !important;
+		margin: #{$i}rem;
 	}
 
 	.pt-#{$i} {
-		padding-top: #{$i}rem !important;
+		padding-top: #{$i}rem;
 	}
 	.pr-#{$i} {
-		padding-right: #{$i}rem !important;
+		padding-right: #{$i}rem;
 	}
 	.pl-#{$i} {
-		padding-left: #{$i}rem !important;
+		padding-left: #{$i}rem;
 	}
 	.pb-#{$i} {
-		padding-bottom: #{$i}rem !important;
+		padding-bottom: #{$i}rem;
 	}
 
 	.px-#{$i} {
@@ -50,7 +50,7 @@
 	}
 
 	.pa-#{$i} {
-		padding: #{$i}rem !important;
+		padding: #{$i}rem;
 	}
 	@media (max-width: map_get($breakpoints, 'tablet-wide')) {
 		.mt-lg-#{$i} {
@@ -295,6 +295,9 @@
 .jcc {
 	justify-content: center;
 }
+.jcsb {
+	justify-content: space-between;
+}
 .fww {
 	flex-wrap: wrap;
 }
@@ -327,10 +330,90 @@
 	height: auto;
 }
 
-.height-100 {
-	min-height: 100vh;
-}
-
 .full-height {
 	min-height: 100vh;
+}
+.full-width {
+	width: 100%;
+}
+.buttons {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: space-around;
+	& > *:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+}
+.text-color-white {
+	color: #fff;
+}
+.text-color-light {
+	color: var(--light-color);
+}
+.text-color-dark {
+	color: var(--dark-color);
+}
+.text-color-light-dark {
+	color: var(--dark-color-light);
+}
+.text-color-info {
+	color: var(--info-color);
+}
+.text-color-secondary {
+	color: var(--secondary-color);
+}
+.text-color-primary {
+	color: var(--primary-color);
+}
+.text-color-primary-light {
+	color: var(--primary-light-color);
+}
+.text-color-negative {
+	color: var(--negative-color);
+}
+.text-color-positive {
+	color: var(--positive-color);
+}
+
+.bg-color-white {
+	background-color: #fff;
+}
+.bg-color-light {
+	background-color: var(--light-color);
+}
+.bg-color-dark {
+	background-color: var(--dark-color);
+}
+.bg-color-info {
+	background-color: var(--info-color);
+}
+.bg-color-secondary {
+	background-color: var(--secondary-color);
+}
+.bg-color-primary {
+	background-color: var(--primary-color);
+}
+.bg-color-primary-light {
+	background-color: var(--primary-light-color);
+}
+.bg-color-negative {
+	background-color: var(--negative-color);
+}
+.bg-color-positive {
+	background-color: var(--positive-color);
+}
+
+$points: (
+	'lg': 'tablet-wide',
+	'md': 'tablet',
+	'sm': 'phablet',
+	'xs': 'phone'
+);
+@each $m, $p in $points {
+	@media (max-width: map-get($breakpoints, $p)) {
+		.hide-#{$m}-and-down {
+			display: none !important;
+		}
+	}
 }

@@ -1,6 +1,6 @@
 <template>
-	<section class="hero py-2 mt-3 mt-sm-2 text-lighten-dark">
-		<h1 class="display-1">
+	<section class="section-wrap text-color-dark">
+		<h1 class="display-1 pt-1">
 			Hello there,
 			<span class="db mt-1 display"
 				>I am <strong>frontend developer</strong>, <strong>physicist</strong>,
@@ -12,25 +12,25 @@
 			today than the me yesterday.
 		</p>
 
-		<div class="mt-2 mt-xs-2 text-secondary text-center">
-			<h2 class="display">Want to check my works? Or read about me?</h2>
-			<div class="links mt-2 mt-sm-1 title-2">
-				<b-button tag="nuxt-link" class="is-link" :to="{ name: 'about' }">
+		<div class="mt-4 mt-sm-2 text-color-secondary text-center">
+			<h2 class="display">Want to read about me? Or check my works?</h2>
+			<div class="buttons jcc mt-1 mt-sm-1 title-2">
+				<c-button tag="nuxt-link" class="is-primary" :to="{ name: 'about' }">
 					About
-				</b-button>
-				<b-button tag="nuxt-link" class="is-link ml-2" :to="{ name: 'works' }">
+				</c-button>
+				<c-button tag="nuxt-link" class="is-primary" :to="{ name: 'works' }">
 					Works
-				</b-button>
+				</c-button>
 			</div>
 		</div>
 
-		<div class="mt-2 mt-sm-1 text-secondary text-center">
+		<div class="mt-1 text-color-secondary text-center">
 			<h2 class="display">Links that You might be interesting:</h2>
-			<div class="links mt-1 title-2">
-				<a
+			<div class="buttons jcc mt-1 title-2">
+				<c-button
 					v-for="(link, index) in links"
-					class="link"
-					:class="{ 'mt-sm-1': index === linksLength }"
+					class="is-primary"
+					:class="{ 'mt-xs-1': index === linksLength }"
 					:key="link.id"
 					:href="link.url"
 					target="_blank"
@@ -38,9 +38,12 @@
 					aria-label="External link"
 				>
 					{{ link.name }}
-				</a>
+				</c-button>
 			</div>
 		</div>
+		<p class="title-2 text-center mt-4 mt-sm-2">
+			<strong>All rights reserved {{ new Date().toLocaleString() }}</strong>
+		</p>
 	</section>
 </template>
 
@@ -80,47 +83,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-.link {
-	text-decoration: none;
-	display: inline-block;
-	position: relative;
-	color: map-get($colors, dark);
-	border-radius: 5px;
-	padding: 0.2rem;
-	&:not(:first-child) {
-		margin-left: 1rem;
-	}
-	&:focus {
-		outline: none;
-	}
-	&:active,
-	&:focus {
-		&::before {
-			transform: scale(1);
-		}
-	}
-	&:visited {
-		&::before {
-			transform: scale(1);
-		}
-	}
-	&::before {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		transition: 0.25s transform;
-		transform: scale(0);
-		width: 100%;
-		height: 1px;
-		background-color: map-get($colors, dark);
-	}
-	&:hover {
-		color: lighten(map-get($colors, dark), 15%);
-		&::before {
-			transform: scale(1);
-		}
-	}
-}
-</style>

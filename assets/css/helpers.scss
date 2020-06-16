@@ -1,0 +1,69 @@
+$breakpoints: (
+	'phone': 400px,
+	'phone-wide': 480px,
+	'phablet': 560px,
+	'tablet-small': 640px,
+	'tablet': 768px,
+	'tablet-wide': 1024px,
+	'desktop': 1248px,
+	'desktop-wide': 1440px
+);
+$colors: (
+	primary: #007bff,
+	secondary: #6c757d,
+	danger: #dc3545,
+	success: #28a745,
+	warning: #ffc107,
+	dark: #1a2424,
+	light: #e8e9e9
+);
+@import 'grid';
+@mixin font-size($size, $base: 16px) {
+	font-size: $size;
+	font-size: ($size / $base) * 1rem;
+}
+
+@mixin transition($args...) {
+	transition: $args;
+}
+
+@mixin linear-gradient($from, $to) {
+	background-color: $from;
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+@mixin truncate($truncation-boundary) {
+	max-width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin box($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin flex($justify: flex-start, $align: stretch, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin center-block-flex {
+	@include flex(center, center);
+}
+@mixin responsive-col($size: 3, $md-size: 6, $sm-size: 10, $xs-size: 12) {
+	@include col();
+	@include col-size($size);
+	@include col-md-size($md-size);
+	@include col-sm-size($sm-size);
+	@include col-xs-size($xs-size);
+}

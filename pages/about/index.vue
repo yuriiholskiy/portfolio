@@ -1,5 +1,5 @@
 <template>
-	<div class="section-wrap py-2 text-lighten-dark">
+	<div class="section-wrap text-color-dark">
 		<section class="about">
 			<h2 class="display-1">
 				About me,
@@ -24,16 +24,16 @@
 			</div>
 		</section>
 
-		<section class="skills mt-2">
+		<section class="skills mt-1">
 			<h2 class="display-1">
 				My skills,
 			</h2>
-			<c-list-group class="mt-2 mx-auto" max-width="800px">
+			<c-list-group class="mt-1 mx-auto" max-width="800px">
 				<c-list-item
 					v-for="({ name, percent, theme, icon }, idx) in skills"
 					:key="name"
-					class="skill-list title-2"
-					v-ripple
+					class="skill-list title-2 is-light"
+					v-ripple="'#46afcc'"
 				>
 					<div class="skill-content">
 						<c-icon
@@ -43,19 +43,18 @@
 						/>
 						<span class="skill-name"> #{{ idx + 1 }} \ {{ name }} </span>
 					</div>
-					<b-progress
-						:type="`is-${theme}`"
-						size="is-medium"
-						:value="+percent"
-						show-value
+					<c-progress
+						:size="75"
 						class="mt-md-1"
-					>
-					</b-progress>
+						:class="`is-${theme}`"
+						:value="percent"
+						show-value
+					/>
 				</c-list-item>
 			</c-list-group>
 		</section>
 
-		<section class="hobbies mt-2">
+		<section class="hobbies mt-1">
 			<h2 class="display-1">
 				My hobbies,
 			</h2>
@@ -83,6 +82,8 @@
 import CListGroup from '~/components/ui/CListGroup';
 import CListItem from '~/components/ui/CListItem';
 import CIcon from '~/components/ui/CIcon';
+import CProgress from '~/components/ui/CProgress';
+const values = [95, 90, 95, 95, 95, 90];
 export default {
 	head() {
 		return {
@@ -95,42 +96,53 @@ export default {
 			]
 		};
 	},
+	created() {
+		let intervalId = null;
+		for (let i = 0; i < this.skills.length; i++) {
+			intervalId = setInterval(() => {
+				this.skills[i].percent = values[i];
+			}, 50 * (i * 4 + 1));
+		}
+		this.$once('hook:beforeDestroy', () => {
+			clearInterval(intervalId);
+		});
+	},
 	data() {
 		return {
 			skills: [
 				{
 					name: 'HTML',
-					percent: '95',
-					theme: 'danger',
+					percent: 0,
+					theme: 'negative',
 					icon: 'html'
 				},
 				{
 					name: 'CSS',
-					percent: '90',
+					percent: 0,
 					theme: 'primary',
 					icon: 'css'
 				},
 				{
 					name: 'JavaScript',
-					percent: '95',
-					theme: 'warning',
+					percent: 0,
+					theme: 'info',
 					icon: 'js'
 				},
 				{
 					name: 'Vue',
-					percent: '90',
-					theme: 'success',
+					percent: 0,
+					theme: 'positive',
 					icon: 'vue'
 				},
 				{
 					name: 'Nuxt',
-					percent: '90',
-					theme: 'success',
+					percent: 0,
+					theme: 'positive',
 					icon: 'nuxt'
 				},
 				{
 					name: 'React',
-					percent: '90',
+					percent: 0,
 					theme: 'primary',
 					icon: 'react'
 				}
@@ -140,7 +152,8 @@ export default {
 	components: {
 		CListGroup,
 		CListItem,
-		CIcon
+		CIcon,
+		CProgress
 	}
 };
 </script>
@@ -176,12 +189,6 @@ export default {
 		.skill-name {
 			margin-right: auto;
 		}
-	}
-}
-.progress-wrapper {
-	width: 75%;
-	&:not(:last-child) {
-		margin-bottom: 0;
 	}
 }
 </style>

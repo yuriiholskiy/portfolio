@@ -6,7 +6,10 @@
 		:style="sizes"
 		v-on="$listeners"
 	>
-		<span class="burger-menu-item bg-dark" :class="{ active: active }"></span>
+		<span
+			class="burger-menu-item bg-color-dark"
+			:class="{ active: active }"
+		></span>
 	</button>
 </template>
 
@@ -35,12 +38,16 @@ export default {
 	display: block;
 	position: relative;
 	border-radius: 50%;
+	@include transition(0.3s background-color);
+	&:hover {
+		background-color: var(--secondary-light-color);
+	}
 	&:focus {
 		outline: none;
 	}
 	&:focus,
 	&:active {
-		box-shadow: 0 0 0 0.2rem rgba(map-get($colors, 'light'), 0.5);
+		box-shadow: 0 0 0 0.2rem var(--secondary-color);
 	}
 	&-item,
 	&-item::before,

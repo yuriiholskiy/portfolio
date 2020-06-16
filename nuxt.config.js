@@ -55,15 +55,15 @@ export default {
 		name: 'page-fade',
 		mode: 'out-in'
 	},
-	css: ['~/assets/style.scss'],
+	css: ['~/assets/css/style.scss'],
 	plugins: [
-		'~/plugins/buefy',
+		'~/plugins/global-components',
 		'~/plugins/custom-directives',
 		'~/plugins/iconify'
 	],
 	modules: ['@nuxtjs/style-resources'],
 	styleResources: {
-		scss: '~/assets/_vars.scss'
+		scss: '~/assets/css/helpers.scss'
 	},
 	transpile: ['vue-lazy-hydration'],
 	build: {

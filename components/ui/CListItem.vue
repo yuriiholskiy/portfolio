@@ -1,12 +1,7 @@
 <template>
 	<li
 		class="c-list-item"
-		:class="[
-			themes[theme],
-			{ active: active },
-			{ disabled: disabled },
-			{ flex: flex }
-		]"
+		:class="[{ active: active }, { disabled: disabled }, { flex: flex }]"
 		v-on="$listeners"
 	>
 		<slot></slot>
@@ -21,10 +16,6 @@ export default {
 			type: Boolean,
 			required: false
 		},
-		theme: {
-			type: String,
-			required: false
-		},
 		disabled: {
 			type: Boolean,
 			required: false
@@ -33,19 +24,6 @@ export default {
 			type: Boolean,
 			required: false
 		}
-	},
-	data() {
-		return {
-			themes: {
-				primary: 'c-list-item-primary',
-				secondary: 'c-list-item-secondary',
-				warning: 'c-list-item-warning',
-				danger: 'c-list-item-danger',
-				success: 'c-list-item-success',
-				dark: 'c-list-item-dark',
-				light: 'c-list-item-light'
-			}
-		};
 	}
 };
 </script>
@@ -57,7 +35,8 @@ export default {
 	display: block;
 	padding: 0.75rem 1rem;
 	background-color: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.125);
+	color: var(--light-color);
+	border: 1px solid var(--dark-light-color);
 	transition: 0.3s background-color;
 	display: flex;
 	justify-content: space-between;
@@ -70,14 +49,14 @@ export default {
 		background-color: darken(#fff, 10%);
 	}
 	&.active {
-		background-color: map-get($colors, 'primary');
+		background-color: var(--primary-color);
 		color: #fff;
 		&:hover {
-			background-color: darken(map-get($colors, 'primary'), 10%);
+			background-color: var(--primary-dark-color);
 		}
 	}
 	&.disabled {
-		background-color: darken(#fff, 10%) !important;
+		background-color: var(--light-dark-color) !important;
 		color: #000 !important;
 	}
 	&.flex {
@@ -85,14 +64,62 @@ export default {
 		justify-content: space-between;
 		align-items: center;
 	}
-	@each $key, $val in $colors {
-		&-#{$key} {
-			background-color: $val;
-			color: lighten($val, 40%);
-			&:hover {
-				background-color: darken($val, 10%);
-			}
+	&.is-primary {
+		background-color: var(--primary-color);
+		border-color: var(--light-color);
+		&:hover {
+			background-color: var(--primary-dark-color);
 		}
 	}
+	&.is-secondary {
+		background-color: var(--secondary-color);
+		border-color: var(--light-color);
+		&:hover {
+			background-color: var(--secondary-dark-color);
+		}
+	}
+	&.is-info {
+		background-color: var(--info-color);
+		color: var(--dark-color);
+		&:hover {
+			background-color: var(--info-dark-color);
+		}
+	}
+	&.is-negative {
+		background-color: var(--negative-color);
+		&:hover {
+			background-color: var(--negative-dark-color);
+		}
+	}
+	&.is-positive {
+		background-color: var(--positive-color);
+		&:hover {
+			background-color: var(--positive-dark-color);
+		}
+	}
+	&.is-light {
+		background-color: var(--light-color);
+		color: var(--dark-color);
+		border-color: var(--dark-color);
+		&:hover {
+			background-color: var(--light-light-color);
+		}
+	}
+	&.is-dark {
+		background-color: var(--dark-color);
+		border-color: var(--light-color);
+		&:hover {
+			background-color: var(--dark-light-color);
+		}
+	}
+	// @each $key, $val in $colors {
+	// 	&-#{$key} {
+	// 		background-color: $val;
+	// 		color: lighten($val, 40%);
+	// 		&:hover {
+	// 			background-color: darken($val, 10%);
+	// 		}
+	// 	}
+	// }
 }
 </style>

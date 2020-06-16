@@ -1,14 +1,25 @@
 <template>
-	<b-modal
-		:active="modelValue"
-		:can-cancel="true"
-		scroll="keep"
-		:width="900"
-		animation="modal-fade"
-		@close="$emit('update:modelValue', !modelValue)"
-	>
-		<slot />
-	</b-modal>
+	<transition name="modal-fade">
+		<div class="c-modal-backdrop" v-if="modelValue" @click.self="closeModal">
+			<div class="c-modal">
+				<header class="c-modal-header">
+					<slot name="header">
+						This is the default title!
+					</slot>
+				</header>
+				<section class="c-modal-body">
+					<slot name="body">
+						I'm the default body!
+					</slot>
+				</section>
+				<footer class="c-modal-footer">
+					<slot name="footer">
+						I'm the default footer!
+					</slot>
+				</footer>
+			</div>
+		</div>
+	</transition>
 </template>
 
 <script>
@@ -22,16 +33,100 @@ export default {
 		modelValue: {
 			type: Boolean,
 			required: true
+		},
+		lockScroll: {
+			type: Boolean,
+			deafult: false
+		},
+		cancelOnEscape: {
+			type: Boolean,
+			default: true
+		}
+	},
+	mounted() {
+		if (this.modelValue && this.lockScroll) {
+			document.body.style.overflow = 'hidden';
+		}
+		const handler = ({ code }) => {
+			if (this.cancelOnEscape && code === 'Escape') {
+				this.closeModal();
+			}
+		};
+		document.addEventListener('keydown', handler);
+		this.$once('hook:beforeDestroy', () => {
+			document.removeEventListener('keydown', handler);
+			this.closeModal();
+		});
+	},
+	methods: {
+		closeModal() {
+			this.$emit('update:modelValue', false);
+			document.body.style.overflow = '';
 		}
 	}
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.c-modal-backdrop {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.c-modal {
+	background-color: var(--light-color);
+	overflow-x: auto;
+	display: flex;
+	flex-direction: column;
+	color: var(--dark-color);
+	min-height: 400px;
+	flex-basis: 70%;
+	@media screen and(max-width: map-get($breakpoints, 'tablet')) {
+		flex-basis: 100%;
+	}
+}
+
+.c-modal-body {
+	position: relative;
+	padding: 2rem 4rem;
+	@media screen and (max-width: map-get($breakpoints , 'tablet-small')) {
+		padding: 1rem 1rem 0 1rem;
+	}
+	@media screen and (max-width: map-get($breakpoints , 'phablet')) {
+		max-height: 200px;
+		overflow-y: scroll;
+	}
+}
+.c-modal-header,
+.c-modal-footer {
+	padding: 1rem;
+	display: flex;
+}
+
+.c-modal-header {
+	border-bottom: 1px solid var(--dark-color);
+	justify-content: center;
+}
+
+.c-modal-footer {
+	border-top: 1px solid var(--dark-color);
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-top: auto;
+}
+
 .modal-fade-enter,
 .modal-fade-leave-to {
 	opacity: 0;
-	transform: skewX(8deg);
+	transform: skewX(5deg);
 }
 
 .modal-fade-enter-active,

@@ -1,7 +1,7 @@
 <template>
-	<div class="full-height">
+	<div class="full-height bg-color-light">
 		<app-header />
-		<div class="container px-2">
+		<div class="container">
 			<nuxt />
 		</div>
 	</div>
@@ -25,6 +25,9 @@ export default {
 };
 </script>
 <style lang="scss">
+.container {
+	@include container;
+}
 .pulse {
 	width: 100px;
 	height: 100px;

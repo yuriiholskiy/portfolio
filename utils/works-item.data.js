@@ -1,7 +1,7 @@
 const defaultTechologies = [
 	{
 		name: 'html',
-		theme: 'danger',
+		theme: 'negative',
 		rippleColor: 'red'
 	},
 	{
@@ -11,7 +11,7 @@ const defaultTechologies = [
 	},
 	{
 		name: 'js',
-		theme: 'warning',
+		theme: 'info',
 		rippleColor: 'orange'
 	}
 ];
@@ -25,7 +25,7 @@ export default [
 			...defaultTechologies,
 			{
 				name: 'vue',
-				theme: 'success',
+				theme: 'positive',
 				rippleColor: 'green'
 			}
 		],
@@ -50,7 +50,7 @@ export default [
 			...defaultTechologies,
 			{
 				name: 'vue',
-				theme: 'success',
+				theme: 'positive',
 				rippleColor: 'green'
 			}
 		],
@@ -70,7 +70,7 @@ export default [
 			...defaultTechologies,
 			{
 				name: 'vue',
-				theme: 'success',
+				theme: 'positive',
 				rippleColor: 'green'
 			}
 		],
@@ -94,7 +94,7 @@ export default [
 			...defaultTechologies,
 			{
 				name: 'vue',
-				theme: 'success',
+				theme: 'positive',
 				rippleColor: 'green'
 			}
 		],
@@ -128,7 +128,7 @@ export default [
 			},
 			{
 				name: 'jest',
-				theme: 'warning',
+				theme: 'info',
 				rippleColor: 'orangered'
 			},
 			{

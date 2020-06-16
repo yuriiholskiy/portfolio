@@ -1,0 +1,104 @@
+$cols-count: 12;
+$grid-gap: 30px;
+$grid-gap-one-side: $grid-gap / 2;
+
+@mixin container {
+	max-width: map_get($breakpoints, 'desktop-wide');
+	padding: 0 $grid-gap;
+	margin: 0 auto;
+}
+@mixin row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: $grid-gap-one-side * -1;
+	margin-right: $grid-gap-one-side * -1;
+}
+
+@mixin col {
+	position: relative;
+	max-width: 100%;
+	flex-grow: 1;
+	min-height: 1px;
+	margin-left: $grid-gap-one-side;
+	margin-right: $grid-gap-one-side;
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+@mixin calc-size($size, $offset) {
+	$num: (100% / $cols-count) * $size;
+	flex: 0 0 #{calc(#{$num} - #{$offset})};
+	max-width: #{calc(#{$num} - #{$offset})};
+}
+
+@mixin col-size($size) {
+	@include calc-size($size, $grid-gap);
+}
+@mixin col-lg-size($size) {
+	@media (max-width: map_get($breakpoints, 'tablet-wide')) {
+		@include calc-size($size, $grid-gap);
+	}
+}
+@mixin col-md-size($size) {
+	@media (max-width: map_get($breakpoints, 'tablet')) {
+		@include calc-size($size, $grid-gap);
+	}
+}
+@mixin col-sm-size($size) {
+	@media (max-width: map_get($breakpoints, 'phablet')) {
+		@include calc-size($size, $grid-gap);
+	}
+}
+@mixin col-xs-size($size) {
+	@media (max-width: map_get($breakpoints, 'phone-wide')) {
+		@include calc-size($size, $grid-gap);
+	}
+}
+
+@mixin xs($name, $value) {
+	@media (max-width: map_get($breakpoints, 'phone')) {
+		#{$name}: $value;
+	}
+}
+
+@mixin xs-block() {
+	@media (max-width: map_get($breakpoints, 'phone')) {
+		@content;
+	}
+}
+
+@mixin sm($name, $value) {
+	@media (max-width: map_get($breakpoints, 'phablet')) {
+		#{$name}: $value;
+	}
+}
+
+@mixin sm-block() {
+	@media (max-width: map_get($breakpoints, 'phablet')) {
+		@content;
+	}
+}
+
+@mixin md($name, $value) {
+	@media (max-width: map_get($breakpoints, 'tablet')) {
+		#{$name}: $value;
+	}
+}
+
+@mixin md-block() {
+	@media (max-width: map_get($breakpoints, 'tablet')) {
+		@content;
+	}
+}
+
+@mixin lg($name, $value) {
+	@media (max-width: map_get($breakpoints, 'tablet-wide')) {
+		#{$name}: $value;
+	}
+}
+
+@mixin lg-block() {
+	@media (max-width: map_get($breakpoints, 'tablet-wide')) {
+		@content;
+	}
+}
