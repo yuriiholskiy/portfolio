@@ -28,7 +28,7 @@
 			<h2 class="display-1">
 				My skills,
 			</h2>
-			<c-list-group class="mt-1 mx-auto" max-width="800px">
+			<c-list-group class="mx-auto mt-1" max-width="800px">
 				<c-list-item
 					v-for="({ name, percent, theme, icon }, idx) in skills"
 					:key="name"
@@ -96,7 +96,7 @@ export default {
 			]
 		};
 	},
-	created() {
+	mounted() {
 		const intervalId = setInterval(() => {
 			for (let i = 0; i < this.skills.length; i++) {
 				this.skills[i].percent = values[i];
