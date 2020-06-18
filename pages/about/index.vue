@@ -28,30 +28,7 @@
 			<h2 class="display-1">
 				My skills,
 			</h2>
-			<c-list-group class="mx-auto mt-1" max-width="800px">
-				<c-list-item
-					v-for="({ name, percent, theme, icon }, idx) in skills"
-					:key="name"
-					class="skill-list title-2 is-light"
-					v-ripple="'#46afcc'"
-				>
-					<div class="skill-content">
-						<c-icon
-							:sprite="require('@/assets/icons/sprite.svg')"
-							:name="icon"
-							class="skill-icon"
-						/>
-						<span class="skill-name"> #{{ idx + 1 }} \ {{ name }} </span>
-					</div>
-					<c-progress
-						:size="75"
-						class="mt-md-1"
-						:class="`is-${theme}`"
-						:value="percent"
-						show-value
-					/>
-				</c-list-item>
-			</c-list-group>
+			<about-skill-list />
 		</section>
 
 		<section class="hobbies mt-1">
@@ -79,11 +56,7 @@
 </template>
 
 <script>
-import CListGroup from '~/components/ui/CListGroup';
-import CListItem from '~/components/ui/CListItem';
-import CIcon from '~/components/ui/CIcon';
-import CProgress from '~/components/ui/CProgress';
-const values = [95, 90, 95, 95, 95, 90];
+import AboutSkillList from '~/components/about_component/AboutSkillList';
 export default {
 	head() {
 		return {
@@ -96,63 +69,8 @@ export default {
 			]
 		};
 	},
-	mounted() {
-		const intervalId = setInterval(() => {
-			for (let i = 0; i < this.skills.length; i++) {
-				this.skills[i].percent = values[i];
-			}
-		}, 150);
-		this.$once('hook:beforeDestroy', () => {
-			clearInterval(intervalId);
-		});
-	},
-	data() {
-		return {
-			skills: [
-				{
-					name: 'HTML',
-					percent: 0,
-					theme: 'negative',
-					icon: 'html'
-				},
-				{
-					name: 'CSS',
-					percent: 0,
-					theme: 'primary',
-					icon: 'css'
-				},
-				{
-					name: 'JavaScript',
-					percent: 0,
-					theme: 'info',
-					icon: 'js'
-				},
-				{
-					name: 'Vue',
-					percent: 0,
-					theme: 'positive',
-					icon: 'vue'
-				},
-				{
-					name: 'Nuxt',
-					percent: 0,
-					theme: 'positive',
-					icon: 'nuxt'
-				},
-				{
-					name: 'React',
-					percent: 0,
-					theme: 'primary',
-					icon: 'react'
-				}
-			]
-		};
-	},
 	components: {
-		CListGroup,
-		CListItem,
-		CIcon,
-		CProgress
+		AboutSkillList
 	}
 };
 </script>
@@ -165,29 +83,6 @@ export default {
 	@media screen and (min-width: map-get($breakpoints, 'phone')) {
 		max-width: 50rem;
 		margin: 1rem auto 0 auto;
-	}
-}
-.skill-list {
-	display: flex;
-	flex-direction: column;
-	.skill-content {
-		display: flex;
-		align-items: center;
-	}
-	.skill-icon {
-		margin-right: 0.5rem;
-	}
-	.skill-name {
-		margin-right: 0;
-	}
-	@media screen and (min-width: map-get($breakpoints, 'tablet')) {
-		flex-direction: row;
-		.skill-icon {
-			margin-right: 0.5rem;
-		}
-		.skill-name {
-			margin-right: auto;
-		}
 	}
 }
 </style>

@@ -112,14 +112,5 @@ export default {
 			background-color: var(--dark-light-color);
 		}
 	}
-	// @each $key, $val in $colors {
-	// 	&-#{$key} {
-	// 		background-color: $val;
-	// 		color: lighten($val, 40%);
-	// 		&:hover {
-	// 			background-color: darken($val, 10%);
-	// 		}
-	// 	}
-	// }
 }
 </style>

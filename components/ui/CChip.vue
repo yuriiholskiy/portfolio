@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import CIcon from '~/components/ui/CIcon';
 export default {
 	name: 'CChip',
 	props: {
@@ -35,9 +34,6 @@ export default {
 			type: Boolean,
 			default: false
 		}
-	},
-	components: {
-		CIcon
 	}
 };
 </script>

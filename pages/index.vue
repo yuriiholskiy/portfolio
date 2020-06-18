@@ -23,25 +23,7 @@
 				</c-button>
 			</div>
 		</div>
-
-		<div class="mt-1 text-color-secondary text-center">
-			<h2 class="display">Links that You might be interesting:</h2>
-			<div class="buttons jcc mt-1 title-2">
-				<c-button
-					tag="a"
-					v-for="(link, index) in links"
-					class="is-primary"
-					:class="{ 'mt-xs-1': index === linksLength }"
-					:key="link.id"
-					:href="link.url"
-					target="_blank"
-					rel="noopener"
-					aria-label="External link"
-				>
-					{{ link.name }}
-				</c-button>
-			</div>
-		</div>
+		<index-useful-links />
 		<p class="title-2 text-center mt-4 mt-sm-2">
 			<strong>All rights reserved {{ new Date().toLocaleString() }}</strong>
 		</p>
@@ -49,38 +31,10 @@
 </template>
 
 <script>
-import { uuid } from '~/utils/helpers';
+import IndexUsefulLinks from '~/components/index_components/IndexUsefulLinks';
 export default {
-	data() {
-		return {
-			links: [
-				{
-					name: 'Codepen',
-					url: 'https://codepen.io/erety',
-					id: uuid()
-				},
-				{
-					name: 'Facebook',
-					url: 'https://facebook.com/yuriiholskiy',
-					id: uuid()
-				},
-				{
-					name: 'Github',
-					url: 'https://github.com/yuriiholskiy',
-					id: uuid()
-				},
-				{
-					name: 'LinkedIn',
-					url: 'https://www.linkedin.com/in/yurii-golskyi-322376194/',
-					id: uuid()
-				}
-			]
-		};
-	},
-	computed: {
-		linksLength() {
-			return this.links.length - 1;
-		}
+	components: {
+		IndexUsefulLinks
 	}
 };
 </script>

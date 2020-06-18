@@ -109,10 +109,10 @@ export default {
 	color: #555;
 	box-shadow: 0 0 3px 0 #aaa;
 	background-color: var(--dark-color, '#666');
-	transition: 0.15s box-shadow;
+	transition: 0.15s box-shadow, 0.3s transform;
 	color: var(--light-color);
 	&:hover {
-		box-shadow: 0 0 5px 0 #777;
+		box-shadow: 0 0 5px 0 var(--info-color);
 	}
 }
 

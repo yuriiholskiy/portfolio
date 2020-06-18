@@ -18,51 +18,16 @@
 						<h4 class="created-by-title mt-2 text-color-light hide-sm-and-down">
 							Used techonologies:
 						</h4>
-						<div class="mt-half df aic fww acsa hide-sm-and-down">
-							<c-chip
-								v-for="{ name, theme, rippleColor } in item.chips.slice(
-									0,
-									item.chipsCountShow
-								)"
-								:key="name"
-								:icon-name="name"
-								v-ripple="rippleColor"
-								class="mt-half"
-								:class="`is-${theme}`"
-							>
-								{{ name }}
-							</c-chip>
-							<c-button
-								title="Show all techonologies"
-								class="is-info is-rounded is-small mt-half"
-								v-if="item.chips.length > item.chipsCountShow"
-								@click="showAllChips(item.chips, index)"
-							>
-								...
-							</c-button>
-						</div>
+						<works-technology
+							:item="item"
+							@show-all-chips="showAllChips(item.chips, index)"
+						/>
 					</template>
 					<template #action>
-						<div class="buttons mt-1">
-							<c-button
-								class="is-info"
-								type="button"
-								@click.prevent="showDetails(item)"
-							>
-								Show more
-							</c-button>
-							<c-button
-								tag="a"
-								v-for="{ name, to } in item.links"
-								:key="to"
-								class="is-primary hide-sm-and-down"
-								target="_blank"
-								rel="noopener"
-								:href="to"
-							>
-								{{ name }}
-							</c-button>
-						</div>
+						<works-useful-links
+							:links="item.links"
+							@show-details="showDetails(item)"
+						/>
 					</template>
 				</c-card>
 			</div>
@@ -107,8 +72,9 @@
 
 <script>
 import CCard from '~/components/ui/CCard';
-import CChip from '~/components/ui/CChip';
 import CModal from '~/components/ui/CModal';
+import WorksTechnology from '~/components/works_component/WorksTechnology';
+import WorksUsefulLinks from '~/components/works_component/WorksUsefulLinks';
 import worksData from '~/utils/works-item.data';
 
 export default {
@@ -144,8 +110,9 @@ export default {
 	},
 	components: {
 		CCard,
-		CChip,
-		CModal
+		CModal,
+		WorksTechnology,
+		WorksUsefulLinks
 	}
 };
 </script>
