@@ -112,7 +112,8 @@ export default [
 	},
 	{
 		title: 'Defibrillator app',
-		description: 'Defibrillators app',
+		description:
+			'Defibrillators app, this is a volunteer health care project. We are developing a service that could help people to find the nearest place with defibrillator.',
 		imageSrc: require('~/assets/images/def-app.jpg'),
 		chips: [
 			...defaultTechologies,

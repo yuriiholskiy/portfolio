@@ -4,14 +4,10 @@
 		<div class="buttons jcc mt-1 title-2">
 			<c-button
 				tag="a"
-				v-for="(link, index) in links"
+				v-for="link in links"
 				class="is-primary"
-				:class="{ 'mt-xs-1': index === links.length - 1 }"
 				:key="link.name"
 				:href="link.url"
-				target="_blank"
-				rel="noopener"
-				aria-label="External link"
 			>
 				{{ link.name }}
 			</c-button>
@@ -26,10 +22,6 @@ export default {
 	data() {
 		return {
 			links: [
-				{
-					name: 'Codepen',
-					url: 'https://codepen.io/erety'
-				},
 				{
 					name: 'Facebook',
 					url: 'https://facebook.com/yuriiholskiy'

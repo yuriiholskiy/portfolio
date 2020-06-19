@@ -21,6 +21,13 @@
 					knowledge, become a part of a cool team, program and develop both
 					personally and with team.
 				</p>
+				<c-button
+					tag="a"
+					href="https://github.com/yuriiholskiy/Lv-469.node/blob/master/cv/YuriiHolskyiCV.pdf"
+					class="is-primary mt-1"
+				>
+					Link to cv
+				</c-button>
 			</div>
 		</section>
 

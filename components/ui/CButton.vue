@@ -3,7 +3,7 @@
 		:is="tag"
 		class="c-button"
 		v-on="$listeners"
-		v-bind="$attrs"
+		v-bind="linkAttrs"
 		:to="to"
 	>
 		<slot />
@@ -21,6 +21,22 @@ export default {
 		to: {
 			type: [String, Object],
 			required: false
+		}
+	},
+	computed: {
+		linkAttrs() {
+			const isLink = this.tag === 'a';
+			const extLinkAttrs = isLink
+				? {
+						target: '_blank',
+						rel: 'noopener',
+						'aria-label': 'External link'
+				  }
+				: null;
+			return {
+				...this.$attrs,
+				...extLinkAttrs
+			};
 		}
 	}
 };

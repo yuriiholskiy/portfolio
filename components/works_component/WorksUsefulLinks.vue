@@ -8,8 +8,6 @@
 			v-for="{ name, to } in links"
 			:key="to"
 			class="is-primary hide-sm-and-down"
-			target="_blank"
-			rel="noopener"
 			:href="to"
 		>
 			{{ name }}

@@ -6,7 +6,7 @@
 		<c-input
 			type="text"
 			placeholder="search by title ('/' to focus)"
-			v-model="searchData"
+			v-model.trim="searchData"
 			ref="search-input"
 		/>
 
@@ -21,7 +21,7 @@
 						{{ item.title }}
 					</template>
 					<template #description>
-						{{ item.description.slice(0, 40) }} ...
+						<span> {{ item.description.slice(0, 40).trim() }}... </span>
 						<h4 class="created-by-title mt-2 text-color-light hide-sm-and-down">
 							Used techonologies:
 						</h4>
