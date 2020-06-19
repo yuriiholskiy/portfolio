@@ -13,7 +13,7 @@ export default {
 	},
 	rootDir: __dirname,
 	head: {
-		title: 'Yurii Golskyi portfolio',
+		titleTemplate: '%s - Yurii Holskyi portfolio',
 		htmlAttrs: {
 			lang: 'en'
 		},
@@ -40,11 +40,21 @@ export default {
 				hid: 'keyword',
 				name: 'keyword',
 				content:
-					'Yurii Golskyi, Yurii Golskyi Portfolio, Portfolio, Frontend, Frond-end developer, HTML, CSS, Github, JavaScript, Vue, Nuxt'
+					'Yurii Holskyi, Yurii Holskyi Portfolio, Portfolio, Frontend, Frond-end developer, HTML, CSS, Github, JavaScript, Vue, Nuxt, React'
 			},
 			{
 				hid: 'url',
 				name: 'url',
+				content: 'https://yuriiholskiy.github.io/portfolio/'
+			},
+			{
+				hid: 'og:type',
+				property: 'og:type',
+				content: 'website'
+			},
+			{
+				hid: 'og:url',
+				property: 'og:url',
 				content: 'https://yuriiholskiy.github.io/portfolio/'
 			}
 		],

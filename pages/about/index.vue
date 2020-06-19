@@ -60,11 +60,23 @@ import AboutSkillList from '~/components/about_component/AboutSkillList';
 export default {
 	head() {
 		return {
+			title: 'About me',
 			meta: [
 				{
 					hid: 'description',
 					name: 'description',
 					content: 'A few words about me, my education, skills and hobbies'
+				},
+				{
+					hid: 'og:title',
+					property: 'og:title',
+					content: 'About me'
+				},
+				{
+					hid: 'og:description',
+					property: 'og:description',
+					content:
+						'I am Front-end developer. My future I see in IT speciality. I am interested in new technologies. Quickly find a common language with people, easily join the new team. Love to work in team and teach new things from other people. Like to look for non-standart ways for solving differents task. My "personal motivators" is: family and friends; My "energy fillers" is: listen to music and doing sports.'
 				}
 			]
 		};

@@ -3,10 +3,17 @@
 		<h2 class="display-1">
 			My works,
 		</h2>
-		<div class="row">
+		<c-input
+			type="text"
+			placeholder="search by title ('/' to focus)"
+			v-model="searchData"
+			ref="search-input"
+		/>
+
+		<transition-group tag="div" name="work-card" class="row" appear>
 			<div
-				class="column mt-1"
-				v-for="(item, index) in worksData"
+				class="column mt-1 work-card-item"
+				v-for="(item, index) in filteredWorksData"
 				:key="item.title"
 			>
 				<c-card action max-width="50">
@@ -31,7 +38,7 @@
 					</template>
 				</c-card>
 			</div>
-		</div>
+		</transition-group>
 		<c-modal v-model="isModalActive" class="px-1" :lock-scroll="true">
 			<template #header>
 				<h3 class="title-1 text-center">
@@ -86,6 +93,16 @@ export default {
 					hid: 'description',
 					name: 'description',
 					content: 'This is my portfolio works page'
+				},
+				{
+					hid: 'og:title',
+					property: 'og:title',
+					content: 'My works'
+				},
+				{
+					hid: 'og:description',
+					property: 'og:description',
+					content: 'My portfolio works'
 				}
 			]
 		};
@@ -93,9 +110,21 @@ export default {
 	data() {
 		return {
 			worksData,
+			searchData: '',
 			isModalActive: false,
 			activeItem: {}
 		};
+	},
+	mounted() {
+		const handler = e => {
+			if (e.key === '/') {
+				this.$refs['search-input'].$refs.input.focus();
+			}
+		};
+		document.addEventListener('keyup', handler);
+		this.$once('hook:beforeDestroy', () => {
+			document.removeEventListener('keyup', handler);
+		});
 	},
 	methods: {
 		showAllChips(chips, index) {
@@ -108,6 +137,21 @@ export default {
 			this.isModalActive = true;
 		}
 	},
+	computed: {
+		filteredWorksData() {
+			// by chips
+			// return this.worksData.filter(
+			// 	w =>
+			// 		w.chips.filter(c =>
+			// 			c.name.toLowerCase().includes(this.searchData.toLowerCase())
+			// 		).length > 0
+			// );
+			// by title
+			return this.worksData.filter(w =>
+				w.title.toLowerCase().includes(this.searchData.toLowerCase())
+			);
+		}
+	},
 	components: {
 		CCard,
 		CModal,
@@ -118,6 +162,19 @@ export default {
 </script>
 
 <style lang="scss">
+.work-card-leave-active {
+	width: 100%;
+	// for smooth moving when enter transition
+	position: absolute !important;
+}
+.work-card-enter,
+.work-card-leave-to {
+	opacity: 0;
+	transform: translateY(10px);
+}
+.work-card-item {
+	transition: transform 0.7s ease-out, opacity 0.7s ease-in-out;
+}
 .fit {
 	object-fit: cover;
 }

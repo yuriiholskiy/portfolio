@@ -1,5 +1,11 @@
 <template>
-	<component :is="tag" class="c-button" v-on="$listeners" v-bind="$attrs">
+	<component
+		:is="tag"
+		class="c-button"
+		v-on="$listeners"
+		v-bind="$attrs"
+		:to="to"
+	>
 		<slot />
 	</component>
 </template>
@@ -11,6 +17,10 @@ export default {
 		tag: {
 			type: String,
 			default: 'button'
+		},
+		to: {
+			type: [String, Object],
+			required: false
 		}
 	}
 };

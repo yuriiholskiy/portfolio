@@ -8,6 +8,7 @@ $grid-gap-one-side: $grid-gap / 2;
 	margin: 0 auto;
 }
 @mixin row {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: $grid-gap-one-side * -1;

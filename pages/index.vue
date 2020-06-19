@@ -33,6 +33,29 @@
 <script>
 import IndexUsefulLinks from '~/components/index_components/IndexUsefulLinks';
 export default {
+	head() {
+		return {
+			title: 'Home',
+			meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: 'Home page and useful links'
+				},
+				{
+					hid: 'og:title',
+					property: 'og:title',
+					content: 'Yurii Golskyi, more than developer.'
+				},
+				{
+					hid: 'og:description',
+					property: 'og:description',
+					content:
+						'I am frontend developer, physicist, thinker, philosopher. I like creating frontend apps, and I find happiness in being a better me today than the me yesterday.'
+				}
+			]
+		};
+	},
 	components: {
 		IndexUsefulLinks
 	}
