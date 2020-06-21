@@ -8,8 +8,7 @@ export default {
 		modern: 'client'
 	}),
 	router: {
-		base,
-		trailingSlash: true
+		base
 	},
 	rootDir: __dirname,
 	head: {
@@ -45,7 +44,7 @@ export default {
 			{
 				hid: 'url',
 				name: 'url',
-				content: 'https://yuriiholskiy.github.io/portfolio/'
+				content: 'https://yuriiholskiy.github.io/portfolio'
 			},
 			{
 				hid: 'og:type',
@@ -55,7 +54,7 @@ export default {
 			{
 				hid: 'og:url',
 				property: 'og:url',
-				content: 'https://yuriiholskiy.github.io/portfolio/'
+				content: 'https://yuriiholskiy.github.io/portfolio'
 			}
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: base + 'favicon.ico' }]
@@ -71,6 +70,14 @@ export default {
 		'~/plugins/custom-directives',
 		'~/plugins/iconify'
 	],
+	buildModules: ['@nuxt/content'],
+	content: {
+		markdown: {
+			prism: {
+				theme: '~node_modules/prismjs/themes/prism-tomorrow.css'
+			}
+		}
+	},
 	modules: ['@nuxtjs/style-resources'],
 	styleResources: {
 		scss: '~/assets/css/helpers.scss'

@@ -46,7 +46,6 @@ export default {
 .c-button {
 	position: relative;
 	min-width: 66px;
-	vertical-align: middle;
 	display: inline-flex;
 	flex: 0 0 auto;
 	align-items: center;

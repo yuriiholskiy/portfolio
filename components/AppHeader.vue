@@ -53,6 +53,10 @@ export default {
 				{
 					name: 'Works',
 					path: 'works'
+				},
+				{
+					name: 'Blog',
+					path: 'blog'
 				}
 			]
 		};

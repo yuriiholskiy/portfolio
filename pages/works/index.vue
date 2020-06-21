@@ -78,7 +78,6 @@
 </template>
 
 <script>
-import CCard from '~/components/ui/CCard';
 import CModal from '~/components/ui/CModal';
 import WorksTechnology from '~/components/works_component/WorksTechnology';
 import WorksUsefulLinks from '~/components/works_component/WorksUsefulLinks';
