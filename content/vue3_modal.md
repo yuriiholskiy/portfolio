@@ -8,7 +8,7 @@ title: 'Build a modal component with Vue 3'
 	<code class="language-js">Teleport</code> component. So, let's start.
 </p>
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#setting-up-the-project">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_modal#setting-up-the-project">
 		#
 	</a>
 	Setting up the project
@@ -45,7 +45,7 @@ title: 'Build a modal component with Vue 3'
 
 <p>In this case I use webpack setup.</p>
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#project-files-overview">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_modal#project-files-overview">
 		#
 	</a>
 	Project files overview
@@ -127,7 +127,7 @@ export default {
 </section>
 
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#modal-component">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_modal#modal-component">
 		#
 	</a>
 	Create modal component
@@ -229,7 +229,7 @@ export default {
 </section>
 
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#teleport-component">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_modal#teleport-component">
 		#
 	</a>
 	Teleport component
@@ -301,7 +301,7 @@ export default {
 </section>
 
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#conclusions">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_modal#conclusions">
 		#
 	</a>
 	Conclusions
