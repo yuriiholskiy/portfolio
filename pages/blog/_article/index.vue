@@ -1,6 +1,6 @@
 <template>
 	<section class="section-wrap">
-		<h2 class="title-1 text-center">
+		<h2 class="py-1 title-1 text-center">
 			{{ doc.title }}
 		</h2>
 		<nuxt-content class="mt-2" :document="doc" />
@@ -9,9 +9,37 @@
 
 <script>
 export default {
-	async asyncData({ $content, params }) {
-		const doc = await $content(params.article || 'index').fetch();
-		// console.log(doc);
+	head() {
+		return {
+			title: this.doc.title,
+			meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content:
+						'This article about building modal component using Vue 3 composition api and also work with built-in Teleport component.'
+				},
+				{
+					hid: 'og:title',
+					property: 'og:title',
+					content: this.doc.title
+				},
+				{
+					hid: 'og:description',
+					property: 'og:description',
+					content:
+						'This article about building modal component using Vue 3 composition api and also work with built-in Teleport component.'
+				}
+			]
+		};
+	},
+	async asyncData({ $content, params, error }) {
+		let doc;
+		try {
+			doc = await $content(params.article || 'index').fetch();
+		} catch {
+			error({ statusCode: 404, message: 'Article not found' });
+		}
 		return {
 			doc
 		};

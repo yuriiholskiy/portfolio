@@ -13,13 +13,18 @@
 		</p>
 
 		<div class="mt-4 mt-sm-2 text-color-secondary text-center">
-			<h2 class="display">Want to read about me? Or check my works?</h2>
+			<h2 class="display">
+				Want to read about me? Or check my works? Or read my articles?
+			</h2>
 			<div class="buttons jcc mt-1 mt-sm-1 title-2">
 				<c-button tag="nuxt-link" class="is-primary" :to="{ name: 'about' }">
 					About
 				</c-button>
 				<c-button tag="nuxt-link" class="is-primary" :to="{ name: 'works' }">
 					Works
+				</c-button>
+				<c-button tag="nuxt-link" class="is-primary" :to="{ name: 'blog' }">
+					Blog
 				</c-button>
 			</div>
 		</div>

@@ -25,6 +25,28 @@
 
 <script>
 export default {
+	head() {
+		return {
+			title: 'Blog',
+			meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: 'This is article blog page'
+				},
+				{
+					hid: 'og:title',
+					property: 'og:title',
+					content: 'Article blog'
+				},
+				{
+					hid: 'og:description',
+					property: 'og:description',
+					content: 'This is article blog page'
+				}
+			]
+		};
+	},
 	data() {
 		return {
 			articles: [
@@ -39,13 +61,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-.row {
-	@include row;
-	@include md(justify-content, center);
-}
-.column {
-	@include responsive-col(6, 12, 12, 12);
-}
-</style>

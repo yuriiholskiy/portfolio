@@ -1,15 +1,14 @@
 <template>
 	<div class="error">
 		<p class="error-text text-center">
-			Sorry, we have error there.
-			<span>Looks like this page doesn't exist.</span>
+			{{ error.message }}
 		</p>
 		<img
 			src="~/assets/icons/error-icon.svg"
 			alt="Error icon"
 			class="mt-2 error-icon"
 		/>
-		<c-button tag="nuxt-link" :to="{ name: 'index' }" class="is-positive mt-2">
+		<c-button tag="nuxt-link" :to="{ name: 'index' }" class="is-negative mt-2">
 			Back to home
 		</c-button>
 	</div>
@@ -17,7 +16,18 @@
 
 <script>
 export default {
-	layout: 'error-layout'
+	layout: 'error-layout',
+	props: {
+		error: {
+			type: Object,
+			required: true
+		}
+	},
+	head() {
+		return {
+			title: this.error.message
+		};
+	}
 };
 </script>
 

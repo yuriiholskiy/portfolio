@@ -12,7 +12,6 @@ export default {
 	},
 	rootDir: __dirname,
 	head: {
-		titleTemplate: '%s - Yurii Holskyi portfolio',
 		htmlAttrs: {
 			lang: 'en'
 		},

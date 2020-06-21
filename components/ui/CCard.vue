@@ -20,8 +20,8 @@ export default {
 			default: false
 		},
 		ripple: {
-			type: Boolean,
-			default: false
+			type: String,
+			default: ''
 		}
 	},
 	render(h, { data, props, slots, listeners }) {
@@ -83,7 +83,7 @@ export default {
 					? [
 							{
 								name: 'ripple',
-								value: bgColor
+								value: ripple
 							}
 					  ]
 					: null,

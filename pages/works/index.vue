@@ -179,11 +179,4 @@ export default {
 .created-by-title {
 	font-weight: 800;
 }
-.row {
-	@include row;
-	@include md(justify-content, center);
-}
-.column {
-	@include responsive-col(6, 12, 12, 12);
-}
 </style>
