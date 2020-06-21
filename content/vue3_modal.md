@@ -1,14 +1,14 @@
 ---
-title: 'Build a modal component with Vue 3 Teleport'
+title: 'Build a modal component with Vue 3'
 ---
 
 <p>
  In this article we build modal component using Vue 3
-	<code class="language-js">v-model</code> and
+	<code class="language-js">v-model</code> and also work with built-in
 	<code class="language-js">Teleport</code> component. So, let's start.
 </p>
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="http://yuriiholskiy.github.io/portfolio/blog/vue_teleport#setting-up-the-project">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#setting-up-the-project">
 		#
 	</a>
 	Setting up the project
@@ -20,8 +20,8 @@ title: 'Build a modal component with Vue 3 Teleport'
 			tag="a"
 			class="is-primary is-small"
 			href="https://github.com/vuejs/vue-next-webpack-preview"
-		>Vue next
-		</c-button> or You can use experimental
+		>Vue next</c-button> 
+		or You can use experimental
 		<c-button
 			tag="a"
 			class="is-primary is-small"
@@ -45,7 +45,7 @@ title: 'Build a modal component with Vue 3 Teleport'
 
 <p>In this case I use webpack setup.</p>
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="http://yuriiholskiy.github.io/portfolio/blog/vue_teleport#project-files-overview">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#project-files-overview">
 		#
 	</a>
 	Project files overview
@@ -127,7 +127,7 @@ export default {
 </section>
 
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="http://yuriiholskiy.github.io/portfolio/blog/vue_teleport#modal-component">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#modal-component">
 		#
 	</a>
 	Create modal component
@@ -229,7 +229,7 @@ export default {
 </section>
 
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="http://yuriiholskiy.github.io/portfolio/blog/vue_teleport#teleport-component">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#teleport-component">
 		#
 	</a>
 	Teleport component
@@ -292,7 +292,7 @@ export default {
 ```
 
 <p>Here we have a teleport component and content that need to be teleported passed via slots.</p>
-<p>For teleport component we have a required prop "<strong>to</strong>" that accepted a selector (i.e. id, class, etc.)</p>
+<p>For teleport component we have a required prop "<strong>to</strong>" that accepted a valid CSS selector (i.e. id, class, etc.)</p>
 
 <p class="mt-1">And voila, our modal component rendered in <code class="language-js">&lt;div class="modal"&gt;&lt;/div&gt;</code></p>
 
@@ -301,7 +301,7 @@ export default {
 </section>
 
 <h3 class="title-1 mt-2 text-color-primary">
-	<a href="http://yuriiholskiy.github.io/portfolio/blog/vue_teleport#conclusions">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue_teleport#conclusions">
 		#
 	</a>
 	Conclusions

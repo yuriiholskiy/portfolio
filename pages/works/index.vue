@@ -152,7 +152,6 @@ export default {
 		}
 	},
 	components: {
-		CCard,
 		CModal,
 		WorksTechnology,
 		WorksUsefulLinks
