@@ -1,5 +1,6 @@
 ---
-title: 'Build a modal component with Vue 3'
+title: Build a modal component with Vue 3
+description: This article about building modal component using Vue 3 composition api and also work with Teleport component
 ---
 
 <p>
@@ -15,7 +16,7 @@ title: 'Build a modal component with Vue 3'
 </h3>
 <section id="setting-up-the-project">
 	<p class="mt-half">
-		To create a project I use this minimal webpack setup for Vue 3 (beta) 
+		To create a project I used this minimal webpack setup for Vue 3 (beta) 
 		<c-button
 			tag="a"
 			class="is-primary is-small"

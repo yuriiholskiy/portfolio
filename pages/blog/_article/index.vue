@@ -16,8 +16,7 @@ export default {
 				{
 					hid: 'description',
 					name: 'description',
-					content:
-						'This article about building modal component using Vue 3 composition api and also work with built-in Teleport component.'
+					content: this.doc.description
 				},
 				{
 					hid: 'og:title',
@@ -27,8 +26,7 @@ export default {
 				{
 					hid: 'og:description',
 					property: 'og:description',
-					content:
-						'This article about building modal component using Vue 3 composition api and also work with built-in Teleport component.'
+					content: this.doc.description
 				}
 			]
 		};
