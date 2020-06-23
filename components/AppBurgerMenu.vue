@@ -1,7 +1,7 @@
 <template>
 	<button
 		type="button"
-		aria-label="burger-menu"
+		aria-label="Open sidebar"
 		class="burger-menu"
 		:style="sizes"
 		v-on="$listeners"

@@ -7,11 +7,11 @@
 					Navigation
 				</h3>
 				<c-button
-					tag="a"
+					tag="nuxt-link"
+					:to="{ name: link.path }"
 					v-for="link in menuLinks"
 					:key="link.path"
 					class="mt-1 is-primary db is-big"
-					@click="goTo(link.path)"
 				>
 					{{ link.name }}
 				</c-button>
@@ -39,10 +39,9 @@ export default {
 			required: true
 		}
 	},
-	methods: {
-		goTo(name) {
+	watch: {
+		'$route.fullPath'() {
 			this.$emit('update:drawer', false);
-			this.$router.push({ name });
 		}
 	},
 	components: {

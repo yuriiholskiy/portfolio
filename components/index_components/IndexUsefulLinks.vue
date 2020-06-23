@@ -5,10 +5,12 @@
 			<c-button
 				tag="a"
 				v-for="link in links"
+				:aria-label="link.name"
 				class="is-primary"
 				:key="link.name"
 				:href="link.url"
 			>
+				🚀
 				{{ link.name }}
 			</c-button>
 		</div>

@@ -23,10 +23,11 @@
 				</p>
 				<c-button
 					tag="a"
+					aria-label="Link to CV"
 					href="https://github.com/yuriiholskiy/Lv-469.node/blob/master/cv/YuriiHolskyiCV.pdf"
 					class="is-primary mt-1"
 				>
-					Link to cv
+					Link to CV
 				</c-button>
 			</div>
 		</section>

@@ -13,8 +13,13 @@
 						<span> {{ article.description.slice(0, 40).trim() }}... </span>
 					</template>
 					<template #action>
-						<c-button tag="nuxt-link" class="is-info mt-1" :to="article.path">
-							Read
+						<c-button
+							tag="nuxt-link"
+							:aria-label="article.title"
+							class="is-info mt-1"
+							:to="article.path"
+						>
+							👓 Read
 						</c-button>
 					</template>
 				</c-card>

@@ -29,8 +29,7 @@ export default {
 			const extLinkAttrs = isLink
 				? {
 						target: '_blank',
-						rel: 'noopener',
-						'aria-label': 'External link'
+						rel: 'noopener'
 				  }
 				: null;
 			return {
