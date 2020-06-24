@@ -1,6 +1,6 @@
 <template>
 	<section class="section-wrap">
-		<h2 class="py-1 title-1 text-center">
+		<h2 class="py-1 title-1 text-center text-color-dark">
 			{{ doc.title }}
 		</h2>
 		<nuxt-content class="mt-2" :document="doc" />
