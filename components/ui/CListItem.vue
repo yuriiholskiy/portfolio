@@ -98,11 +98,11 @@ export default {
 		}
 	}
 	&.is-light {
-		background-color: var(--light-color);
-		color: var(--dark-color);
-		border-color: var(--dark-color);
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		border-color: var(--text-secondary-color);
 		&:hover {
-			background-color: var(--light-light-color);
+			background-color: var(--bg-secondary-color);
 		}
 	}
 	&.is-dark {

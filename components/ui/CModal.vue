@@ -90,11 +90,11 @@ export default {
 }
 
 .c-modal {
-	background-color: var(--light-color);
+	background-color: var(--bg-color);
 	overflow-x: auto;
 	display: flex;
 	flex-direction: column;
-	color: var(--dark-color);
+	color: var(--text-color);
 	max-height: 650px;
 	flex-basis: 70%;
 	@media screen and(max-width: map-get($breakpoints, 'tablet')) {

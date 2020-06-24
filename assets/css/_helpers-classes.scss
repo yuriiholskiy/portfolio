@@ -306,6 +306,7 @@
 }
 .display-1 {
 	font-size: calc(2vmin + 2rem);
+	color: var(--text-color-secondary);
 }
 .display-2 {
 	font-size: calc(2vmin + 1.5rem);
@@ -352,7 +353,7 @@
 	color: var(--light-color);
 }
 .text-color-dark {
-	color: var(--dark-color);
+	color: var(--text-color);
 }
 .text-color-light-dark {
 	color: var(--dark-color-light);
@@ -361,7 +362,7 @@
 	color: var(--info-color);
 }
 .text-color-secondary {
-	color: var(--secondary-color);
+	color: var(--text-color-secondary);
 }
 .text-color-primary {
 	color: var(--primary-color);

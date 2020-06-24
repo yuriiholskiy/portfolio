@@ -1,5 +1,5 @@
 <template>
-	<div class="full-height bg-color-light">
+	<div class="full-height app">
 		<app-header />
 		<div class="container">
 			<nuxt />
@@ -46,5 +46,9 @@ export default {
 		transform: scale(2);
 		opacity: 0;
 	}
+}
+.app {
+	background-color: var(--bg-color);
+	transition: 0.3s color, 0.3s background-color ease;
 }
 </style>

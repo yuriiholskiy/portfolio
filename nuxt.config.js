@@ -69,7 +69,10 @@ export default {
 		'~/plugins/custom-directives',
 		'~/plugins/iconify'
 	],
-	buildModules: ['@nuxt/content'],
+	buildModules: ['@nuxt/content', '@nuxtjs/color-mode'],
+	colorMode: {
+		preference: 'dark'
+	},
 	content: {
 		markdown: {
 			prism: {

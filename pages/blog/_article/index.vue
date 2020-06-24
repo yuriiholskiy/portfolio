@@ -49,6 +49,7 @@ export default {
 .nuxt-content {
 	max-width: 65rem;
 	margin: 1rem auto 0;
+	color: var(--text-color);
 	code {
 		font-size: 1.2rem;
 	}

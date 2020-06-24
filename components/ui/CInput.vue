@@ -41,17 +41,12 @@ export default {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: #495057;
-	background-color: #fff;
+	color: var(--text-color);
+	background-color: var(--bg-color);
 	margin-bottom: 1px;
-	border: 1px solid #ced4da;
+	border: 1px solid var(--text-color-secondary);
 	border-radius: 0.25rem;
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	&:valid {
-		border-color: #749c75;
-	}
-	&:invalid {
-		border-color: #dc3545;
-	}
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+		background-color 0.3s;
 }
 </style>

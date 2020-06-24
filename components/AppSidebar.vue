@@ -1,9 +1,9 @@
 <template>
 	<div class="sidebar">
 		<c-overlay :is-open="drawer" @click.self="$emit('update:drawer', false)" />
-		<c-nav-drawer v-model="drawer" class="bg-color-dark text-color-light">
+		<c-nav-drawer v-model="drawer">
 			<div class="full-width text-center mt-2 px-1">
-				<h3 class="title-1 text-color-light">
+				<h3 class="title-1">
 					Navigation
 				</h3>
 				<c-button
@@ -14,6 +14,9 @@
 					class="mt-1 is-primary db is-big"
 				>
 					{{ link.name }}
+				</c-button>
+				<c-button class="is-info mt-2" @click="changeTheme">
+					Change theme ({{ $colorMode.preference }})
 				</c-button>
 			</div>
 		</c-nav-drawer>
@@ -42,6 +45,15 @@ export default {
 	watch: {
 		'$route.fullPath'() {
 			this.$emit('update:drawer', false);
+		}
+	},
+	methods: {
+		changeTheme() {
+			if (this.$colorMode.preference === 'light') {
+				this.$colorMode.preference = 'dark';
+			} else {
+				this.$colorMode.preference = 'light';
+			}
 		}
 	},
 	components: {

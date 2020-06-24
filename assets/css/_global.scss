@@ -1,5 +1,4 @@
 :root {
-	--header-color: #314766;
 	--light-color: #e8e9e9;
 	--light-light-color: #fff;
 	--light-dark-color: #828686;
@@ -21,6 +20,19 @@
 	--info-light-color: #f5e483;
 	--info-dark-color: #a08907;
 	--default-font-size: 16px;
+}
+
+.light-mode {
+	--bg-color: var(--light-color);
+	--bg-secondary-color: var(--secondary-color);
+	--text-color: var(--dark-color);
+	--text-color-secondary: var(--primary-color);
+}
+.dark-mode {
+	--bg-color: var(--dark-color);
+	--bg-secondary-color: var(--dark-light-color);
+	--text-color: var(--light-color);
+	--text-color-secondary: var(--primary-light-color);
 }
 
 html {

@@ -1,7 +1,7 @@
 <template>
 	<div class="app-header">
 		<app-sidebar :menu-links="menuLinks" v-model="drawer" />
-		<c-toolbar class="bg-color-dark">
+		<c-toolbar>
 			<template #start>
 				<div class="buttons">
 					<app-burger-menu

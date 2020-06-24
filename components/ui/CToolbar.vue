@@ -25,12 +25,14 @@ export default {
 	position: absolute;
 	top: 0;
 	z-index: 10;
-	padding: 0 #{$grid-gap};
-	color: #fff;
-	box-shadow: 0 3px 15px rgba(#000, 0.7);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 0 #{$grid-gap};
+	color: var(--light-color);
+	box-shadow: 0 3px 15px rgba(#000, 0.7);
+	background-color: var(--bg-secondary-color);
+	transition: 0.3s color, 0.3s background-color ease;
 	&-content {
 		width: inherit;
 	}

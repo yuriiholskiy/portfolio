@@ -46,9 +46,9 @@ export default {
 	width: 250px;
 	height: 100vh;
 	box-shadow: 1px 2px 15px rgba(#000, 0.7);
-	transition: 0.3s transform;
-	color: var(--light-color);
-	background-color: var(--dark-color);
+	transition: 0.3s transform, 0.3s color, 0.3s background-color ease;
+	color: var(--text-color);
+	background-color: var(--bg-color);
 	&.left {
 		left: 0;
 		transform: translateX(-110%);
