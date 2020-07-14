@@ -1,10 +1,8 @@
 <template>
-	<div class="full-height app">
+	<main class="full-height app">
 		<app-header />
-		<div class="container">
-			<nuxt />
-		</div>
-	</div>
+		<nuxt class="container" />
+	</main>
 </template>
 
 <script>

@@ -4,7 +4,8 @@ $grid-gap-one-side: $grid-gap / 2;
 
 @mixin container {
 	max-width: map_get($breakpoints, 'desktop-wide');
-	padding: 0 $grid-gap;
+	padding-left: $grid-gap;
+	padding-right: $grid-gap;
 	margin: 0 auto;
 }
 @mixin row {

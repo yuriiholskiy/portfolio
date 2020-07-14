@@ -1,5 +1,5 @@
 <template>
-	<div class="app-header">
+	<header class="app-header">
 		<app-sidebar :menu-links="menuLinks" v-model="drawer" />
 		<c-toolbar>
 			<template #start>
@@ -28,7 +28,7 @@
 				</div>
 			</template>
 		</c-toolbar>
-	</div>
+	</header>
 </template>
 
 <script>

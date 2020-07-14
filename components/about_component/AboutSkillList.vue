@@ -22,8 +22,7 @@
 </template>
 
 <script>
-const values = [95, 90, 95, 95, 95, 90];
-import skillsData from '~/utils/skill-item.data.js';
+import { skillsData, skillsDataPercents } from '~/utils/skill-item.data.js';
 import CListGroup from '~/components/ui/CListGroup';
 import CListItem from '~/components/ui/CListItem';
 import CProgress from '~/components/ui/CProgress';
@@ -42,7 +41,7 @@ export default {
 	mounted() {
 		const intervalId = setTimeout(() => {
 			for (let i = 0; i < this.skillsData.length; i++) {
-				this.skillsData[i].percent = values[i];
+				this.skillsData[i].percent = skillsDataPercents[i];
 			}
 		}, 150);
 		this.$once('hook:beforeDestroy', () => {

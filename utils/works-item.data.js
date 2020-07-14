@@ -12,7 +12,7 @@ const defaultTechologies = [
 	{
 		name: 'js',
 		theme: 'info',
-		rippleColor: 'orange'
+		rippleColor: 'yellow'
 	}
 ];
 const CHIPS_COUNT_SHOW = 4;
@@ -27,6 +27,11 @@ export default [
 				name: 'vue',
 				theme: 'positive',
 				rippleColor: 'green'
+			},
+			{
+				name: 'jest',
+				theme: 'info',
+				rippleColor: 'yellow'
 			}
 		],
 		chipsCountShow: CHIPS_COUNT_SHOW,
@@ -130,7 +135,7 @@ export default [
 			{
 				name: 'jest',
 				theme: 'info',
-				rippleColor: 'orangered'
+				rippleColor: 'yellow'
 			},
 			{
 				name: 'material-ui',

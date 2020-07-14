@@ -12,7 +12,7 @@
 			today than the me yesterday.
 		</p>
 
-		<div class="mt-4 mt-sm-2 text-color-secondary text-center">
+		<nav class="mt-4 mt-sm-2 text-color-secondary text-center">
 			<h2 class="display">
 				Want to read about me? Or check my works? Or read my articles?
 			</h2>
@@ -27,7 +27,7 @@
 					Blog
 				</c-button>
 			</div>
-		</div>
+		</nav>
 		<index-useful-links />
 		<p class="title-2 text-center mt-4 mt-sm-2">
 			<strong>All rights reserved {{ new Date().toLocaleString() }}</strong>

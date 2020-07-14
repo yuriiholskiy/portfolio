@@ -1,4 +1,4 @@
-export default [
+export const skillsData = [
 	{
 		name: 'HTML',
 		percent: 0,
@@ -16,6 +16,12 @@ export default [
 		percent: 0,
 		theme: 'info',
 		icon: 'js'
+	},
+	{
+		name: 'Typescript',
+		percent: 0,
+		theme: 'primary',
+		icon: 'ts'
 	},
 	{
 		name: 'Vue',
@@ -36,3 +42,5 @@ export default [
 		icon: 'react'
 	}
 ];
+
+export const skillsDataPercents = [95, 90, 95, 90, 95, 95, 90];
