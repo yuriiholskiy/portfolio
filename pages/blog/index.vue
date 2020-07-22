@@ -4,13 +4,19 @@
 			It is my blog,
 		</h2>
 		<div class="row">
-			<div class="column mt-1" v-for="article in articles" :key="article.name">
+			<div
+				class="column mt-1"
+				v-for="article in articlesData"
+				:key="article.name"
+			>
 				<c-card action max-width="50">
 					<template #title>
 						{{ article.title }}
 					</template>
 					<template #description>
 						<span> {{ article.description.slice(0, 40).trim() }}... </span>
+						<app-tag-list :tags="article.tags" />
+						<p class="mt-1">Read time: ({{ article.readTime }})</p>
 					</template>
 					<template #action>
 						<c-button
@@ -29,6 +35,8 @@
 </template>
 
 <script>
+import AppTagList from '~/components/AppTagList';
+import articlesData from '~/utils/articles.data';
 export default {
 	head() {
 		return {
@@ -54,24 +62,11 @@ export default {
 	},
 	data() {
 		return {
-			articles: [
-				{
-					title: 'Build a modal component with Vue 3',
-					path: { name: 'blog-article', params: { article: 'vue3_modal' } },
-					description:
-						'In this article we build modal component using Vue 3 v-model and also work with built-in Teleport component.'
-				},
-				{
-					title: 'Build a validation system with Vue 3 and typescript',
-					path: {
-						name: 'blog-article',
-						params: { article: 'vue3_validation_system' }
-					},
-					description:
-						'In this article we build a validation system using Vue 3 composition api and typescript'
-				}
-			]
+			articlesData
 		};
+	},
+	components: {
+		AppTagList
 	}
 };
 </script>

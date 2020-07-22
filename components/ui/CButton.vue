@@ -155,7 +155,6 @@ export default {
 	}
 	&.is-small {
 		min-width: 33px;
-		padding: 0.1rem 0.2rem;
 	}
 	&.is-rounded {
 		border-radius: 50%;

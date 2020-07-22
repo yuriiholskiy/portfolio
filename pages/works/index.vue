@@ -21,13 +21,10 @@
 						{{ item.title }}
 					</template>
 					<template #description>
-						<span> {{ item.description.slice(0, 40).trim() }}... </span>
-						<h4 class="created-by-title mt-2 text-color-light hide-sm-and-down">
-							Used techonologies:
-						</h4>
+						<span> {{ item.description.slice(0, 45).trim() }}... </span>
 						<works-technology
 							:item="item"
-							@show-all-chips="showAllChips(item.chips, index)"
+							@show-all-tags="showAllTags(item.tags, index)"
 						/>
 					</template>
 					<template #action>
@@ -126,10 +123,10 @@ export default {
 		});
 	},
 	methods: {
-		showAllChips(chips, index) {
+		showAllTags(tags, index) {
 			const el = this.worksData.find((_, idx) => idx === index);
-			const sub = chips.length - el.chipsCountShow;
-			el.chipsCountShow = chips.length + sub;
+			const sub = tags.length - el.tagsCountShow;
+			el.tagsCountShow = tags.length + sub;
 		},
 		showDetails(item) {
 			this.activeItem = item;

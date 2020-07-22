@@ -1,23 +1,11 @@
 <template>
-	<div class="mt-half df aic fww acsa hide-sm-and-down">
-		<c-chip
-			v-for="{ name, theme, rippleColor } in item.chips.slice(
-				0,
-				item.chipsCountShow
-			)"
-			:key="name"
-			:icon-name="name"
-			v-ripple="rippleColor"
-			class="mt-half"
-			:class="`is-${theme}`"
-		>
-			{{ name }}
-		</c-chip>
+	<div class="df aicfe fww acsa hide-sm-and-down">
+		<app-tag-list :tags="item.tags.slice(0, item.tagsCountShow)" />
 		<c-button
 			title="Show all techonologies"
-			class="is-info is-rounded is-small mt-half"
-			v-if="item.chips.length > item.chipsCountShow"
-			@click="$emit('show-all-chips')"
+			class="is-info is-rounded is-small ml-half"
+			v-if="item.tags.length > item.tagsCountShow"
+			@click="$emit('show-all-tags')"
 		>
 			...
 		</c-button>
@@ -25,7 +13,7 @@
 </template>
 
 <script>
-import CChip from '~/components/ui/CChip';
+import AppTagList from '~/components/AppTagList';
 export default {
 	name: 'WorksTechnology',
 	props: {
@@ -35,7 +23,7 @@ export default {
 		}
 	},
 	components: {
-		CChip
+		AppTagList
 	}
 };
 </script>
