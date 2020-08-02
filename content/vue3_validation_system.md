@@ -56,11 +56,11 @@ description: In this article we build a validation system using Vue 3 compositio
 	<form class="form">
 		<label for="name">Name</label>
 		<div class="ui input focus">
-			<input type="text" placeholder="Name" />
+			<input type="text" placeholder="Name" v-model="name" />
 		</div>
 		<label for="email">Email</label>
 		<div class="ui input focus">
-			<input type="text" placeholder="Email" />
+			<input type="text" placeholder="Email" v-model="email" />
 		</div>
 		<input class="ui primary button" type="submit" value="Submit" />
 	</form>
@@ -73,8 +73,12 @@ export default defineComponent({
 	name: 'App',
 	setup() {
 		const title = ref('Hello, Vite');
+		const name = ref('');
+		const email = ref('');
 		return {
-			title
+			title,
+			name,
+			email
 		};
 	}
 });
@@ -84,7 +88,8 @@ export default defineComponent({
 <p>
 	Vue 3 offers a <code class="language-js">defineComponent()</code> function. Inside the <code class="language-js">defineComponent()</code> function you can see a setup function, which takes the props as the first argument. Since, we are not using props we just omit them.
 </p>
-<p class="mb-1">Also, we create a reactive reference using <code class="language-js">ref</code> function and returned it from the setup function.</p>
+<p class="mb-1">Also, we create a reactive reference for title and model to our inputs using <code class="language-js">ref</code> function and returned it from the setup function. <code class="language-js">v-model</code> create "two-way" binding. You can read more in documentation.
+</p>
 <p>Also, I using <c-button
 				tag="a"
 				class="is-primary is-small"
@@ -161,9 +166,10 @@ export interface Status {
 }
 
 export const validate = (
-	value: string,
+	value: string | number,
 	validators: Array<Validators>
 ): Status => {
+	value = value.toString();
 	for (const validator of validators) {
 		if (validator.type === 'required' && (!value || !value.length)) {
 			return {
@@ -238,9 +244,10 @@ export interface Status {
 }
 
 export const validate = (
-	value: string,
+	value: string | number,
 	validators: Array<Validators>
 ): Status => {
+	value = value.toString();
 	for (const validator of validators) {
 		if (validator.type === 'required' && (!value || !value.length)) {
 			return {
@@ -283,5 +290,88 @@ export const validate = (
 	</a>
 	Using our validation system
 </h3>
-<p>In progress...</p>
+<p>Now, in App.vue we can use our validations.</p>
+
+```vue[App.vue]
+<template>
+	<h1>{{ title }}</h1>
+	<form class="form">
+		<label for="name">Name</label>
+		<div class="ui input focus">
+			<input type="text" placeholder="Name" v-model="name" />
+			<span class="error-text text-color-red" v-if="!nameStatus.valid">
+				{{ nameStatus.message }}
+			</span>
+		</div>
+		<label for="email">Email</label>
+		<div class="ui input focus">
+			<input type="text" placeholder="Email" v-model="email" />
+			<span class="error-text text-color-red" v-if="!emailStatus.valid">
+				{{ emailStatus.message }}
+			</span>
+		</div>
+		<input
+			class="ui primary button"
+			type="submit"
+			value="Submit"
+			:disabled="!isFormValid"
+		/>
+	</form>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref, computed } from 'vue';
+import {
+	required,
+	length,
+	emailValidator,
+	Status,
+	validate
+} from './validators';
+
+export default defineComponent({
+	name: 'App',
+	setup() {
+		const title = ref('Hello, Vite');
+		const name = ref('');
+		const email = ref('');
+		const nameStatus = computed<Status>(() =>
+			validate(name.value, [required(), length({ min: 5, max: 12 })])
+		);
+		const emailStatus = computed<Status>(() =>
+			validate(email.value, [required(), emailValidator()])
+		);
+		const isFormValid = computed(
+			() => nameStatus.value.valid && emailStatus.value.valid
+		);
+		return {
+			title,
+			name,
+			email,
+			nameStatus,
+			emailStatus,
+			isFormValid
+		};
+	}
+});
+</script>
+```
+
+<p>
+	Here, we import validators, validate function and "Status" interface. In <code class="language-js">setup</code> method we create computed properties that return validate function with validators we want to use, named field name + Status since we return "Status" object.
+	Moreover, <code class="language-js">isFormValid</code> computed show that all fields are valid. And if not we disabled submit button. Also, we add span to display error messages, when validation on this field failed.
+</p>
+<p class="mt-half">
+And, in browser we have<img src="papers/validation-system/validation-1.png" alt="Form validation"/>
+</p>
+<p>
+As we can see, our validation already works. Errors showing, that field required and submit button is disabled. 
+</p>
+<p class="mt-half">
+On the video we can see all steps
+</p>
+<video class="mt-1" controls type="video/mp4" src="videos/validation.mp4"></video>
+<p class="mt-half">
+To be continued...
+</p>
 </section>
