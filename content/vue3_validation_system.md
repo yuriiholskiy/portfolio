@@ -365,7 +365,7 @@ export default defineComponent({
 And, in browser we have<img src="papers/validation-system/validation-1.png" alt="Form validation"/>
 </p>
 <p>
-As we can see, our validation already works. Errors showing, that field required and submit button is disabled. 
+As we can see, our validation already works. Errors is appear because field need to be filled and submit button is disabled. 
 </p>
 <p class="mt-half">
 On the video we can see all steps
