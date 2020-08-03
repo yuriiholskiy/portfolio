@@ -372,6 +372,124 @@ On the video we can see all steps
 </p>
 <video class="mt-1" controls type="video/mp4" src="videos/validation.mp4"></video>
 <p class="mt-half">
-To be continued...
+Pretty cool, right?
 </p>
+</section>
+
+<section id="custom_hook_for_validation">
+<h3 class="title-1 mt-1 text-color-primary">
+	<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_validation_system#custom_hook_for_validation">
+		#
+	</a>
+	Create custom hook for validation
+</h3>
+<p class="mt-half">
+We can got further, and create composable function or hook (from react world). 
+</p>
+<p class="mb-half">In project I create file <code class="language-js">useValidation.ts</code></p>
+
+```ts[useValidation.ts]
+import { computed, Ref, ComputedRef } from 'vue';
+import { validate, Status, Validators } from './validators';
+
+export const useValidation = (
+	ref: Ref,
+	validators: Validators[]
+): ComputedRef => {
+	return computed<Status>(() => validate(ref.value, validators));
+};
+```
+
+<p>We return function that accept value to validate and validators array and return computed that we describe above.<p/>
+
+<p class="mb-half">Now, in <code class="language-js">App.vue</code> we can use this hook</p>
+
+```vue[App.vue]
+<template>
+	<h1>{{ title }}</h1>
+	<form class="form">
+		<label for="name">Name</label>
+		<div class="ui input focus">
+			<input type="text" placeholder="Name" v-model="name" />
+			<span class="error-text text-color-red" v-if="!nameStatus.valid">
+				{{ nameStatus.message }}
+			</span>
+		</div>
+		<label for="email">Email</label>
+		<div class="ui input focus">
+			<input type="text" placeholder="Email" v-model="email" />
+			<span class="error-text text-color-red" v-if="!emailStatus.valid">
+				{{ emailStatus.message }}
+			</span>
+		</div>
+		<input
+			class="ui primary button"
+			type="submit"
+			value="Submit"
+			:disabled="!isFormValid"
+		/>
+	</form>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref, computed } from 'vue';
+import { required, length, emailValidator } from './validators';
+import { useValidate } from './useValidate';
+export default defineComponent({
+	name: 'App',
+	setup() {
+		const title = ref('Hello, Vite');
+		const name = ref('');
+		const email = ref('');
+		const nameStatus = useValidate(name, [
+			required(),
+			length({ min: 4, max: 15 })
+		]);
+		const emailStatus = useValidate(email, [required(), emailValidator()]);
+
+		const isValid = computed(
+			() => nameStatus.value.valid && emailStatus.value.valid
+		);
+		const onSubmit = () => {
+			console.log('submit');
+		};
+		return {
+			title,
+			name,
+			nameStatus,
+			email,
+			emailStatus,
+			isValid,
+			onSubmit
+		};
+	}
+});
+</script>
+```
+
+<p>All logic work as before. To use another validator we just import it and pass in <code class="language-js">useValidate</code> function.</p>
+
+</section>
+
+<section id="conclusions" class="mt-1">
+	<h3 class="title-1 mt-1 text-color-primary">
+		<a href="https://yuriiholskiy.github.io/portfolio/blog/vue3_validation_system#conclusions">
+			#
+		</a>
+		Conclusions
+	</h3>
+	<p>
+	In this article we create a custom validation system using Vue 3 composition api and typescript.
+	</p>
+	<p>
+	That's all. Hope You enjoyed.
+	</p>
+	<div class="buttons">
+		<c-button class="mt-1 is-primary" tag="nuxt-link" to="/">
+			Home
+		</c-button>
+		<c-button class="mt-1 is-primary" tag="nuxt-link" to="/blog">
+			Back to blog
+		</c-button>
+	</div>
 </section>

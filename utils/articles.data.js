@@ -20,7 +20,7 @@ export default [
 	},
 	{
 		title: 'Build a validation system with Vue 3 and typescript',
-		readTime: 'Paper in progress',
+		readTime: '10 minutes',
 		path: {
 			name: 'blog-article',
 			params: { article: 'vue3_validation_system' }
