@@ -434,18 +434,18 @@ export const useValidation = (
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
 import { required, length, emailValidator } from './validators';
-import { useValidate } from './useValidate';
+import { useValidation } from './useValidation';
 export default defineComponent({
 	name: 'App',
 	setup() {
 		const title = ref('Hello, Vite');
 		const name = ref('');
 		const email = ref('');
-		const nameStatus = useValidate(name, [
+		const nameStatus = useValidation(name, [
 			required(),
 			length({ min: 4, max: 15 })
 		]);
-		const emailStatus = useValidate(email, [required(), emailValidator()]);
+		const emailStatus = useValidation(email, [required(), emailValidator()]);
 
 		const isValid = computed(
 			() => nameStatus.value.valid && emailStatus.value.valid
@@ -467,7 +467,7 @@ export default defineComponent({
 </script>
 ```
 
-<p>All logic work as before. To use another validator we just import it and pass in <code class="language-js">useValidate</code> function.</p>
+<p>All logic work as before. To use another validator we just import it and pass in <code class="language-js">useValidation</code> function.</p>
 
 </section>
 
