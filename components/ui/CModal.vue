@@ -106,7 +106,7 @@ export default {
 	position: relative;
 	padding: 1rem 4rem;
 	@media screen and (max-width: map-get($breakpoints , 'tablet-small')) {
-		padding: 1rem 1rem 0 1rem;
+		padding: 1rem 1rem;
 	}
 	@media screen and (max-width: map-get($breakpoints , 'phablet')) {
 		max-height: 200px;
