@@ -3,7 +3,7 @@
 		<app-tag-list :tags="item.tags.slice(0, item.tagsCountShow)" />
 		<c-button
 			title="Show all techonologies"
-			class="is-info is-rounded is-small ml-half"
+			class="is-info is-small ml-half"
 			v-if="item.tags.length > item.tagsCountShow"
 			@click="$emit('show-all-tags')"
 		>

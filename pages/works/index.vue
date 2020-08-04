@@ -13,7 +13,7 @@
 		<transition-group tag="div" name="work-card" class="row" appear>
 			<div
 				class="column mt-1 work-card-item"
-				v-for="(item, index) in filteredWorksData"
+				v-for="item in filteredWorksData"
 				:key="item.title"
 			>
 				<c-card action max-width="50">
@@ -22,10 +22,7 @@
 					</template>
 					<template #description>
 						<span> {{ item.description.slice(0, 45).trim() }}... </span>
-						<works-technology
-							:item="item"
-							@show-all-tags="showAllTags(item.tags, index)"
-						/>
+						<app-tag-list :tags="item.tags" class="mt-1 hide-md-and-down" />
 					</template>
 					<template #action>
 						<works-useful-links
@@ -51,6 +48,7 @@
 				<p class="mt-1 title-2">
 					{{ activeItem.description }}
 				</p>
+				<app-tag-list :tags="activeItem.tags" />
 			</template>
 			<template #footer>
 				<p class="title-2">
@@ -76,7 +74,7 @@
 
 <script>
 import CModal from '~/components/ui/CModal';
-import WorksTechnology from '~/components/works_component/WorksTechnology';
+import AppTagList from '~/components/AppTagList';
 import WorksUsefulLinks from '~/components/works_component/WorksUsefulLinks';
 import worksData from '~/utils/works-item.data';
 
@@ -124,7 +122,7 @@ export default {
 	},
 	methods: {
 		showAllTags(tags, index) {
-			const el = this.worksData.find((_, idx) => idx === index);
+			const el = this.filteredWorksData.find((_, idx) => idx === index);
 			const sub = tags.length - el.tagsCountShow;
 			el.tagsCountShow = tags.length + sub;
 		},
@@ -135,14 +133,6 @@ export default {
 	},
 	computed: {
 		filteredWorksData() {
-			// by chips
-			// return this.worksData.filter(
-			// 	w =>
-			// 		w.chips.filter(c =>
-			// 			c.name.toLowerCase().includes(this.searchData.toLowerCase())
-			// 		).length > 0
-			// );
-			// by title
 			return this.worksData.filter(w =>
 				w.title.toLowerCase().includes(this.searchData.toLowerCase())
 			);
@@ -150,7 +140,7 @@ export default {
 	},
 	components: {
 		CModal,
-		WorksTechnology,
+		AppTagList,
 		WorksUsefulLinks
 	}
 };

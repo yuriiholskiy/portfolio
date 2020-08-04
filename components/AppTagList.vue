@@ -1,6 +1,6 @@
 <template>
-	<div class="mt-1">
-		<h4 class="fwb text-color-primary-light mt-half hide-sm-and-down">Tags:</h4>
+	<div>
+		<h4 class="fwb text-color-primary-light mt-half">Tags:</h4>
 		<c-chip
 			v-for="{ name, theme, rippleColor } in tags"
 			:key="name"

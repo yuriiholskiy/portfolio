@@ -104,7 +104,7 @@ export default {
 
 .c-modal-body {
 	position: relative;
-	padding: 2rem 4rem;
+	padding: 1rem 4rem;
 	@media screen and (max-width: map-get($breakpoints , 'tablet-small')) {
 		padding: 1rem 1rem 0 1rem;
 	}
@@ -115,17 +115,17 @@ export default {
 }
 .c-modal-header,
 .c-modal-footer {
-	padding: 1rem;
+	padding: 0.5rem 1rem 1rem;
 	display: flex;
 }
 
 .c-modal-header {
-	border-bottom: 1px solid var(--dark-color);
+	border-bottom: 1px solid var(--light-color);
 	justify-content: center;
 }
 
 .c-modal-footer {
-	border-top: 1px solid var(--dark-color);
+	border-top: 1px solid var(--light-color);
 	flex-direction: column;
 	align-items: flex-end;
 	margin-top: auto;
