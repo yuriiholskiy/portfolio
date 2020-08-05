@@ -11,9 +11,6 @@ export default {
 		base
 	},
 	rootDir: __dirname,
-	server: {
-		port: 8000
-	},
 	head: {
 		htmlAttrs: {
 			lang: 'en'

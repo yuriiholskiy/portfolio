@@ -61,6 +61,10 @@ export default {
 	&:focus {
 		outline: none;
 	}
+	&.is-flat {
+		background-color: transparent;
+		color: var(--light-color);
+	}
 	&.is-primary {
 		background-color: var(--primary-color);
 		color: var(--light-light-color);

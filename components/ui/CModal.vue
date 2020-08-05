@@ -1,11 +1,27 @@
 <template>
 	<transition name="modal-fade">
-		<div class="c-modal-backdrop" v-if="modelValue" @click.self="closeModal">
+		<div
+			id="modal"
+			role="dialog"
+			class="c-modal-backdrop"
+			v-if="modelValue"
+			@click.self="closeModal"
+		>
 			<div class="c-modal">
 				<header class="c-modal-header">
 					<slot name="header">
 						This is the default title!
 					</slot>
+					<c-button
+						v-if="closeButton"
+						class="c-modal-close-btn is-small is-flat"
+						title="Close modal"
+						aria-label="Close modal"
+						aria-labelledby="modal"
+						@click="closeModal"
+					>
+						❌
+					</c-button>
 				</header>
 				<section class="c-modal-body">
 					<slot name="body">
@@ -39,6 +55,10 @@ export default {
 			deafult: false
 		},
 		cancelOnEscape: {
+			type: Boolean,
+			default: true
+		},
+		closeButton: {
 			type: Boolean,
 			default: true
 		}
@@ -90,6 +110,7 @@ export default {
 }
 
 .c-modal {
+	position: relative;
 	background-color: var(--bg-color);
 	overflow-x: auto;
 	display: flex;
@@ -100,35 +121,45 @@ export default {
 	@media screen and(max-width: map-get($breakpoints, 'tablet')) {
 		flex-basis: 100%;
 	}
-}
-
-.c-modal-body {
-	position: relative;
-	padding: 1rem 4rem;
-	@media screen and (max-width: map-get($breakpoints , 'tablet-small')) {
-		padding: 1rem 1rem;
+	@media screen and(max-height: map-get($breakpoints, 'phone-wide')) {
+		max-height: 350px;
+		flex-basis: 90%;
 	}
-	@media screen and (max-width: map-get($breakpoints , 'phablet')) {
-		max-height: 200px;
-		overflow-y: scroll;
+	@media screen and(max-height: map-get($breakpoints, 'phone')) {
+		max-height: 300px;
+		flex-basis: 90%;
 	}
-}
-.c-modal-header,
-.c-modal-footer {
-	padding: 0.5rem 1rem 1rem;
-	display: flex;
-}
-
-.c-modal-header {
-	border-bottom: 1px solid var(--light-color);
-	justify-content: center;
-}
-
-.c-modal-footer {
-	border-top: 1px solid var(--light-color);
-	flex-direction: column;
-	align-items: flex-end;
-	margin-top: auto;
+	&-close-btn {
+		position: absolute;
+		right: 5px;
+		top: 15px;
+	}
+	&-body {
+		position: relative;
+		padding: 1rem 4rem;
+		@media screen and (max-width: map-get($breakpoints , 'tablet-small')) {
+			padding: 1rem 1rem;
+		}
+		@media screen and (max-width: map-get($breakpoints , 'phablet')) {
+			max-height: 200px;
+			overflow-y: scroll;
+		}
+	}
+	&-header,
+	&-footer {
+		padding: 0.5rem 1rem 1rem;
+		display: flex;
+	}
+	&-header {
+		border-bottom: 1px solid var(--light-color);
+		justify-content: center;
+	}
+	&-footer {
+		border-top: 1px solid var(--light-color);
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: auto;
+	}
 }
 
 .modal-fade-enter,
