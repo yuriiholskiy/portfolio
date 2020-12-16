@@ -1,0 +1,1 @@
+export { IMenuLink } from './MenuLink';
